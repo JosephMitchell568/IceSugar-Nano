@@ -1,0 +1,5 @@
+IceSugar-Nano does not have an internal PLL.
+So, in order to 'boot' into the maximum clock frequncy I will need to reverse engineer the icesprog
+For the time being I will use the default 12MHz clock.
+
+Before booting in max freq I will use the provided icesprog for testing purposes.
