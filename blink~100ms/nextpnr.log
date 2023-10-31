@@ -1,0 +1,280 @@
+Info: constrained 'LED' to bel 'X13/Y11/io1'
+Info: constrained 'CLK' to bel 'X0/Y8/io1'
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:        1 LCs used as LUT4 only
+Info:       21 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:        0 LCs used as DFF only
+Info: Packing carries..
+Info:        1 LCs used as CARRY only
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting CLK$SB_IO_IN (fanout 21)
+Info: Constraining chains...
+Info:        1 LCs used to legalise carry chains.
+Info: Checksum: 0xf1b811d2
+
+Info: Annotating ports with timing budgets for target frequency 36.00 MHz
+Info: Checksum: 0xd1a6934d
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:    26/ 1280     2%
+Info: 	        ICESTORM_RAM:     0/   16     0%
+Info: 	               SB_IO:     2/  112     1%
+Info: 	               SB_GB:     1/    8    12%
+Info: 	        ICESTORM_PLL:     0/    1     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+
+Info: Placed 2 cells based on constraints.
+Info: Creating initial analytic placement for 6 cells, random placement wirelen = 61.
+Info:     at initial placer iter 0, wirelen = 2
+Info:     at initial placer iter 1, wirelen = 2
+Info:     at initial placer iter 2, wirelen = 2
+Info:     at initial placer iter 3, wirelen = 2
+Info: Running main analytical placer.
+Info:     at iteration #1, type ICESTORM_LC: wirelen solved = 2, spread = 9, legal = 13; time = 0.00s
+Info:     at iteration #1, type SB_GB: wirelen solved = 13, spread = 13, legal = 13; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 2, spread = 9, legal = 9; time = 0.00s
+Info:     at iteration #2, type ICESTORM_LC: wirelen solved = 3, spread = 3, legal = 7; time = 0.00s
+Info:     at iteration #2, type SB_GB: wirelen solved = 7, spread = 7, legal = 7; time = 0.00s
+Info:     at iteration #2, type ALL: wirelen solved = 3, spread = 3, legal = 8; time = 0.00s
+Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 4, spread = 4, legal = 8; time = 0.00s
+Info:     at iteration #3, type SB_GB: wirelen solved = 8, spread = 8, legal = 8; time = 0.00s
+Info:     at iteration #3, type ALL: wirelen solved = 4, spread = 4, legal = 12; time = 0.00s
+Info:     at iteration #4, type ICESTORM_LC: wirelen solved = 5, spread = 5, legal = 8; time = 0.00s
+Info:     at iteration #4, type SB_GB: wirelen solved = 8, spread = 8, legal = 8; time = 0.00s
+Info:     at iteration #4, type ALL: wirelen solved = 5, spread = 5, legal = 9; time = 0.00s
+Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 5, spread = 5, legal = 12; time = 0.00s
+Info:     at iteration #5, type SB_GB: wirelen solved = 12, spread = 12, legal = 12; time = 0.00s
+Info:     at iteration #5, type ALL: wirelen solved = 5, spread = 5, legal = 10; time = 0.00s
+Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 5, spread = 5, legal = 11; time = 0.00s
+Info:     at iteration #6, type SB_GB: wirelen solved = 11, spread = 11, legal = 11; time = 0.00s
+Info:     at iteration #6, type ALL: wirelen solved = 5, spread = 5, legal = 8; time = 0.00s
+Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 4, spread = 4, legal = 8; time = 0.00s
+Info:     at iteration #7, type SB_GB: wirelen solved = 8, spread = 8, legal = 8; time = 0.00s
+Info:     at iteration #7, type ALL: wirelen solved = 5, spread = 10, legal = 13; time = 0.00s
+Info: HeAP Placer Time: 0.03s
+Info:   of which solving equations: 0.01s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 4, wirelen = 8
+Info:   at iteration #4: temp = 0.000000, timing cost = 4, wirelen = 6 
+Info: SA placement time 0.02s
+
+Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 143.82 MHz (PASS at 36.00 MHz)
+
+Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 3.19 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 20824,  21084) |** 
+Info: [ 21084,  21344) |* 
+Info: [ 21344,  21604) |** 
+Info: [ 21604,  21864) | 
+Info: [ 21864,  22124) |* 
+Info: [ 22124,  22384) |** 
+Info: [ 22384,  22644) |* 
+Info: [ 22644,  22904) |* 
+Info: [ 22904,  23164) |** 
+Info: [ 23164,  23424) |* 
+Info: [ 23424,  23684) | 
+Info: [ 23684,  23944) |** 
+Info: [ 23944,  24204) |* 
+Info: [ 24204,  24464) |* 
+Info: [ 24464,  24724) |*** 
+Info: [ 24724,  24984) | 
+Info: [ 24984,  25244) | 
+Info: [ 25244,  25504) |* 
+Info: [ 25504,  25764) |******************** 
+Info: [ 25764,  26024) |* 
+Info: Checksum: 0xa84b441d
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 71 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:         71 |        0         54 |    0    54 |         0|       0.09       0.09|
+Info: Routing complete.
+Info: Router1 time 0.09s
+Info: Checksum: 0x46235426
+
+Info: Critical path report for clock 'CLK$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  0.8  0.8  Source $auto$alumacc.cc:474:replace_alu$6.slice[0].adder_LC.O
+Info:  0.9  1.7    Net counter[0] budget 22.191000 ns (11,8) -> (12,9)
+Info:                Sink $nextpnr_ICESTORM_LC_0.I1
+Info:                Defined in:
+Info:                  blink.v:6
+Info:  0.4  2.0  Source $nextpnr_ICESTORM_LC_0.COUT
+Info:  0.0  2.0    Net $nextpnr_ICESTORM_LC_0$O budget 0.000000 ns (12,9) -> (12,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[1].carry$CARRY.CIN
+Info:  0.2  2.2  Source $auto$alumacc.cc:474:replace_alu$6.slice[1].carry$CARRY.COUT
+Info:  0.0  2.2    Net $auto$alumacc.cc:474:replace_alu$6.C[2] budget 0.000000 ns (12,9) -> (12,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[2].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  2.4  Source $auto$alumacc.cc:474:replace_alu$6.slice[2].adder_LC.COUT
+Info:  0.0  2.4    Net $auto$alumacc.cc:474:replace_alu$6.C[3] budget 0.000000 ns (12,9) -> (12,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[3].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  2.6  Source $auto$alumacc.cc:474:replace_alu$6.slice[3].adder_LC.COUT
+Info:  0.0  2.6    Net $auto$alumacc.cc:474:replace_alu$6.C[4] budget 0.000000 ns (12,9) -> (12,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[4].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  2.8  Source $auto$alumacc.cc:474:replace_alu$6.slice[4].adder_LC.COUT
+Info:  0.0  2.8    Net $auto$alumacc.cc:474:replace_alu$6.C[5] budget 0.000000 ns (12,9) -> (12,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[5].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  3.0  Source $auto$alumacc.cc:474:replace_alu$6.slice[5].adder_LC.COUT
+Info:  0.0  3.0    Net $auto$alumacc.cc:474:replace_alu$6.C[6] budget 0.000000 ns (12,9) -> (12,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[6].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  3.2  Source $auto$alumacc.cc:474:replace_alu$6.slice[6].adder_LC.COUT
+Info:  0.0  3.2    Net $auto$alumacc.cc:474:replace_alu$6.C[7] budget 0.000000 ns (12,9) -> (12,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[7].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  3.3  Source $auto$alumacc.cc:474:replace_alu$6.slice[7].adder_LC.COUT
+Info:  0.3  3.6    Net $auto$alumacc.cc:474:replace_alu$6.C[8] budget 0.290000 ns (12,9) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[8].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  3.8  Source $auto$alumacc.cc:474:replace_alu$6.slice[8].adder_LC.COUT
+Info:  0.0  3.8    Net $auto$alumacc.cc:474:replace_alu$6.C[9] budget 0.000000 ns (12,10) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[9].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  4.0  Source $auto$alumacc.cc:474:replace_alu$6.slice[9].adder_LC.COUT
+Info:  0.0  4.0    Net $auto$alumacc.cc:474:replace_alu$6.C[10] budget 0.000000 ns (12,10) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[10].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  4.2  Source $auto$alumacc.cc:474:replace_alu$6.slice[10].adder_LC.COUT
+Info:  0.0  4.2    Net $auto$alumacc.cc:474:replace_alu$6.C[11] budget 0.000000 ns (12,10) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[11].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  4.4  Source $auto$alumacc.cc:474:replace_alu$6.slice[11].adder_LC.COUT
+Info:  0.0  4.4    Net $auto$alumacc.cc:474:replace_alu$6.C[12] budget 0.000000 ns (12,10) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[12].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  4.6  Source $auto$alumacc.cc:474:replace_alu$6.slice[12].adder_LC.COUT
+Info:  0.0  4.6    Net $auto$alumacc.cc:474:replace_alu$6.C[13] budget 0.000000 ns (12,10) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[13].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  4.8  Source $auto$alumacc.cc:474:replace_alu$6.slice[13].adder_LC.COUT
+Info:  0.0  4.8    Net $auto$alumacc.cc:474:replace_alu$6.C[14] budget 0.000000 ns (12,10) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[14].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  4.9  Source $auto$alumacc.cc:474:replace_alu$6.slice[14].adder_LC.COUT
+Info:  0.0  4.9    Net $auto$alumacc.cc:474:replace_alu$6.C[15] budget 0.000000 ns (12,10) -> (12,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[15].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  5.1  Source $auto$alumacc.cc:474:replace_alu$6.slice[15].adder_LC.COUT
+Info:  0.3  5.4    Net $auto$alumacc.cc:474:replace_alu$6.C[16] budget 0.290000 ns (12,10) -> (12,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[16].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  5.6  Source $auto$alumacc.cc:474:replace_alu$6.slice[16].adder_LC.COUT
+Info:  0.0  5.6    Net $auto$alumacc.cc:474:replace_alu$6.C[17] budget 0.000000 ns (12,11) -> (12,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[17].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  5.8  Source $auto$alumacc.cc:474:replace_alu$6.slice[17].adder_LC.COUT
+Info:  0.0  5.8    Net $auto$alumacc.cc:474:replace_alu$6.C[18] budget 0.000000 ns (12,11) -> (12,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[18].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  6.0  Source $auto$alumacc.cc:474:replace_alu$6.slice[18].adder_LC.COUT
+Info:  0.0  6.0    Net $auto$alumacc.cc:474:replace_alu$6.C[19] budget 0.000000 ns (12,11) -> (12,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[19].adder_LC.CIN
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.2  6.2  Source $auto$alumacc.cc:474:replace_alu$6.slice[19].adder_LC.COUT
+Info:  0.4  6.5    Net $auto$alumacc.cc:474:replace_alu$6.C[20] budget 0.380000 ns (12,11) -> (12,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6.slice[20].adder_LC.I3
+Info:                Defined in:
+Info:                  blink.v:20
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.5  7.0  Setup $auto$alumacc.cc:474:replace_alu$6.slice[20].adder_LC.I3
+Info: 5.2 ns logic, 1.8 ns routing
+
+Info: Critical path report for cross-domain path 'posedge CLK$SB_IO_IN_$glb_clk' -> '<async>':
+Info: curr total
+Info:  0.8  0.8  Source $auto$alumacc.cc:474:replace_alu$6.slice[20].adder_LC.O
+Info:  0.9  1.7    Net counter[20] budget 13.161000 ns (12,11) -> (12,11)
+Info:                Sink $abc$226$auto$blifparse.cc:492:parse_blif$228_LC.I0
+Info:                Defined in:
+Info:                  blink.v:6
+Info:  0.7  2.3  Source $abc$226$auto$blifparse.cc:492:parse_blif$228_LC.O
+Info:  0.9  3.2    Net LED$SB_IO_OUT budget 13.160000 ns (12,11) -> (13,11)
+Info:                Sink LED$sb_io.D_OUT_0
+Info:                Defined in:
+Info:                  blink.v:3
+Info: 1.5 ns logic, 1.7 ns routing
+
+Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 142.23 MHz (PASS at 36.00 MHz)
+
+Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 3.19 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 20746,  20986) |** 
+Info: [ 20986,  21226) |* 
+Info: [ 21226,  21466) |* 
+Info: [ 21466,  21706) |* 
+Info: [ 21706,  21946) | 
+Info: [ 21946,  22186) |** 
+Info: [ 22186,  22426) |* 
+Info: [ 22426,  22666) |* 
+Info: [ 22666,  22906) |** 
+Info: [ 22906,  23146) |* 
+Info: [ 23146,  23386) |* 
+Info: [ 23386,  23626) | 
+Info: [ 23626,  23866) |* 
+Info: [ 23866,  24106) |* 
+Info: [ 24106,  24346) |** 
+Info: [ 24346,  24586) |** 
+Info: [ 24586,  24826) |** 
+Info: [ 24826,  25066) | 
+Info: [ 25066,  25306) | 
+Info: [ 25306,  25546) |********************* 
+
+Info: Program finished normally.
