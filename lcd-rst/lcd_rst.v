@@ -7,7 +7,12 @@ module lcd_rst(  input CLK,
 		 output reg SDA,
 		 output reg CS
                 );
-   reg [2:0] state; 
+
+   localparam ACTIVATE_LCD_RST = 2'b00,
+	      DELAY_100MS = 2'b01,
+	      DEACTIVATE_LCD_RST = 2'b10;
+
+   reg [1:0] state; 
    reg [25:0] counter;
    // According to the Makefile we use 48MHz clock
    // However, this FPGA does not have 48MHz clock
@@ -18,13 +23,13 @@ module lcd_rst(  input CLK,
 
    initial begin
       counter = 0;
-      state = 0;
+      state = ACTIVATE_LCD_RST;
    end
 
    always @(posedge CLK)
    begin
     case(state)
-     2'b00: begin
+     ACTIVATE_LCD_RST: begin
       LED <= 1'b0;
       SCK <= 1'b0;
       RST <= 1'b0;
@@ -32,39 +37,33 @@ module lcd_rst(  input CLK,
       SDA <= 1'b0;
       CS <= 1'b0;
       counter <= 26'b0;
-      state <= 2'b01;
+      state <= DELAY_100MS;
      end
-     2'b01: begin
+     DELAY_100MS: begin
       if(counter[20] == 1'b1)
       begin
        counter <= 26'b0;
-       state <= 2'b10;
-       LED <= 1'b1;
-      end
-      else
-      begin
-       LED <= 1'b0;
+       if(RST == 1'b0)
+       begin
+        state <= DEACTIVATE_LCD_RST;
+	LED <= 1'b1;
+       end
+       else
+       begin
+        state <= ACTIVATE_LCD_RST;
+	LED <= 1'b0;
+       end
       end
       counter <= counter + 1'b1;
      end
-     2'b10: begin
+     DEACTIVATE_LCD_RST: begin
       RST <= 1'b1;
       LED <= 1'b1;
       counter <= 26'b0;
-      state <= 2'b11;
+      state <= DELAY_100MS;
      end
-     2'b11: begin
-      if(counter[20] == 1'b1)
-      begin
-       LED <= 1'b0;
-       counter <= 26'b0;
-       state <= 2'b00;
-      end
-      else
-      begin
-       LED <= 1'b1;
-      end
-      counter <= counter + 1'b1;
+     default: begin
+      state <= ACTIVATE_LCD_RST;
      end
     endcase
    end
