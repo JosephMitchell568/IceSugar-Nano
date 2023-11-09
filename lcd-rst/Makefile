@@ -1,4 +1,4 @@
-filename = lcd_rst
+filename = lcd-rst_sleep-out
 pcf_file = io.pcf
 
 ICELINK_DIR=$(shell df | grep iCELink | awk '{print $$6}')

@@ -9,282 +9,210 @@ Info: constrained 'CS' to bel 'X13/Y9/io0'
 Info: Packing constants..
 Info: Packing IOs..
 Info: Packing LUT-FFs..
-Info:       27 LCs used as LUT4 only
-Info:       24 LCs used as LUT4 and DFF
+Info:       84 LCs used as LUT4 only
+Info:       44 LCs used as LUT4 and DFF
 Info: Packing non-LUT FFs..
-Info:        1 LCs used as DFF only
+Info:       30 LCs used as DFF only
 Info: Packing carries..
-Info:        1 LCs used as CARRY only
+Info:        2 LCs used as CARRY only
 Info: Packing RAMs..
 Info: Placing PLLs..
 Info: Packing special functions..
 Info: Packing PLLs..
 Info: Promoting globals..
-Info: promoting CLK$SB_IO_IN (fanout 25)
-Info: promoting $abc$665$auto$dff2dffe.cc:158:make_patterns_logic$483 [cen] (fanout 21)
+Info: promoting CLK$SB_IO_IN (fanout 74)
+Info: promoting $abc$2660$auto$rtlil.cc:1969:NotGate$2594 [reset] (fanout 32)
+Info: promoting $abc$2660$auto$dff2dffe.cc:158:make_patterns_logic$2257 [cen] (fanout 26)
 Info: Constraining chains...
-Info:        1 LCs used to legalise carry chains.
-Info: Checksum: 0x537d1d6d
+Info:        2 LCs used to legalise carry chains.
+Info: Checksum: 0xa370e868
 
 Info: Annotating ports with timing budgets for target frequency 36.00 MHz
-Info: Checksum: 0x3a53ea74
+Info: Checksum: 0x20db1dad
 
 Info: Device utilisation:
-Info: 	         ICESTORM_LC:    56/ 1280     4%
+Info: 	         ICESTORM_LC:   164/ 1280    12%
 Info: 	        ICESTORM_RAM:     0/   16     0%
 Info: 	               SB_IO:     7/  112     6%
-Info: 	               SB_GB:     2/    8    25%
+Info: 	               SB_GB:     3/    8    37%
 Info: 	        ICESTORM_PLL:     0/    1     0%
 Info: 	         SB_WARMBOOT:     0/    1     0%
 
 Info: Placed 7 cells based on constraints.
-Info: Creating initial analytic placement for 38 cells, random placement wirelen = 643.
-Info:     at initial placer iter 0, wirelen = 47
-Info:     at initial placer iter 1, wirelen = 43
-Info:     at initial placer iter 2, wirelen = 43
-Info:     at initial placer iter 3, wirelen = 43
+Info: Creating initial analytic placement for 140 cells, random placement wirelen = 2249.
+Info:     at initial placer iter 0, wirelen = 121
+Info:     at initial placer iter 1, wirelen = 101
+Info:     at initial placer iter 2, wirelen = 103
+Info:     at initial placer iter 3, wirelen = 100
 Info: Running main analytical placer.
-Info:     at iteration #1, type ICESTORM_LC: wirelen solved = 41, spread = 101, legal = 108; time = 0.00s
-Info:     at iteration #1, type SB_GB: wirelen solved = 108, spread = 108, legal = 112; time = 0.00s
-Info:     at iteration #1, type ALL: wirelen solved = 42, spread = 94, legal = 137; time = 0.00s
-Info:     at iteration #2, type ICESTORM_LC: wirelen solved = 49, spread = 104, legal = 140; time = 0.00s
-Info:     at iteration #2, type SB_GB: wirelen solved = 140, spread = 140, legal = 140; time = 0.00s
-Info:     at iteration #2, type ALL: wirelen solved = 42, spread = 103, legal = 147; time = 0.00s
-Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 48, spread = 118, legal = 134; time = 0.00s
-Info:     at iteration #3, type SB_GB: wirelen solved = 132, spread = 134, legal = 134; time = 0.00s
-Info:     at iteration #3, type ALL: wirelen solved = 45, spread = 109, legal = 117; time = 0.00s
-Info:     at iteration #4, type ICESTORM_LC: wirelen solved = 49, spread = 117, legal = 126; time = 0.00s
-Info:     at iteration #4, type SB_GB: wirelen solved = 126, spread = 126, legal = 126; time = 0.00s
-Info:     at iteration #4, type ALL: wirelen solved = 49, spread = 154, legal = 161; time = 0.00s
-Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 48, spread = 119, legal = 118; time = 0.00s
-Info:     at iteration #5, type SB_GB: wirelen solved = 118, spread = 118, legal = 118; time = 0.00s
-Info:     at iteration #5, type ALL: wirelen solved = 43, spread = 108, legal = 120; time = 0.00s
-Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 48, spread = 137, legal = 141; time = 0.00s
-Info:     at iteration #6, type SB_GB: wirelen solved = 141, spread = 141, legal = 141; time = 0.00s
-Info:     at iteration #6, type ALL: wirelen solved = 47, spread = 156, legal = 159; time = 0.00s
-Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 48, spread = 137, legal = 144; time = 0.00s
-Info:     at iteration #7, type SB_GB: wirelen solved = 144, spread = 144, legal = 144; time = 0.00s
-Info:     at iteration #7, type ALL: wirelen solved = 47, spread = 156, legal = 159; time = 0.00s
-Info:     at iteration #8, type ICESTORM_LC: wirelen solved = 48, spread = 137, legal = 137; time = 0.00s
-Info:     at iteration #8, type SB_GB: wirelen solved = 137, spread = 137, legal = 137; time = 0.00s
-Info:     at iteration #8, type ALL: wirelen solved = 49, spread = 155, legal = 158; time = 0.00s
-Info: HeAP Placer Time: 0.07s
-Info:   of which solving equations: 0.03s
-Info:   of which spreading cells: 0.00s
-Info:   of which strict legalisation: 0.00s
+Info:     at iteration #1, type ICESTORM_LC: wirelen solved = 88, spread = 535, legal = 576; time = 0.01s
+Info:     at iteration #1, type SB_GB: wirelen solved = 566, spread = 580, legal = 583; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 101, spread = 615, legal = 704; time = 0.01s
+Info:     at iteration #2, type ICESTORM_LC: wirelen solved = 102, spread = 541, legal = 613; time = 0.00s
+Info:     at iteration #2, type SB_GB: wirelen solved = 597, spread = 603, legal = 610; time = 0.00s
+Info:     at iteration #2, type ALL: wirelen solved = 96, spread = 532, legal = 570; time = 0.01s
+Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 102, spread = 568, legal = 628; time = 0.00s
+Info:     at iteration #3, type SB_GB: wirelen solved = 613, spread = 619, legal = 627; time = 0.00s
+Info:     at iteration #3, type ALL: wirelen solved = 95, spread = 567, legal = 656; time = 0.01s
+Info:     at iteration #4, type ICESTORM_LC: wirelen solved = 124, spread = 458, legal = 567; time = 0.02s
+Info:     at iteration #4, type SB_GB: wirelen solved = 561, spread = 561, legal = 567; time = 0.00s
+Info:     at iteration #4, type ALL: wirelen solved = 107, spread = 480, legal = 602; time = 0.01s
+Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 131, spread = 567, legal = 634; time = 0.01s
+Info:     at iteration #5, type SB_GB: wirelen solved = 624, spread = 630, legal = 634; time = 0.00s
+Info:     at iteration #5, type ALL: wirelen solved = 114, spread = 454, legal = 580; time = 0.01s
+Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 144, spread = 473, legal = 588; time = 0.01s
+Info:     at iteration #6, type SB_GB: wirelen solved = 577, spread = 583, legal = 588; time = 0.00s
+Info:     at iteration #6, type ALL: wirelen solved = 110, spread = 446, legal = 568; time = 0.01s
+Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 146, spread = 476, legal = 576; time = 0.01s
+Info:     at iteration #7, type SB_GB: wirelen solved = 564, spread = 571, legal = 576; time = 0.00s
+Info:     at iteration #7, type ALL: wirelen solved = 122, spread = 453, legal = 584; time = 0.02s
+Info:     at iteration #8, type ICESTORM_LC: wirelen solved = 135, spread = 472, legal = 639; time = 0.01s
+Info:     at iteration #8, type SB_GB: wirelen solved = 628, spread = 636, legal = 639; time = 0.00s
+Info:     at iteration #8, type ALL: wirelen solved = 124, spread = 399, legal = 462; time = 0.00s
+Info:     at iteration #9, type ICESTORM_LC: wirelen solved = 127, spread = 483, legal = 563; time = 0.02s
+Info:     at iteration #9, type SB_GB: wirelen solved = 548, spread = 554, legal = 563; time = 0.00s
+Info:     at iteration #9, type ALL: wirelen solved = 129, spread = 465, legal = 574; time = 0.00s
+Info:     at iteration #10, type ICESTORM_LC: wirelen solved = 163, spread = 534, legal = 618; time = 0.00s
+Info:     at iteration #10, type SB_GB: wirelen solved = 601, spread = 610, legal = 618; time = 0.00s
+Info:     at iteration #10, type ALL: wirelen solved = 173, spread = 523, legal = 558; time = 0.01s
+Info:     at iteration #11, type ICESTORM_LC: wirelen solved = 172, spread = 472, legal = 503; time = 0.01s
+Info:     at iteration #11, type SB_GB: wirelen solved = 493, spread = 502, legal = 503; time = 0.00s
+Info:     at iteration #11, type ALL: wirelen solved = 161, spread = 466, legal = 498; time = 0.00s
+Info:     at iteration #12, type ICESTORM_LC: wirelen solved = 170, spread = 354, legal = 401; time = 0.02s
+Info:     at iteration #12, type SB_GB: wirelen solved = 390, spread = 399, legal = 401; time = 0.00s
+Info:     at iteration #12, type ALL: wirelen solved = 153, spread = 355, legal = 412; time = 0.01s
+Info:     at iteration #13, type ICESTORM_LC: wirelen solved = 177, spread = 366, legal = 417; time = 0.01s
+Info:     at iteration #13, type SB_GB: wirelen solved = 406, spread = 415, legal = 417; time = 0.00s
+Info:     at iteration #13, type ALL: wirelen solved = 158, spread = 363, legal = 419; time = 0.01s
+Info:     at iteration #14, type ICESTORM_LC: wirelen solved = 182, spread = 360, legal = 424; time = 0.00s
+Info:     at iteration #14, type SB_GB: wirelen solved = 414, spread = 423, legal = 424; time = 0.00s
+Info:     at iteration #14, type ALL: wirelen solved = 144, spread = 318, legal = 382; time = 0.00s
+Info:     at iteration #15, type ICESTORM_LC: wirelen solved = 161, spread = 324, legal = 407; time = 0.01s
+Info:     at iteration #15, type SB_GB: wirelen solved = 399, spread = 405, legal = 407; time = 0.00s
+Info:     at iteration #15, type ALL: wirelen solved = 145, spread = 348, legal = 392; time = 0.00s
+Info:     at iteration #16, type ICESTORM_LC: wirelen solved = 173, spread = 319, legal = 394; time = 0.01s
+Info:     at iteration #16, type SB_GB: wirelen solved = 384, spread = 393, legal = 394; time = 0.00s
+Info:     at iteration #16, type ALL: wirelen solved = 158, spread = 377, legal = 428; time = 0.01s
+Info:     at iteration #17, type ICESTORM_LC: wirelen solved = 195, spread = 325, legal = 408; time = 0.01s
+Info:     at iteration #17, type SB_GB: wirelen solved = 396, spread = 403, legal = 408; time = 0.00s
+Info:     at iteration #17, type ALL: wirelen solved = 168, spread = 317, legal = 397; time = 0.02s
+Info:     at iteration #18, type ICESTORM_LC: wirelen solved = 187, spread = 363, legal = 425; time = 0.00s
+Info:     at iteration #18, type SB_GB: wirelen solved = 411, spread = 418, legal = 425; time = 0.00s
+Info:     at iteration #18, type ALL: wirelen solved = 157, spread = 418, legal = 598; time = 0.01s
+Info:     at iteration #19, type ICESTORM_LC: wirelen solved = 205, spread = 425, legal = 586; time = 0.00s
+Info:     at iteration #19, type SB_GB: wirelen solved = 572, spread = 580, legal = 586; time = 0.00s
+Info:     at iteration #19, type ALL: wirelen solved = 189, spread = 432, legal = 566; time = 0.01s
+Info: HeAP Placer Time: 0.60s
+Info:   of which solving equations: 0.33s
+Info:   of which spreading cells: 0.02s
+Info:   of which strict legalisation: 0.01s
 
 Info: Running simulated annealing placer for refinement.
-Info:   at iteration #1: temp = 0.000000, timing cost = 11, wirelen = 117
-Info:   at iteration #5: temp = 0.000000, timing cost = 11, wirelen = 97
-Info:   at iteration #9: temp = 0.000000, timing cost = 11, wirelen = 96 
-Info: SA placement time 0.04s
+Info:   at iteration #1: temp = 0.000000, timing cost = 65, wirelen = 382
+Info:   at iteration #5: temp = 0.000000, timing cost = 86, wirelen = 340
+Info:   at iteration #10: temp = 0.000000, timing cost = 70, wirelen = 320
+Info:   at iteration #12: temp = 0.000000, timing cost = 71, wirelen = 307 
+Info: SA placement time 0.16s
 
-Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 125.03 MHz (PASS at 36.00 MHz)
+Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 69.77 MHz (PASS at 36.00 MHz)
 
-Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 3.36 ns
+Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 3.70 ns
 
 Info: Slack histogram:
 Info:  legend: * represents 1 endpoint(s)
 Info:          + represents [1,1) endpoint(s)
-Info: [ 19779,  20096) |** 
-Info: [ 20096,  20413) |*********************** 
-Info: [ 20413,  20730) |* 
-Info: [ 20730,  21047) |* 
-Info: [ 21047,  21364) |** 
-Info: [ 21364,  21681) |* 
-Info: [ 21681,  21998) |** 
-Info: [ 21998,  22315) |** 
-Info: [ 22315,  22632) | 
-Info: [ 22632,  22949) |** 
-Info: [ 22949,  23266) |*** 
-Info: [ 23266,  23583) |** 
-Info: [ 23583,  23900) |*** 
-Info: [ 23900,  24217) |** 
-Info: [ 24217,  24534) |****************** 
-Info: [ 24534,  24851) |* 
-Info: [ 24851,  25168) | 
-Info: [ 25168,  25485) |*************** 
-Info: [ 25485,  25802) |****************** 
-Info: [ 25802,  26119) |* 
-Info: Checksum: 0xb091c0a2
+Info: [ 13444,  14053) |************************** 
+Info: [ 14053,  14662) | 
+Info: [ 14662,  15271) | 
+Info: [ 15271,  15880) |********************* 
+Info: [ 15880,  16489) | 
+Info: [ 16489,  17098) |************ 
+Info: [ 17098,  17707) |********************************************* 
+Info: [ 17707,  18316) |************ 
+Info: [ 18316,  18925) |****************************** 
+Info: [ 18925,  19534) |** 
+Info: [ 19534,  20143) |***************** 
+Info: [ 20143,  20752) |** 
+Info: [ 20752,  21361) |********* 
+Info: [ 21361,  21970) |*** 
+Info: [ 21970,  22579) |** 
+Info: [ 22579,  23188) |****** 
+Info: [ 23188,  23797) |**** 
+Info: [ 23797,  24406) |**** 
+Info: [ 24406,  25015) |*** 
+Info: [ 25015,  25624) |****************************************** 
+Info: Checksum: 0x3df8a330
 
 Info: Routing..
 Info: Setting up routing queue.
-Info: Routing 169 arcs.
+Info: Routing 507 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-Info:        170 |        1        152 |    1   152 |         0|       0.09       0.09|
+Info:        587 |       68        497 |   68   497 |         0|       0.10       0.10|
 Info: Routing complete.
-Info: Router1 time 0.09s
-Info: Checksum: 0x50be135f
+Info: Router1 time 0.10s
+Info: Checksum: 0x5d116ae2
 
 Info: Critical path report for clock 'CLK$SB_IO_IN_$glb_clk' (posedge -> posedge):
 Info: curr total
-Info:  0.8  0.8  Source $abc$665$auto$blifparse.cc:492:parse_blif$671_LC.O
-Info:  0.9  1.7    Net counter[0] budget 11.007000 ns (2,8) -> (1,8)
-Info:                Sink $nextpnr_ICESTORM_LC_0.I1
+Info:  0.8  0.8  Source $auto$simplemap.cc:420:simplemap_dff$1149_DFFLC.O
+Info:  0.9  1.7    Net state[20] budget 3.239000 ns (1,5) -> (1,5)
+Info:                Sink $abc$2660$auto$blifparse.cc:492:parse_blif$2665_LC.I0
 Info:                Defined in:
-Info:                  lcd_rst.v:16
-Info:  0.4  2.0  Source $nextpnr_ICESTORM_LC_0.COUT
-Info:  0.0  2.0    Net $nextpnr_ICESTORM_LC_0$O budget 0.000000 ns (1,8) -> (1,8)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[1].carry$CARRY.CIN
-Info:  0.2  2.2  Source $auto$alumacc.cc:474:replace_alu$71.slice[1].carry$CARRY.COUT
-Info:  0.0  2.2    Net $auto$alumacc.cc:474:replace_alu$71.C[2] budget 0.000000 ns (1,8) -> (1,8)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[2].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  2.4  Source $auto$alumacc.cc:474:replace_alu$71.slice[2].adder_LC.COUT
-Info:  0.0  2.4    Net $auto$alumacc.cc:474:replace_alu$71.C[3] budget 0.000000 ns (1,8) -> (1,8)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[3].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  2.6  Source $auto$alumacc.cc:474:replace_alu$71.slice[3].adder_LC.COUT
-Info:  0.0  2.6    Net $auto$alumacc.cc:474:replace_alu$71.C[4] budget 0.000000 ns (1,8) -> (1,8)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[4].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  2.8  Source $auto$alumacc.cc:474:replace_alu$71.slice[4].adder_LC.COUT
-Info:  0.0  2.8    Net $auto$alumacc.cc:474:replace_alu$71.C[5] budget 0.000000 ns (1,8) -> (1,8)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[5].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  3.0  Source $auto$alumacc.cc:474:replace_alu$71.slice[5].adder_LC.COUT
-Info:  0.0  3.0    Net $auto$alumacc.cc:474:replace_alu$71.C[6] budget 0.000000 ns (1,8) -> (1,8)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[6].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  3.2  Source $auto$alumacc.cc:474:replace_alu$71.slice[6].adder_LC.COUT
-Info:  0.0  3.2    Net $auto$alumacc.cc:474:replace_alu$71.C[7] budget 0.000000 ns (1,8) -> (1,8)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[7].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  3.3  Source $auto$alumacc.cc:474:replace_alu$71.slice[7].adder_LC.COUT
-Info:  0.3  3.6    Net $auto$alumacc.cc:474:replace_alu$71.C[8] budget 0.290000 ns (1,8) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[8].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  3.8  Source $auto$alumacc.cc:474:replace_alu$71.slice[8].adder_LC.COUT
-Info:  0.0  3.8    Net $auto$alumacc.cc:474:replace_alu$71.C[9] budget 0.000000 ns (1,9) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[9].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.0  Source $auto$alumacc.cc:474:replace_alu$71.slice[9].adder_LC.COUT
-Info:  0.0  4.0    Net $auto$alumacc.cc:474:replace_alu$71.C[10] budget 0.000000 ns (1,9) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[10].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.2  Source $auto$alumacc.cc:474:replace_alu$71.slice[10].adder_LC.COUT
-Info:  0.0  4.2    Net $auto$alumacc.cc:474:replace_alu$71.C[11] budget 0.000000 ns (1,9) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[11].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.4  Source $auto$alumacc.cc:474:replace_alu$71.slice[11].adder_LC.COUT
-Info:  0.0  4.4    Net $auto$alumacc.cc:474:replace_alu$71.C[12] budget 0.000000 ns (1,9) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[12].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.6  Source $auto$alumacc.cc:474:replace_alu$71.slice[12].adder_LC.COUT
-Info:  0.0  4.6    Net $auto$alumacc.cc:474:replace_alu$71.C[13] budget 0.000000 ns (1,9) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[13].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.8  Source $auto$alumacc.cc:474:replace_alu$71.slice[13].adder_LC.COUT
-Info:  0.0  4.8    Net $auto$alumacc.cc:474:replace_alu$71.C[14] budget 0.000000 ns (1,9) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[14].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.9  Source $auto$alumacc.cc:474:replace_alu$71.slice[14].adder_LC.COUT
-Info:  0.0  4.9    Net $auto$alumacc.cc:474:replace_alu$71.C[15] budget 0.000000 ns (1,9) -> (1,9)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[15].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  5.1  Source $auto$alumacc.cc:474:replace_alu$71.slice[15].adder_LC.COUT
-Info:  0.3  5.4    Net $auto$alumacc.cc:474:replace_alu$71.C[16] budget 0.290000 ns (1,9) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[16].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  5.6  Source $auto$alumacc.cc:474:replace_alu$71.slice[16].adder_LC.COUT
-Info:  0.0  5.6    Net $auto$alumacc.cc:474:replace_alu$71.C[17] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[17].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  5.8  Source $auto$alumacc.cc:474:replace_alu$71.slice[17].adder_LC.COUT
-Info:  0.0  5.8    Net $auto$alumacc.cc:474:replace_alu$71.C[18] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[18].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  6.0  Source $auto$alumacc.cc:474:replace_alu$71.slice[18].adder_LC.COUT
-Info:  0.0  6.0    Net $auto$alumacc.cc:474:replace_alu$71.C[19] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[19].adder_LC.CIN
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  6.2  Source $auto$alumacc.cc:474:replace_alu$71.slice[19].adder_LC.COUT
-Info:  0.4  6.5    Net $auto$alumacc.cc:474:replace_alu$71.C[20] budget 0.380000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$71.slice[20].adder_LC.I3
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.5  7.0  Source $auto$alumacc.cc:474:replace_alu$71.slice[20].adder_LC.O
-Info:  0.9  7.9    Net $abc$665$add$lcd_rst.v:57$4_Y[20] budget 11.006000 ns (1,10) -> (1,11)
-Info:                Sink $abc$665$auto$blifparse.cc:492:parse_blif$691_LC.I2
-Info:                Defined in:
-Info:                  lcd_rst.v:57
-Info:  0.6  8.5  Setup $abc$665$auto$blifparse.cc:492:parse_blif$691_LC.I2
-Info: 5.8 ns logic, 2.7 ns routing
+Info:                  lcd-rst_sleep-out.v:23
+Info:  0.7  2.3  Source $abc$2660$auto$blifparse.cc:492:parse_blif$2665_LC.O
+Info:  0.9  3.2    Net $abc$2660$auto$simplemap.cc:127:simplemap_reduce$1023[5]_new_inv_ budget 3.239000 ns (1,5) -> (1,6)
+Info:                Sink $abc$2660$auto$blifparse.cc:492:parse_blif$2664_LC.I0
+Info:  0.7  3.9  Source $abc$2660$auto$blifparse.cc:492:parse_blif$2664_LC.O
+Info:  0.9  4.7    Net $abc$2660$auto$simplemap.cc:127:simplemap_reduce$1037[1]_new_inv_ budget 3.238000 ns (1,6) -> (2,7)
+Info:                Sink $abc$2660$auto$blifparse.cc:492:parse_blif$2684_LC.I0
+Info:  0.7  5.4  Source $abc$2660$auto$blifparse.cc:492:parse_blif$2684_LC.O
+Info:  0.9  6.2    Net $abc$2660$auto$simplemap.cc:256:simplemap_eqne$817_new_inv_ budget 3.238000 ns (2,7) -> (2,8)
+Info:                Sink $abc$2660$auto$blifparse.cc:492:parse_blif$2683_LC.I0
+Info:  0.7  6.9  Source $abc$2660$auto$blifparse.cc:492:parse_blif$2683_LC.O
+Info:  2.0  8.9    Net $abc$2660$auto$dff2dffe.cc:158:make_patterns_logic$2491 budget 3.929000 ns (2,8) -> (2,4)
+Info:                Sink $abc$2660$auto$blifparse.cc:492:parse_blif$2694_LC.I0
+Info:  0.7  9.5  Source $abc$2660$auto$blifparse.cc:492:parse_blif$2694_LC.O
+Info:  2.7 12.2    Net $abc$2660$auto$dff2dffe.cc:158:make_patterns_logic$2479 budget 3.929000 ns (2,4) -> (2,5)
+Info:                Sink $abc$2660$auto$blifparse.cc:492:parse_blif$2693_LC.CEN
+Info:  0.1 12.3  Setup $abc$2660$auto$blifparse.cc:492:parse_blif$2693_LC.CEN
+Info: 4.2 ns logic, 8.1 ns routing
 
 Info: Critical path report for cross-domain path 'posedge CLK$SB_IO_IN_$glb_clk' -> '<async>':
 Info: curr total
-Info:  0.8  0.8  Source $abc$665$auto$blifparse.cc:492:parse_blif$667_LC.O
-Info:  2.3  3.1    Net LED$SB_IO_OUT budget 26.982000 ns (2,11) -> (13,11)
-Info:                Sink LED$sb_io.D_OUT_0
+Info:  0.8  0.8  Source $abc$2660$auto$blifparse.cc:492:parse_blif$2693_LC.O
+Info:  2.9  3.7    Net SCK$SB_IO_OUT budget 26.982000 ns (2,5) -> (0,13)
+Info:                Sink SCK$sb_io.D_OUT_0
 Info:                Defined in:
-Info:                  lcd_rst.v:3
-Info: 0.8 ns logic, 2.3 ns routing
+Info:                  lcd-rst_sleep-out.v:4
+Info: 0.8 ns logic, 2.9 ns routing
 
-Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 118.23 MHz (PASS at 36.00 MHz)
+Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 81.08 MHz (PASS at 36.00 MHz)
 
-Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 3.06 ns
+Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 3.71 ns
 
 Info: Slack histogram:
 Info:  legend: * represents 1 endpoint(s)
 Info:          + represents [1,1) endpoint(s)
-Info: [ 19319,  19659) |** 
-Info: [ 19659,  19999) |** 
-Info: [ 19999,  20339) |* 
-Info: [ 20339,  20679) |* 
-Info: [ 20679,  21019) |** 
-Info: [ 21019,  21359) |** 
-Info: [ 21359,  21699) |************************ 
-Info: [ 21699,  22039) |* 
-Info: [ 22039,  22379) |* 
-Info: [ 22379,  22719) |*** 
-Info: [ 22719,  23059) |* 
-Info: [ 23059,  23399) |*** 
-Info: [ 23399,  23739) | 
-Info: [ 23739,  24079) |*** 
-Info: [ 24079,  24419) |*** 
-Info: [ 24419,  24759) |* 
-Info: [ 24759,  25099) |*************** 
-Info: [ 25099,  25439) |*************** 
-Info: [ 25439,  25779) |****************** 
-Info: [ 25779,  26119) |* 
+Info: [ 15443,  15952) |*************************** 
+Info: [ 15952,  16461) | 
+Info: [ 16461,  16970) |********* 
+Info: [ 16970,  17479) |*********************************************** 
+Info: [ 17479,  17988) |************************* 
+Info: [ 17988,  18497) |********************************** 
+Info: [ 18497,  19006) |******* 
+Info: [ 19006,  19515) |*** 
+Info: [ 19515,  20024) |******* 
+Info: [ 20024,  20533) |********* 
+Info: [ 20533,  21042) |******** 
+Info: [ 21042,  21551) |*** 
+Info: [ 21551,  22060) |** 
+Info: [ 22060,  22569) |** 
+Info: [ 22569,  23078) |***** 
+Info: [ 23078,  23587) |*** 
+Info: [ 23587,  24096) |*** 
+Info: [ 24096,  24605) |** 
+Info: [ 24605,  25114) |** 
+Info: [ 25114,  25623) |****************************************** 
 
 Info: Program finished normally.
