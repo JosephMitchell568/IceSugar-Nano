@@ -1,4 +1,0 @@
-Extend the state machine from LCD RESET to include SLEEP OUT command.
-
-There are several steps to the completion of this command.
-I believe that several steps can be grouped together to make it more efficient and still functional.
