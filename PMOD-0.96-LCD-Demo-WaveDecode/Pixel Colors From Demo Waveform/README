@@ -1,2 +1,3 @@
 Here are the pixel colors from the demo waveform decoded from RGB565 format.
 They are the same colors used to construct the RISC V logo!
+Some of them are lighter hues for the zoom in and out animation.
