@@ -1,4 +1,0 @@
-This design will forever reset the lcd screen using the 100ms led blink example program.
-
-LCD reset occurs when you first activate the reset signal, delay 100ms, deactivate reset, and delay 100ms.
-This was decoded from the STM32 lcd example.
