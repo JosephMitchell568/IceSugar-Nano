@@ -1,0 +1,9 @@
+PMOD 0.96 LCD Reset command implementation for IceSugarNano FPGA based on ST7735 documentation.
+
+The provided documentation states that reset signal needs to be active for at least 10us,
+ and deactivated for at least 5ms
+
+Given the default clock frequency is 12Mhz that would mean that active reset should take 120 clock cycles
+ and deactivated reset should take 60000 clock cycles (12 * 10 * 500)
+
+This example defines a few Reset states that will be used going forward and possibly modified...
