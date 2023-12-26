@@ -320,7 +320,6 @@ module cmd_param_bram
      data <= param_bram[param_counter];
      num_params_left <= num_params_left - 8'd1;
      param_counter <= param_counter + 7'b1;
-     dc <= 1'b1;
      state <= RAISE_DC; // Set mosi and dc
     end
     else
