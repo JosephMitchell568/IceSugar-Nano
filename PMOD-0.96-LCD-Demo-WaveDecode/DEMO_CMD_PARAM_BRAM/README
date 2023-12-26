@@ -1,0 +1,4 @@
+This Project attempts to use a variety of BRAM in order to store the essential demo data 
+ in order to reproduce a custom frame on the PMOD 0.96 LCD screen.
+
+There should be additional delays added in between each command and parameter.
