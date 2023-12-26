@@ -44,7 +44,7 @@ module cmd_param_bram
  // The last number of params is 80 * 160 = 12800 14b
  reg [4:0] cmd_counter; //cmd counter
  reg [6:0] param_counter;//param counter
- reg [7:0] num_params_left;// number of params left
+ reg [13:0] num_params_left;// number of params left
  reg [13:0] frame_size; //frame size for mem write
  reg [7:0] data; // Can be cmd or param
  reg [2:0] bit_counter; // Points to current bit
@@ -186,7 +186,7 @@ module cmd_param_bram
 
   cmd_counter = 5'd0; //cmd counter
   param_counter = 7'd0;//param counter
-  num_params_left = 8'd0;
+  num_params_left = 14'd0;
 
   rst = 1'b1;
   scl = 1'b1;
@@ -306,7 +306,14 @@ module cmd_param_bram
     if(scl == 1'b1)
     begin
      state <= LOAD_PARAM; // Set parameter
-     num_params_left <= num_cmd_params_bram[cmd_counter-6'd1];
+     if(cmd_counter == 6'd22)
+     begin
+      num_params_left <= frame_size;
+     end
+     else
+     begin
+      num_params_left <= num_cmd_params_bram[cmd_counter-6'd1];
+     end
      cs <= 1'b1; // Reset both cs and dc
     end
     else
@@ -319,7 +326,11 @@ module cmd_param_bram
     begin
      data <= param_bram[param_counter];
      num_params_left <= num_params_left - 8'd1;
-     param_counter <= param_counter + 7'b1;
+     if(cmd_counter != 6'd22) //Ensure the same parameter is set for memory write (frame)
+     begin
+      param_counter <= param_counter + 7'b1;
+     end
+     dc <= 1'b1;
      state <= RAISE_DC; // Set mosi and dc
     end
     else
