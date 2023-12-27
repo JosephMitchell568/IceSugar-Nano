@@ -118,90 +118,90 @@ module reset(
     state <= sm; //Set mosi
    end
    sm: begin
-    if(bit_counter == 3'b111)
-    begin
-     state <= lcs; //Lower CS
-    end
-    else if(bit_counter == 3'b000)
-    begin
-     state <= slb; //Send last bit
-     bit_counter <= 3'b111; //Reset bit counter
-    end
-    else
-    begin
-     state <= send; //Send non last bit
-    end
+    //if(bit_counter == 3'b111)
+    //begin
+    // state <= lcs; //Lower CS
+    //end
+    //else if(bit_counter == 3'b000)
+    //begin
+    // state <= slb; //Send last bit
+    // bit_counter <= 3'b111; //Reset bit counter
+    //end
+    //else
+    //begin
+    // state <= send; //Send non last bit
+    //end
 
     mosi <= data[bit_counter]; //Set on falling edge
-    bit_counter <= bit_counter - 3'b001;
+    //bit_counter <= bit_counter - 3'b001;
    end
-   lcs: begin // Lower CS
-    if(scl == 1'b1)
-    begin
-     cs <= 1'b0;
-     state <= send; //Send first bit
-    end
-    else
-    begin
-     state <= lcs; //Wait until scl is about to fall
-    end
-   end
-   send: begin
-    if(scl == 1'b1) //MOSI gets sent on rising scl
-    begin
-     state <= sm; //Set mosi after sending
-    end
-    else
-    begin
-     state <= send;
-    end
-   end
-   slb: begin
-    if(scl == 1'b1) // Send Last bit of byte
-    begin
-     state <= rcs; // Raise CS, after write byte
-    end
-    else
-    begin
-     state <= slb; // Send last bit
-    end
-   end
-   rcs: begin
-    cs <= 1'b1; // First Raise CS to prepare next data
-    if(dc == 1'b0) // If cmd, raise dc for param
-    begin
-     state <= rdc; // Need to raise dc line, sets data, lowers cs
-    end
-    else // If last byte was a parameter,
-    begin // check if it is the last parameter
-     if(num_params == 14'd0)
-     begin
-      state <= lc; // Load cmd eventually lowers dc line
-     end
-     else
-     begin
-      state <= lp; // load parameter if more parameters exist
-     end
-    end
-   end
-   rdc: begin // Should also set params_left...
-    dc <= 1'b1;
-    params_left <= frmctr3_num_params[cmd_counter - 1'b1];
-    state <= lp; // After setting dc line load first parameter
-   end
-   lp: begin // Load next parameter for cmd
-    if(params_left == 8'd0)
-    begin
-     state <= lc; // last cmd fully processed
-    end
-    else
-    begin
-     data <= frmctr3_p[param_counter];
-     params_left <= params_left - 8'd1; // decrement params left
-     param_counter <= param_counter + 2'b01;
-     state <= sm; // Send the first mosi bit
-    end 
-   end
+   //lcs: begin // Lower CS
+   // if(scl == 1'b1)
+   // begin
+   //  cs <= 1'b0;
+   //  state <= send; //Send first bit
+   // end
+   // else
+   // begin
+   //  state <= lcs; //Wait until scl is about to fall
+   // end
+   //end
+   //send: begin
+   // if(scl == 1'b1) //MOSI gets sent on rising scl
+   // begin
+   //  state <= sm; //Set mosi after sending
+   // end
+   // else
+   // begin
+   //  state <= send;
+   // end
+   //end
+   //slb: begin
+   // if(scl == 1'b1) // Send Last bit of byte
+   // begin
+   //  state <= rcs; // Raise CS, after write byte
+   // end
+   // else
+   // begin
+   //  state <= slb; // Send last bit
+   // end
+   //end
+   //rcs: begin
+   // cs <= 1'b1; // First Raise CS to prepare next data
+   // if(dc == 1'b0) // If cmd, raise dc for param
+   // begin
+   //  state <= rdc; // Need to raise dc line, sets data, lowers cs
+   // end
+   // else // If last byte was a parameter,
+   // begin // check if it is the last parameter
+   //  if(num_params == 14'd0)
+   //  begin
+   //   state <= lc; // Load cmd eventually lowers dc line
+   //  end
+   //  else
+   //  begin
+   //   state <= lp; // load parameter if more parameters exist
+   //  end
+   // end
+   //end
+   //rdc: begin // Should also set params_left...
+   // dc <= 1'b1;
+   // params_left <= frmctr3_num_params[cmd_counter - 1'b1];
+   // state <= lp; // After setting dc line load first parameter
+   //end
+   //lp: begin // Load next parameter for cmd
+   // if(params_left == 8'd0)
+   // begin
+   //  state <= lc; // last cmd fully processed
+   // end
+   // else
+   // begin
+   //  data <= frmctr3_p[param_counter];
+   //  params_left <= params_left - 8'd1; // decrement params left
+   //  param_counter <= param_counter + 2'b01;
+   //  state <= sm; // Send the first mosi bit
+   // end 
+   //end
   endcase
  end
 
