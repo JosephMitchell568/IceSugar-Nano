@@ -27,6 +27,9 @@
 1. Executing Verilog-2005 frontend: frmctr1.v
 Parsing Verilog input from `frmctr1.v' to AST representation.
 Generating RTLIL representation for module `\reset'.
+frmctr1.v:165: Warning: Identifier `\rcs' is implicitly declared.
+frmctr1.v:181: Warning: Identifier `\num_params' is implicitly declared.
+frmctr1.v:197: Warning: Identifier `\frmctr3_p' is implicitly declared.
 Successfully finished Verilog frontend.
 
 -- Running command `synth_ice40 -json frmctr1.json -blif frmctr1.blif' --
@@ -105,99 +108,105 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 7 switch rules as full_case in process $proc$frmctr1.v:69$10 in module reset.
+Marked 10 switch rules as full_case in process $proc$frmctr1.v:69$10 in module reset.
 Removed a total of 0 dead cases.
 
 2.3.3. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\reset.$proc$frmctr1.v:45$31'.
+Found init rule in `\reset.$proc$frmctr1.v:45$40'.
   Set init value: \scl = 1'1
   Set init value: \state = 6'000000
   Set init value: \data = 8'00000000
   Set init value: \bit_counter = 3'111
   Set init value: \cmd_counter = 1'0
+  Set init value: \param_counter = 2'00
 
 2.3.4. Executing PROC_ARST pass (detect async resets in processes).
 
 2.3.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\reset.$proc$frmctr1.v:45$31'.
-     1/20: $0\param_counter[1:0]
+Creating decoders for process `\reset.$proc$frmctr1.v:45$40'.
+     1/20: $1\param_counter[1:0]
      2/20: $1\cmd_counter[0:0]
      3/20: $1\bit_counter[2:0]
      4/20: $1\data[7:0]
-     5/20: $0$memwr$\frmctr3_p$frmctr1.v:57$7_DATA[7:0]$45
-     6/20: $0$memwr$\frmctr3_p$frmctr1.v:57$7_ADDR[31:0]$44
-     7/20: $0$memwr$\frmctr3_p$frmctr1.v:56$6_DATA[7:0]$43
-     8/20: $0$memwr$\frmctr3_p$frmctr1.v:56$6_ADDR[31:0]$42
-     9/20: $0$memwr$\frmctr3_p$frmctr1.v:55$5_DATA[7:0]$41
-    10/20: $0$memwr$\frmctr3_p$frmctr1.v:55$5_ADDR[31:0]$40
-    11/20: $0$memwr$\frmctr3_num_params$frmctr1.v:53$4_DATA[7:0]$39
-    12/20: $0$memwr$\frmctr3_num_params$frmctr1.v:53$4_ADDR[31:0]$38
-    13/20: $0$memwr$\frmctr3_num_params$frmctr1.v:52$3_DATA[7:0]$37
-    14/20: $0$memwr$\frmctr3_num_params$frmctr1.v:52$3_ADDR[31:0]$36
-    15/20: $0$memwr$\frmctr3_c$frmctr1.v:51$2_DATA[7:0]$35
-    16/20: $0$memwr$\frmctr3_c$frmctr1.v:51$2_ADDR[31:0]$34
-    17/20: $0$memwr$\frmctr3_c$frmctr1.v:50$1_DATA[7:0]$33
-    18/20: $0$memwr$\frmctr3_c$frmctr1.v:50$1_ADDR[31:0]$32
+     5/20: $0$memwr$\frmctr1_p$frmctr1.v:57$7_DATA[7:0]$54
+     6/20: $0$memwr$\frmctr1_p$frmctr1.v:57$7_ADDR[31:0]$53
+     7/20: $0$memwr$\frmctr1_p$frmctr1.v:56$6_DATA[7:0]$52
+     8/20: $0$memwr$\frmctr1_p$frmctr1.v:56$6_ADDR[31:0]$51
+     9/20: $0$memwr$\frmctr1_p$frmctr1.v:55$5_DATA[7:0]$50
+    10/20: $0$memwr$\frmctr1_p$frmctr1.v:55$5_ADDR[31:0]$49
+    11/20: $0$memwr$\frmctr1_num_params$frmctr1.v:53$4_DATA[7:0]$48
+    12/20: $0$memwr$\frmctr1_num_params$frmctr1.v:53$4_ADDR[31:0]$47
+    13/20: $0$memwr$\frmctr1_num_params$frmctr1.v:52$3_DATA[7:0]$46
+    14/20: $0$memwr$\frmctr1_num_params$frmctr1.v:52$3_ADDR[31:0]$45
+    15/20: $0$memwr$\frmctr1_c$frmctr1.v:51$2_DATA[7:0]$44
+    16/20: $0$memwr$\frmctr1_c$frmctr1.v:51$2_ADDR[31:0]$43
+    17/20: $0$memwr$\frmctr1_c$frmctr1.v:50$1_DATA[7:0]$42
+    18/20: $0$memwr$\frmctr1_c$frmctr1.v:50$1_ADDR[31:0]$41
     19/20: $1\scl[0:0]
     20/20: $1\state[5:0]
 Creating decoders for process `\reset.$proc$frmctr1.v:69$10'.
-     1/9: $0\cmd_counter[0:0]
-     2/9: $0\bit_counter[2:0]
-     3/9: $0\data[7:0]
-     4/9: $0\delay[15:0]
-     5/9: $0\state[5:0]
-     6/9: $0\cs[0:0]
-     7/9: $0\mosi[0:0]
-     8/9: $0\dc[0:0]
-     9/9: $0\rst[0:0]
+     1/11: $0\params_left[7:0]
+     2/11: $0\param_counter[1:0]
+     3/11: $0\cmd_counter[0:0]
+     4/11: $0\bit_counter[2:0]
+     5/11: $0\data[7:0]
+     6/11: $0\delay[15:0]
+     7/11: $0\state[5:0]
+     8/11: $0\cs[0:0]
+     9/11: $0\mosi[0:0]
+    10/11: $0\dc[0:0]
+    11/11: $0\rst[0:0]
 Creating decoders for process `\reset.$proc$frmctr1.v:66$8'.
      1/1: $0\scl[0:0]
 
 2.3.6. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\reset.\param_counter' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_c$frmctr1.v:50$1_ADDR' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_c$frmctr1.v:50$1_DATA' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_c$frmctr1.v:51$2_ADDR' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_c$frmctr1.v:51$2_DATA' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_num_params$frmctr1.v:52$3_ADDR' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_num_params$frmctr1.v:52$3_DATA' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_num_params$frmctr1.v:53$4_ADDR' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_num_params$frmctr1.v:53$4_DATA' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_p$frmctr1.v:55$5_ADDR' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_p$frmctr1.v:55$5_DATA' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_p$frmctr1.v:56$6_ADDR' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_p$frmctr1.v:56$6_DATA' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_p$frmctr1.v:57$7_ADDR' from process `\reset.$proc$frmctr1.v:45$31'.
-No latch inferred for signal `\reset.$memwr$\frmctr3_p$frmctr1.v:57$7_DATA' from process `\reset.$proc$frmctr1.v:45$31'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_c$frmctr1.v:50$1_ADDR' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_c$frmctr1.v:50$1_DATA' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_c$frmctr1.v:51$2_ADDR' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_c$frmctr1.v:51$2_DATA' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_num_params$frmctr1.v:52$3_ADDR' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_num_params$frmctr1.v:52$3_DATA' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_num_params$frmctr1.v:53$4_ADDR' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_num_params$frmctr1.v:53$4_DATA' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_p$frmctr1.v:55$5_ADDR' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_p$frmctr1.v:55$5_DATA' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_p$frmctr1.v:56$6_ADDR' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_p$frmctr1.v:56$6_DATA' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_p$frmctr1.v:57$7_ADDR' from process `\reset.$proc$frmctr1.v:45$40'.
+No latch inferred for signal `\reset.$memwr$\frmctr1_p$frmctr1.v:57$7_DATA' from process `\reset.$proc$frmctr1.v:45$40'.
 
 2.3.7. Executing PROC_DFF pass (convert process syncs to FFs).
 Creating register for signal `\reset.\rst' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$147' with positive edge clock.
+  created $dff cell `$procdff$250' with positive edge clock.
 Creating register for signal `\reset.\dc' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$148' with positive edge clock.
+  created $dff cell `$procdff$251' with positive edge clock.
 Creating register for signal `\reset.\mosi' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$149' with positive edge clock.
+  created $dff cell `$procdff$252' with positive edge clock.
 Creating register for signal `\reset.\cs' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$150' with positive edge clock.
+  created $dff cell `$procdff$253' with positive edge clock.
 Creating register for signal `\reset.\state' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$151' with positive edge clock.
+  created $dff cell `$procdff$254' with positive edge clock.
 Creating register for signal `\reset.\delay' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$152' with positive edge clock.
+  created $dff cell `$procdff$255' with positive edge clock.
 Creating register for signal `\reset.\data' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$153' with positive edge clock.
+  created $dff cell `$procdff$256' with positive edge clock.
 Creating register for signal `\reset.\bit_counter' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$154' with positive edge clock.
+  created $dff cell `$procdff$257' with positive edge clock.
 Creating register for signal `\reset.\cmd_counter' using process `\reset.$proc$frmctr1.v:69$10'.
-  created $dff cell `$procdff$155' with positive edge clock.
+  created $dff cell `$procdff$258' with positive edge clock.
+Creating register for signal `\reset.\param_counter' using process `\reset.$proc$frmctr1.v:69$10'.
+  created $dff cell `$procdff$259' with positive edge clock.
+Creating register for signal `\reset.\params_left' using process `\reset.$proc$frmctr1.v:69$10'.
+  created $dff cell `$procdff$260' with positive edge clock.
 Creating register for signal `\reset.\scl' using process `\reset.$proc$frmctr1.v:66$8'.
-  created $dff cell `$procdff$156' with positive edge clock.
+  created $dff cell `$procdff$261' with positive edge clock.
 
 2.3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `reset.$proc$frmctr1.v:45$31'.
-Found and cleaned up 8 empty switches in `\reset.$proc$frmctr1.v:69$10'.
+Removing empty process `reset.$proc$frmctr1.v:45$40'.
+Found and cleaned up 11 empty switches in `\reset.$proc$frmctr1.v:69$10'.
 Removing empty process `reset.$proc$frmctr1.v:69$10'.
 Removing empty process `reset.$proc$frmctr1.v:66$8'.
-Cleaned up 8 empty switches.
+Cleaned up 11 empty switches.
 
 2.4. Executing FLATTEN pass (flatten design).
 No more expansions possible.
@@ -208,16 +217,19 @@ No more expansions possible.
 
 2.7. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
-<suppressed ~10 debug messages>
+<suppressed ~18 debug messages>
 
 2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
-Removed 0 unused cells and 58 unused wires.
-<suppressed ~2 debug messages>
+Removed 22 unused cells and 87 unused wires.
+<suppressed ~24 debug messages>
 
 2.9. Executing CHECK pass (checking for obvious problems).
 checking module reset..
-found and reported 0 problems.
+Warning: Wire reset.\frmctr3_p is used but has no driver.
+Warning: Wire reset.\num_params is used but has no driver.
+Warning: Wire reset.\rcs is used but has no driver.
+found and reported 3 problems.
 
 2.10. Executing OPT pass (performing simple optimizations).
 
@@ -226,8 +238,8 @@ Optimizing module reset.
 
 2.10.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\reset'.
-<suppressed ~48 debug messages>
-Removed a total of 16 cells.
+<suppressed ~177 debug messages>
+Removed a total of 59 cells.
 
 2.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \reset..
@@ -235,11 +247,20 @@ Running muxtree optimizer on module \reset..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~10 debug messages>
 
 2.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \reset.
-Performed a total of 0 changes.
+    New ctrl vector for $pmux cell $procmux$194: { $procmux$124_CMP $procmux$114_CMP $auto$opt_reduce.cc:132:opt_mux$263 }
+    New ctrl vector for $pmux cell $procmux$222: { $procmux$124_CMP $procmux$116_CMP $auto$opt_reduce.cc:132:opt_mux$265 }
+    New ctrl vector for $pmux cell $procmux$111: { $procmux$120_CMP $auto$opt_reduce.cc:132:opt_mux$267 }
+    New ctrl vector for $pmux cell $procmux$75: $auto$opt_reduce.cc:132:opt_mux$269
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$262: { $procmux$106_CMP $procmux$112_CMP $procmux$113_CMP $procmux$116_CMP $procmux$120_CMP $procmux$121_CMP $procmux$122_CMP $procmux$123_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$264: { $procmux$106_CMP $procmux$112_CMP $procmux$113_CMP $procmux$114_CMP $procmux$120_CMP $procmux$121_CMP $procmux$122_CMP $procmux$123_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$266: { $procmux$106_CMP $procmux$112_CMP $procmux$113_CMP $procmux$114_CMP $procmux$116_CMP $procmux$121_CMP $procmux$122_CMP $procmux$123_CMP $procmux$124_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$268: { $procmux$106_CMP $procmux$112_CMP $procmux$113_CMP $procmux$114_CMP $procmux$116_CMP $procmux$120_CMP $procmux$121_CMP $procmux$122_CMP $procmux$123_CMP $procmux$124_CMP }
+  Optimizing cells in module \reset.
+Performed a total of 8 changes.
 
 2.10.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\reset'.
@@ -249,47 +270,86 @@ Removed a total of 0 cells.
 
 2.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
-Removed 0 unused cells and 16 unused wires.
+Removed 0 unused cells and 59 unused wires.
 <suppressed ~1 debug messages>
 
 2.10.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
 
-2.10.9. Finished OPT passes. (There is nothing left to do.)
+2.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \reset..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+2.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \reset.
+Performed a total of 0 changes.
+
+2.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset'.
+Removed a total of 0 cells.
+
+2.10.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset..
+
+2.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset.
+
+2.10.16. Finished OPT passes. (There is nothing left to do.)
 
 2.11. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr3_c$frmctr1.v:50$24 (frmctr3_c).
-Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr3_c$frmctr1.v:51$25 (frmctr3_c).
-Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr3_num_params$frmctr1.v:52$26 (frmctr3_num_params).
-Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr3_num_params$frmctr1.v:53$27 (frmctr3_num_params).
-Removed top 30 address bits (of 32) from memory init port reset.$meminit$\frmctr3_p$frmctr1.v:55$28 (frmctr3_p).
-Removed top 30 address bits (of 32) from memory init port reset.$meminit$\frmctr3_p$frmctr1.v:56$29 (frmctr3_p).
-Removed top 30 address bits (of 32) from memory init port reset.$meminit$\frmctr3_p$frmctr1.v:57$30 (frmctr3_p).
+Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr1_c$frmctr1.v:50$33 (frmctr1_c).
+Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr1_c$frmctr1.v:51$34 (frmctr1_c).
+Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr1_num_params$frmctr1.v:52$35 (frmctr1_num_params).
+Removed top 31 address bits (of 32) from memory init port reset.$meminit$\frmctr1_num_params$frmctr1.v:53$36 (frmctr1_num_params).
+Removed top 30 address bits (of 32) from memory init port reset.$meminit$\frmctr1_p$frmctr1.v:55$37 (frmctr1_p).
+Removed top 30 address bits (of 32) from memory init port reset.$meminit$\frmctr1_p$frmctr1.v:56$38 (frmctr1_p).
+Removed top 30 address bits (of 32) from memory init port reset.$meminit$\frmctr1_p$frmctr1.v:57$39 (frmctr1_p).
 Removed top 9 bits (of 16) from port B of cell reset.$le$frmctr1.v:85$11 ($le).
 Removed top 15 bits (of 16) from port B of cell reset.$add$frmctr1.v:87$12 ($add).
-Removed top 2 bits (of 3) from port B of cell reset.$sub$frmctr1.v:132$20 ($sub).
-Removed top 2 bits (of 6) from port B of cell reset.$procmux$88_CMP0 ($eq).
-Removed top 2 bits (of 6) from port B of cell reset.$procmux$84_CMP0 ($eq).
-Removed top 2 bits (of 6) from mux cell reset.$procmux$86 ($mux).
-Removed top 2 bits (of 6) from mux cell reset.$procmux$90 ($mux).
-Removed top 5 bits (of 6) from mux cell reset.$procmux$94 ($mux).
-Removed top 2 bits (of 6) from mux cell reset.$procmux$97 ($mux).
-Removed top 3 bits (of 6) from port B of cell reset.$procmux$100_CMP0 ($eq).
-Removed top 3 bits (of 6) from port B of cell reset.$procmux$101_CMP0 ($eq).
-Removed top 4 bits (of 6) from port B of cell reset.$procmux$105_CMP0 ($eq).
-Removed top 4 bits (of 6) from port B of cell reset.$procmux$109_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell reset.$sub$frmctr1.v:139$22 ($sub).
+Removed top 1 bits (of 2) from port B of cell reset.$add$frmctr1.v:199$32 ($add).
+Removed top 3 bits (of 6) from port B of cell reset.$procmux$106_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell reset.$procmux$108_CMP0 ($eq).
 Removed top 5 bits (of 6) from port B of cell reset.$procmux$110_CMP0 ($eq).
-Removed top 3 bits (of 6) from port B of cell reset.$procmux$118_CMP0 ($eq).
-Removed top 3 bits (of 6) from port B of cell reset.$procmux$124_CMP0 ($eq).
-Removed top 2 bits (of 6) from wire reset.$procmux$86_Y.
-Removed top 2 bits (of 6) from wire reset.$procmux$90_Y.
-Removed top 2 bits (of 6) from wire reset.$procmux$97_Y.
+Removed top 2 bits (of 6) from port B of cell reset.$procmux$112_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell reset.$procmux$113_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell reset.$procmux$114_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell reset.$procmux$116_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell reset.$procmux$122_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell reset.$procmux$120_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell reset.$procmux$121_CMP0 ($eq).
+Removed top 5 bits (of 6) from port B of cell reset.$procmux$123_CMP0 ($eq).
+Removed top 2 bits (of 6) from mux cell reset.$procmux$148 ($mux).
+Removed top 2 bits (of 6) from port B of cell reset.$procmux$146_CMP0 ($eq).
+Removed top 2 bits (of 6) from mux cell reset.$procmux$151 ($mux).
+Removed top 2 bits (of 6) from mux cell reset.$procmux$156 ($mux).
+Removed top 2 bits (of 6) from mux cell reset.$procmux$161 ($mux).
+Removed top 2 bits (of 6) from mux cell reset.$procmux$165 ($mux).
+Removed top 5 bits (of 6) from mux cell reset.$procmux$169 ($mux).
+Removed top 2 bits (of 6) from mux cell reset.$procmux$172 ($mux).
+Removed top 5 bits (of 6) from mux cell reset.$procmux$177 ($mux).
+Removed top 2 bits (of 6) from wire reset.$procmux$148_Y.
+Removed top 2 bits (of 6) from wire reset.$procmux$151_Y.
+Removed top 2 bits (of 6) from wire reset.$procmux$156_Y.
+Removed top 3 bits (of 6) from wire reset.$procmux$161_Y.
+Removed top 2 bits (of 6) from wire reset.$procmux$165_Y.
+Removed top 5 bits (of 6) from wire reset.$procmux$169_Y.
+Removed top 2 bits (of 6) from wire reset.$procmux$172_Y.
+Removed top 5 bits (of 6) from wire reset.$procmux$177_Y.
 
 2.12. Executing PEEPOPT pass (run peephole optimizers).
 
 2.13. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
-Removed 0 unused cells and 3 unused wires.
+Removed 0 unused cells and 8 unused wires.
 <suppressed ~1 debug messages>
 
 2.14. Executing SHARE pass (SAT-based resource sharing).
@@ -304,7 +364,7 @@ Successfully finished Verilog frontend.
 2.15.2. Continuing TECHMAP pass.
 Using template $paramod$77ad031fce233083715243f95e3cd2547d931e42\_90_lut_cmp_ for cells of type $eq.
 No more expansions possible.
-<suppressed ~200 debug messages>
+<suppressed ~248 debug messages>
 
 2.16. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
@@ -316,20 +376,23 @@ Removed 0 unused cells and 3 unused wires.
 
 2.18. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module reset:
-  creating $macc model for $add$frmctr1.v:109$16 ($add).
+  creating $macc model for $add$frmctr1.v:115$18 ($add).
+  creating $macc model for $add$frmctr1.v:199$32 ($add).
   creating $macc model for $add$frmctr1.v:87$12 ($add).
-  creating $macc model for $sub$frmctr1.v:132$20 ($sub).
-  creating $alu model for $macc $sub$frmctr1.v:132$20.
+  creating $macc model for $sub$frmctr1.v:139$22 ($sub).
+  creating $alu model for $macc $sub$frmctr1.v:139$22.
   creating $alu model for $macc $add$frmctr1.v:87$12.
-  creating $alu model for $macc $add$frmctr1.v:109$16.
+  creating $alu model for $macc $add$frmctr1.v:199$32.
+  creating $alu model for $macc $add$frmctr1.v:115$18.
   creating $alu model for $le$frmctr1.v:85$11 ($le): new $alu
   creating $alu model for $le$frmctr1.v:97$13 ($le): new $alu
-  creating $alu cell for $le$frmctr1.v:97$13: $auto$alumacc.cc:474:replace_alu$164
-  creating $alu cell for $le$frmctr1.v:85$11: $auto$alumacc.cc:474:replace_alu$173
-  creating $alu cell for $add$frmctr1.v:109$16: $auto$alumacc.cc:474:replace_alu$186
-  creating $alu cell for $add$frmctr1.v:87$12: $auto$alumacc.cc:474:replace_alu$189
-  creating $alu cell for $sub$frmctr1.v:132$20: $auto$alumacc.cc:474:replace_alu$192
-  created 5 $alu and 0 $macc cells.
+  creating $alu cell for $le$frmctr1.v:97$13: $auto$alumacc.cc:474:replace_alu$282
+  creating $alu cell for $le$frmctr1.v:85$11: $auto$alumacc.cc:474:replace_alu$291
+  creating $alu cell for $add$frmctr1.v:115$18: $auto$alumacc.cc:474:replace_alu$304
+  creating $alu cell for $add$frmctr1.v:199$32: $auto$alumacc.cc:474:replace_alu$307
+  creating $alu cell for $add$frmctr1.v:87$12: $auto$alumacc.cc:474:replace_alu$310
+  creating $alu cell for $sub$frmctr1.v:139$22: $auto$alumacc.cc:474:replace_alu$313
+  created 6 $alu and 0 $macc cells.
 
 2.19. Executing OPT pass (performing simple optimizations).
 
@@ -346,13 +409,13 @@ Running muxtree optimizer on module \reset..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~10 debug messages>
 
 2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \reset.
-    New input vector for $reduce_or cell $auto$alumacc.cc:509:replace_alu$171: { $auto$rtlil.cc:1832:Not$168 $auto$rtlil.cc:1835:ReduceAnd$170 }
-    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$169: { $auto$alumacc.cc:490:replace_alu$165 [0] $auto$alumacc.cc:490:replace_alu$165 [1] $auto$alumacc.cc:490:replace_alu$165 [2] $auto$alumacc.cc:490:replace_alu$165 [3] $auto$alumacc.cc:490:replace_alu$165 [4] $auto$alumacc.cc:490:replace_alu$165 [5] $auto$alumacc.cc:490:replace_alu$165 [6] $auto$alumacc.cc:490:replace_alu$165 [7] $auto$alumacc.cc:490:replace_alu$165 [8] $auto$alumacc.cc:490:replace_alu$165 [9] $auto$alumacc.cc:490:replace_alu$165 [10] $auto$alumacc.cc:490:replace_alu$165 [11] $auto$alumacc.cc:490:replace_alu$165 [12] $auto$alumacc.cc:490:replace_alu$165 [13] $auto$alumacc.cc:490:replace_alu$165 [14] $auto$alumacc.cc:490:replace_alu$165 [15] }
-    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$176: { $auto$alumacc.cc:490:replace_alu$174 [0] $auto$alumacc.cc:490:replace_alu$174 [1] $auto$alumacc.cc:490:replace_alu$174 [2] $auto$alumacc.cc:490:replace_alu$174 [3] $auto$alumacc.cc:490:replace_alu$174 [4] $auto$alumacc.cc:490:replace_alu$174 [5] $auto$alumacc.cc:490:replace_alu$174 [6] $auto$alumacc.cc:490:replace_alu$174 [7] $auto$alumacc.cc:490:replace_alu$174 [8] $auto$alumacc.cc:490:replace_alu$174 [9] $auto$alumacc.cc:490:replace_alu$174 [10] $auto$alumacc.cc:490:replace_alu$174 [11] $auto$alumacc.cc:490:replace_alu$174 [12] $auto$alumacc.cc:490:replace_alu$174 [13] $auto$alumacc.cc:490:replace_alu$174 [14] $auto$alumacc.cc:490:replace_alu$174 [15] }
+    New input vector for $reduce_or cell $auto$alumacc.cc:509:replace_alu$302: { $auto$rtlil.cc:1832:Not$301 $auto$rtlil.cc:1835:ReduceAnd$295 }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$287: { $auto$alumacc.cc:490:replace_alu$283 [0] $auto$alumacc.cc:490:replace_alu$283 [1] $auto$alumacc.cc:490:replace_alu$283 [2] $auto$alumacc.cc:490:replace_alu$283 [3] $auto$alumacc.cc:490:replace_alu$283 [4] $auto$alumacc.cc:490:replace_alu$283 [5] $auto$alumacc.cc:490:replace_alu$283 [6] $auto$alumacc.cc:490:replace_alu$283 [7] $auto$alumacc.cc:490:replace_alu$283 [8] $auto$alumacc.cc:490:replace_alu$283 [9] $auto$alumacc.cc:490:replace_alu$283 [10] $auto$alumacc.cc:490:replace_alu$283 [11] $auto$alumacc.cc:490:replace_alu$283 [12] $auto$alumacc.cc:490:replace_alu$283 [13] $auto$alumacc.cc:490:replace_alu$283 [14] $auto$alumacc.cc:490:replace_alu$283 [15] }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$294: { $auto$alumacc.cc:490:replace_alu$292 [0] $auto$alumacc.cc:490:replace_alu$292 [1] $auto$alumacc.cc:490:replace_alu$292 [2] $auto$alumacc.cc:490:replace_alu$292 [3] $auto$alumacc.cc:490:replace_alu$292 [4] $auto$alumacc.cc:490:replace_alu$292 [5] $auto$alumacc.cc:490:replace_alu$292 [6] $auto$alumacc.cc:490:replace_alu$292 [7] $auto$alumacc.cc:490:replace_alu$292 [8] $auto$alumacc.cc:490:replace_alu$292 [9] $auto$alumacc.cc:490:replace_alu$292 [10] $auto$alumacc.cc:490:replace_alu$292 [11] $auto$alumacc.cc:490:replace_alu$292 [12] $auto$alumacc.cc:490:replace_alu$292 [13] $auto$alumacc.cc:490:replace_alu$292 [14] $auto$alumacc.cc:490:replace_alu$292 [15] }
   Optimizing cells in module \reset.
 Performed a total of 3 changes.
 
@@ -378,7 +441,7 @@ Running muxtree optimizer on module \reset..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~10 debug messages>
 
 2.19.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \reset.
@@ -402,6 +465,7 @@ Optimizing module reset.
 
 2.20.1. Executing FSM_DETECT pass (finding FSMs in design).
 Not marking reset.state as FSM state register:
+    Users of register don't seem to benefit from recoding.
     Register has an initialization value.
 
 2.20.2. Executing FSM_EXTRACT pass (extracting FSM from design).
@@ -438,7 +502,7 @@ Finding unused cells or wires in module \reset..
 2.22. Executing MEMORY pass.
 
 2.22.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
-Checking cell `$memrd$\frmctr3_c$frmctr1.v:108$15' in module `\reset': no (compatible) $dff found.
+Checking cell `$memrd$\frmctr1_c$frmctr1.v:108$15' in module `\reset': no (compatible) $dff found.
 
 2.22.2. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
@@ -449,17 +513,17 @@ Finding unused cells or wires in module \reset..
 Finding unused cells or wires in module \reset..
 
 2.22.5. Executing MEMORY_COLLECT pass (generating $mem cells).
-Collecting $memrd, $memwr and $meminit for memory `\frmctr3_c' in module `\reset':
-  $meminit$\frmctr3_c$frmctr1.v:50$24 ($meminit)
-  $meminit$\frmctr3_c$frmctr1.v:51$25 ($meminit)
-  $memrd$\frmctr3_c$frmctr1.v:108$15 ($memrd)
-Collecting $memrd, $memwr and $meminit for memory `\frmctr3_num_params' in module `\reset':
-  $meminit$\frmctr3_num_params$frmctr1.v:52$26 ($meminit)
-  $meminit$\frmctr3_num_params$frmctr1.v:53$27 ($meminit)
-Collecting $memrd, $memwr and $meminit for memory `\frmctr3_p' in module `\reset':
-  $meminit$\frmctr3_p$frmctr1.v:55$28 ($meminit)
-  $meminit$\frmctr3_p$frmctr1.v:56$29 ($meminit)
-  $meminit$\frmctr3_p$frmctr1.v:57$30 ($meminit)
+Collecting $memrd, $memwr and $meminit for memory `\frmctr1_c' in module `\reset':
+  $meminit$\frmctr1_c$frmctr1.v:50$33 ($meminit)
+  $meminit$\frmctr1_c$frmctr1.v:51$34 ($meminit)
+  $memrd$\frmctr1_c$frmctr1.v:108$15 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\frmctr1_num_params' in module `\reset':
+  $meminit$\frmctr1_num_params$frmctr1.v:52$35 ($meminit)
+  $meminit$\frmctr1_num_params$frmctr1.v:53$36 ($meminit)
+Collecting $memrd, $memwr and $meminit for memory `\frmctr1_p' in module `\reset':
+  $meminit$\frmctr1_p$frmctr1.v:55$37 ($meminit)
+  $meminit$\frmctr1_p$frmctr1.v:56$38 ($meminit)
+  $meminit$\frmctr1_p$frmctr1.v:57$39 ($meminit)
 
 2.23. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
@@ -467,7 +531,7 @@ Removed 2 unused cells and 0 unused wires.
 <suppressed ~2 debug messages>
 
 2.24. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
-Processing reset.frmctr3_c:
+Processing reset.frmctr1_c:
   Properties: ports=1 bits=16 rports=1 wports=0 dbits=8 abits=1 words=2
   Checking rule #1 for bram type $__ICE40_RAM4K_M0 (variant 1):
     Bram geometry: abits=8 dbits=16 wports=0 rports=0
@@ -509,6 +573,7 @@ No more expansions possible.
 
 2.27.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
+<suppressed ~4 debug messages>
 
 2.27.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\reset'.
@@ -518,11 +583,13 @@ Removed a total of 0 cells.
 
 2.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
 
 2.27.5. Finished fast OPT passes.
 
 2.28. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
-Mapping memory cell \frmctr3_c in module \reset:
+Mapping memory cell \frmctr1_c in module \reset:
   created 2 $dff cells and 0 static cells of width 8.
   read interface: 0 $dff and 1 $mux cells.
   write interface: 0 write mux blocks.
@@ -542,24 +609,32 @@ Running muxtree optimizer on module \reset..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~11 debug messages>
 
 2.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \reset.
-    Consolidated identical input bits for $mux cell $procmux$86:
-      Old ports: A=4'1001, B=4'0110, Y=$auto$wreduce.cc:455:run$157 [3:0]
-      New ports: A=2'01, B=2'10, Y=$auto$wreduce.cc:455:run$157 [1:0]
-      New connections: $auto$wreduce.cc:455:run$157 [3:2] = { $auto$wreduce.cc:455:run$157 [0] $auto$wreduce.cc:455:run$157 [1] }
-    Consolidated identical input bits for $mux cell $procmux$90:
-      Old ports: A=4'0111, B=4'1001, Y=$auto$wreduce.cc:455:run$158 [3:0]
-      New ports: A=2'01, B=2'10, Y={ $auto$wreduce.cc:455:run$158 [3] $auto$wreduce.cc:455:run$158 [1] }
-      New connections: { $auto$wreduce.cc:455:run$158 [2] $auto$wreduce.cc:455:run$158 [0] } = { $auto$wreduce.cc:455:run$158 [1] 1'1 }
-    Consolidated identical input bits for $mux cell $procmux$97:
-      Old ports: A={ 3'100 $procmux$94_Y [0] }, B=4'0111, Y=$auto$wreduce.cc:455:run$159 [3:0]
-      New ports: A={ 2'10 $procmux$94_Y [0] }, B=3'011, Y={ $auto$wreduce.cc:455:run$159 [3] $auto$wreduce.cc:455:run$159 [1:0] }
-      New connections: $auto$wreduce.cc:455:run$159 [2] = $auto$wreduce.cc:455:run$159 [1]
+    Consolidated identical input bits for $mux cell $procmux$151:
+      Old ports: A=4'1010, B=4'0100, Y=$auto$wreduce.cc:455:run$271 [3:0]
+      New ports: A=2'01, B=2'10, Y=$auto$wreduce.cc:455:run$271 [2:1]
+      New connections: { $auto$wreduce.cc:455:run$271 [3] $auto$wreduce.cc:455:run$271 [0] } = { $auto$wreduce.cc:455:run$271 [1] 1'0 }
+    Consolidated identical input bits for $mux cell $procmux$156:
+      Old ports: A=4'1000, B=4'000x, Y=$auto$wreduce.cc:455:run$272 [3:0]
+      New ports: A=2'10, B=2'0x, Y={ $auto$wreduce.cc:455:run$272 [3] $auto$wreduce.cc:455:run$272 [0] }
+      New connections: $auto$wreduce.cc:455:run$272 [2:1] = 2'00
+    Consolidated identical input bits for $mux cell $procmux$161:
+      Old ports: A=4'1001, B=4'0110, Y=$auto$wreduce.cc:455:run$273 [3:0]
+      New ports: A=2'01, B=2'10, Y=$auto$wreduce.cc:455:run$273 [1:0]
+      New connections: $auto$wreduce.cc:455:run$273 [3:2] = { $auto$wreduce.cc:455:run$273 [0] $auto$wreduce.cc:455:run$273 [1] }
+    Consolidated identical input bits for $mux cell $procmux$165:
+      Old ports: A=4'0111, B=4'1001, Y=$auto$wreduce.cc:455:run$274 [3:0]
+      New ports: A=2'01, B=2'10, Y={ $auto$wreduce.cc:455:run$274 [3] $auto$wreduce.cc:455:run$274 [1] }
+      New connections: { $auto$wreduce.cc:455:run$274 [2] $auto$wreduce.cc:455:run$274 [0] } = { $auto$wreduce.cc:455:run$274 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $procmux$172:
+      Old ports: A={ 3'100 $auto$wreduce.cc:455:run$275 [0] }, B=4'0111, Y=$auto$wreduce.cc:455:run$276 [3:0]
+      New ports: A={ 2'10 $auto$wreduce.cc:455:run$275 [0] }, B=3'011, Y={ $auto$wreduce.cc:455:run$276 [3] $auto$wreduce.cc:455:run$276 [1:0] }
+      New connections: $auto$wreduce.cc:455:run$276 [2] = $auto$wreduce.cc:455:run$276 [1]
   Optimizing cells in module \reset.
-Performed a total of 3 changes.
+Performed a total of 5 changes.
 
 2.29.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\reset'.
@@ -567,8 +642,8 @@ Finding identical cells in module `\reset'.
 Removed a total of 1 cells.
 
 2.29.6. Executing OPT_RMDFF pass (remove dff with constant values).
-Removing $memory\frmctr3_c[0]$201 ($dff) from module reset.
-Removing $memory\frmctr3_c[1]$203 ($dff) from module reset.
+Removing $memory\frmctr1_c[0]$322 ($dff) from module reset.
+Removing $memory\frmctr1_c[1]$324 ($dff) from module reset.
 Replaced 2 DFF cells.
 
 2.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
@@ -587,14 +662,14 @@ Running muxtree optimizer on module \reset..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~11 debug messages>
 
 2.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \reset.
-    Consolidated identical input bits for $mux cell $memory\frmctr3_c$rdmux[0][0][0]$205:
-      Old ports: A=8'10110001, B=8'00000000, Y=$memrd$\frmctr3_c$frmctr1.v:108$15_DATA
-      New ports: A=1'1, B=1'0, Y=$memrd$\frmctr3_c$frmctr1.v:108$15_DATA [0]
-      New connections: $memrd$\frmctr3_c$frmctr1.v:108$15_DATA [7:1] = { $memrd$\frmctr3_c$frmctr1.v:108$15_DATA [0] 1'0 $memrd$\frmctr3_c$frmctr1.v:108$15_DATA [0] $memrd$\frmctr3_c$frmctr1.v:108$15_DATA [0] 3'000 }
+    Consolidated identical input bits for $mux cell $memory\frmctr1_c$rdmux[0][0][0]$326:
+      Old ports: A=8'10110001, B=8'00000000, Y=$memrd$\frmctr1_c$frmctr1.v:108$15_DATA
+      New ports: A=1'1, B=1'0, Y=$memrd$\frmctr1_c$frmctr1.v:108$15_DATA [0]
+      New connections: $memrd$\frmctr1_c$frmctr1.v:108$15_DATA [7:1] = { $memrd$\frmctr1_c$frmctr1.v:108$15_DATA [0] 1'0 $memrd$\frmctr1_c$frmctr1.v:108$15_DATA [0] $memrd$\frmctr1_c$frmctr1.v:108$15_DATA [0] 3'000 }
   Optimizing cells in module \reset.
 Performed a total of 1 changes.
 
@@ -609,6 +684,7 @@ Finding unused cells or wires in module \reset..
 
 2.29.15. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
+<suppressed ~1 debug messages>
 
 2.29.16. Rerunning OPT passes. (Maybe there is more to do..)
 
@@ -618,7 +694,7 @@ Running muxtree optimizer on module \reset..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~11 debug messages>
 
 2.29.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \reset.
@@ -673,28 +749,33 @@ Successfully finished Verilog frontend.
 Using extmapper simplemap for cells of type $not.
 Using extmapper simplemap for cells of type $logic_not.
 Using template $paramod$constmap:ee5af906ae0d3d414c6a0471604c553ef70c8e09$paramod$1297efc30c1e19551d1f4e269f2cbfa7dd15f801\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$constmap:6da694385dc7e63f566567eb9230c953ae21ca2f$paramod$87200e792bf78bb988ad871e154054ae00677f50\_90_shift_shiftx for cells of type $shiftx.
 Using extmapper simplemap for cells of type $mux.
 Using extmapper simplemap for cells of type $reduce_or.
-Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=16\B_WIDTH=16\Y_WIDTH=16 for cells of type $alu.
-Using template $paramod\_90_pmux\WIDTH=16\S_WIDTH=3 for cells of type $pmux.
 Using extmapper simplemap for cells of type $eq.
-Using extmapper simplemap for cells of type $lut.
+Using template $paramod\_90_pmux\WIDTH=8\S_WIDTH=2 for cells of type $pmux.
+Using template $paramod\_90_pmux\WIDTH=16\S_WIDTH=3 for cells of type $pmux.
+Using template $paramod\_90_pmux\WIDTH=6\S_WIDTH=2 for cells of type $pmux.
+Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=3\B_WIDTH=1\Y_WIDTH=3 for cells of type $alu.
 Using template $paramod\_90_pmux\WIDTH=6\S_WIDTH=10 for cells of type $pmux.
 Using extmapper simplemap for cells of type $reduce_and.
-Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=16\Y_WIDTH=16 for cells of type $alu.
-Using extmapper simplemap for cells of type $or.
-Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=3\B_WIDTH=1\Y_WIDTH=3 for cells of type $alu.
-Using template $paramod\_90_pmux\WIDTH=1\S_WIDTH=2 for cells of type $pmux.
 Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=7\B_WIDTH=16\Y_WIDTH=16 for cells of type $alu.
-Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=1\Y_WIDTH=1 for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=16\Y_WIDTH=16 for cells of type $alu.
+Using template $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=16\B_WIDTH=16\Y_WIDTH=16 for cells of type $alu.
+Using extmapper simplemap for cells of type $lut.
 Using template $paramod\_90_pmux\WIDTH=1\S_WIDTH=3 for cells of type $pmux.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=1\Y_WIDTH=1 for cells of type $alu.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=2\Y_WIDTH=2 for cells of type $alu.
+Using template $paramod\_90_pmux\WIDTH=1\S_WIDTH=2 for cells of type $pmux.
 Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $and.
 Using extmapper simplemap for cells of type $xor.
 Using extmapper simplemap for cells of type $pos.
-Using extmapper simplemap for cells of type $and.
 Using template $paramod\_90_lcu\WIDTH=1 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=2 for cells of type $lcu.
 No more expansions possible.
-<suppressed ~463 debug messages>
+<suppressed ~760 debug messages>
 
 2.31. Executing ICE40_OPT pass (performing simple optimizations).
 
@@ -702,33 +783,33 @@ No more expansions possible.
 
 2.31.2. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
-<suppressed ~284 debug messages>
+<suppressed ~372 debug messages>
 
 2.31.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\reset'.
-<suppressed ~180 debug messages>
-Removed a total of 60 cells.
+<suppressed ~270 debug messages>
+Removed a total of 90 cells.
 
 2.31.4. Executing OPT_RMDFF pass (remove dff with constant values).
 
 2.31.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
-Removed 47 unused cells and 277 unused wires.
-<suppressed ~48 debug messages>
+Removed 62 unused cells and 403 unused wires.
+<suppressed ~63 debug messages>
 
 2.31.6. Rerunning OPT passes. (Removed registers in this run.)
 
 2.31.7. Running ICE40 specific optimizations.
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$164.slice[0].carry: CO=1'1
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$173.slice[0].carry: CO=$auto$alumacc.cc:474:replace_alu$173.BB [0]
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$189.slice[0].carry: CO=\delay [0]
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$192.slice[0].carry: CO=\bit_counter [0]
-Mapping SB_LUT4 cell reset.$auto$alumacc.cc:474:replace_alu$189.slice[1].adder back to logic.
-Mapping SB_LUT4 cell reset.$auto$alumacc.cc:474:replace_alu$192.slice[1].adder back to logic.
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$282.slice[0].carry: CO=1'1
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$291.slice[0].carry: CO=$auto$alumacc.cc:474:replace_alu$291.BB [0]
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$310.slice[0].carry: CO=\delay [0]
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$313.slice[0].carry: CO=\bit_counter [0]
+Mapping SB_LUT4 cell reset.$auto$alumacc.cc:474:replace_alu$310.slice[1].adder back to logic.
+Mapping SB_LUT4 cell reset.$auto$alumacc.cc:474:replace_alu$313.slice[1].adder back to logic.
 
 2.31.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
-<suppressed ~25 debug messages>
+<suppressed ~28 debug messages>
 
 2.31.9. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\reset'.
@@ -745,7 +826,7 @@ Removed 0 unused cells and 6 unused wires.
 2.31.12. Rerunning OPT passes. (Removed registers in this run.)
 
 2.31.13. Running ICE40 specific optimizations.
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$164.slice[1].carry: CO=1'1
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$282.slice[1].carry: CO=1'1
 
 2.31.14. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
@@ -762,7 +843,7 @@ Finding unused cells or wires in module \reset..
 2.31.18. Rerunning OPT passes. (Removed registers in this run.)
 
 2.31.19. Running ICE40 specific optimizations.
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$164.slice[2].carry: CO=1'1
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$282.slice[2].carry: CO=1'1
 
 2.31.20. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
@@ -779,7 +860,7 @@ Finding unused cells or wires in module \reset..
 2.31.24. Rerunning OPT passes. (Removed registers in this run.)
 
 2.31.25. Running ICE40 specific optimizations.
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$164.slice[3].carry: CO=1'1
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$282.slice[3].carry: CO=1'1
 
 2.31.26. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
@@ -796,7 +877,7 @@ Finding unused cells or wires in module \reset..
 2.31.30. Rerunning OPT passes. (Removed registers in this run.)
 
 2.31.31. Running ICE40 specific optimizations.
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$164.slice[4].carry: CO=1'1
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$282.slice[4].carry: CO=1'1
 
 2.31.32. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
@@ -813,7 +894,7 @@ Finding unused cells or wires in module \reset..
 2.31.36. Rerunning OPT passes. (Removed registers in this run.)
 
 2.31.37. Running ICE40 specific optimizations.
-Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$164.slice[5].carry: CO=\delay [5]
+Optimized away SB_CARRY cell reset.$auto$alumacc.cc:474:replace_alu$282.slice[5].carry: CO=\delay [5]
 
 2.31.38. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
@@ -860,44 +941,44 @@ Selected cell types for direct conversion:
   $_DFF_N_ -> $_DFFE_NP_
   $_DFF_P_ -> $_DFFE_PP_
 Transforming FF to FF+Enable cells in module reset:
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$674 to $_DFFE_PP_ for $0\rst[0:0] -> \rst.
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$675 to $_DFFE_PP_ for $0\dc[0:0] -> \dc.
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$676 to $_DFFE_PP_ for $0\mosi[0:0] -> \mosi.
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$677 to $_DFFE_PP_ for $0\cs[0:0] -> \cs.
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$678 to $_DFFE_PP_ for $0\state[5:0] [0] -> \state [0].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$679 to $_DFFE_PP_ for $0\state[5:0] [1] -> \state [1].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$680 to $_DFFE_PP_ for $0\state[5:0] [2] -> \state [2].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$681 to $_DFFE_PP_ for $0\state[5:0] [3] -> \state [3].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$682 to $_DFFE_PP_ for $0\state[5:0] [4] -> \state [4].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$683 to $_DFFE_PP_ for $0\state[5:0] [5] -> \state [5].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$684 to $_DFFE_PP_ for $0\delay[15:0] [0] -> \delay [0].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$685 to $_DFFE_PP_ for $0\delay[15:0] [1] -> \delay [1].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$686 to $_DFFE_PP_ for $0\delay[15:0] [2] -> \delay [2].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$687 to $_DFFE_PP_ for $0\delay[15:0] [3] -> \delay [3].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$688 to $_DFFE_PP_ for $0\delay[15:0] [4] -> \delay [4].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$689 to $_DFFE_PP_ for $0\delay[15:0] [5] -> \delay [5].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$690 to $_DFFE_PP_ for $0\delay[15:0] [6] -> \delay [6].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$691 to $_DFFE_PP_ for $0\delay[15:0] [7] -> \delay [7].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$692 to $_DFFE_PP_ for $0\delay[15:0] [8] -> \delay [8].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$693 to $_DFFE_PP_ for $0\delay[15:0] [9] -> \delay [9].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$694 to $_DFFE_PP_ for $0\delay[15:0] [10] -> \delay [10].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$695 to $_DFFE_PP_ for $0\delay[15:0] [11] -> \delay [11].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$696 to $_DFFE_PP_ for $0\delay[15:0] [12] -> \delay [12].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$697 to $_DFFE_PP_ for $0\delay[15:0] [13] -> \delay [13].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$698 to $_DFFE_PP_ for $0\delay[15:0] [14] -> \delay [14].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$699 to $_DFFE_PP_ for $0\delay[15:0] [15] -> \delay [15].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$700 to $_DFFE_PP_ for $0\data[7:0] [0] -> \data [0].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$701 to $_DFFE_PP_ for $0\data[7:0] [1] -> \data [1].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$702 to $_DFFE_PP_ for $0\data[7:0] [2] -> \data [2].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$703 to $_DFFE_PP_ for $0\data[7:0] [3] -> \data [3].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$704 to $_DFFE_PP_ for $0\data[7:0] [4] -> \data [4].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$705 to $_DFFE_PP_ for $0\data[7:0] [5] -> \data [5].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$706 to $_DFFE_PP_ for $0\data[7:0] [6] -> \data [6].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$707 to $_DFFE_PP_ for $0\data[7:0] [7] -> \data [7].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$708 to $_DFFE_PP_ for $0\bit_counter[2:0] [0] -> \bit_counter [0].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$709 to $_DFFE_PP_ for $0\bit_counter[2:0] [1] -> \bit_counter [1].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$710 to $_DFFE_PP_ for $0\bit_counter[2:0] [2] -> \bit_counter [2].
-  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$711 to $_DFFE_PP_ for $0\cmd_counter[0:0] -> \cmd_counter.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1000 to $_DFFE_PP_ for $0\delay[15:0] [0] -> \delay [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1001 to $_DFFE_PP_ for $0\delay[15:0] [1] -> \delay [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1002 to $_DFFE_PP_ for $0\delay[15:0] [2] -> \delay [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1003 to $_DFFE_PP_ for $0\delay[15:0] [3] -> \delay [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1004 to $_DFFE_PP_ for $0\delay[15:0] [4] -> \delay [4].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1005 to $_DFFE_PP_ for $0\delay[15:0] [5] -> \delay [5].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1006 to $_DFFE_PP_ for $0\delay[15:0] [6] -> \delay [6].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1007 to $_DFFE_PP_ for $0\delay[15:0] [7] -> \delay [7].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1008 to $_DFFE_PP_ for $0\delay[15:0] [8] -> \delay [8].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1009 to $_DFFE_PP_ for $0\delay[15:0] [9] -> \delay [9].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1010 to $_DFFE_PP_ for $0\delay[15:0] [10] -> \delay [10].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1011 to $_DFFE_PP_ for $0\delay[15:0] [11] -> \delay [11].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1012 to $_DFFE_PP_ for $0\delay[15:0] [12] -> \delay [12].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1013 to $_DFFE_PP_ for $0\delay[15:0] [13] -> \delay [13].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1014 to $_DFFE_PP_ for $0\delay[15:0] [14] -> \delay [14].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1015 to $_DFFE_PP_ for $0\delay[15:0] [15] -> \delay [15].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1016 to $_DFFE_PP_ for $0\data[7:0] [0] -> \data [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1017 to $_DFFE_PP_ for $0\data[7:0] [1] -> \data [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1018 to $_DFFE_PP_ for $0\data[7:0] [2] -> \data [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1019 to $_DFFE_PP_ for $0\data[7:0] [3] -> \data [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1020 to $_DFFE_PP_ for $0\data[7:0] [4] -> \data [4].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1021 to $_DFFE_PP_ for $0\data[7:0] [5] -> \data [5].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1022 to $_DFFE_PP_ for $0\data[7:0] [6] -> \data [6].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1023 to $_DFFE_PP_ for $0\data[7:0] [7] -> \data [7].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1024 to $_DFFE_PP_ for $0\bit_counter[2:0] [0] -> \bit_counter [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1025 to $_DFFE_PP_ for $0\bit_counter[2:0] [1] -> \bit_counter [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1026 to $_DFFE_PP_ for $0\bit_counter[2:0] [2] -> \bit_counter [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$1027 to $_DFFE_PP_ for $0\cmd_counter[0:0] -> \cmd_counter.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$990 to $_DFFE_PP_ for $0\rst[0:0] -> \rst.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$991 to $_DFFE_PP_ for $0\dc[0:0] -> \dc.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$992 to $_DFFE_PP_ for $0\mosi[0:0] -> \mosi.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$993 to $_DFFE_PP_ for $0\cs[0:0] -> \cs.
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$994 to $_DFFE_PP_ for $0\state[5:0] [0] -> \state [0].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$995 to $_DFFE_PP_ for $0\state[5:0] [1] -> \state [1].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$996 to $_DFFE_PP_ for $0\state[5:0] [2] -> \state [2].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$997 to $_DFFE_PP_ for $0\state[5:0] [3] -> \state [3].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$998 to $_DFFE_PP_ for $0\state[5:0] [4] -> \state [4].
+  converting $_DFF_P_ cell $auto$simplemap.cc:420:simplemap_dff$999 to $_DFFE_PP_ for $0\state[5:0] [5] -> \state [5].
 
 2.34. Executing TECHMAP pass (map to technology primitives).
 
@@ -935,34 +1016,44 @@ No more expansions possible.
 
 2.35. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
-<suppressed ~66 debug messages>
+<suppressed ~82 debug messages>
 
 2.36. Executing SIMPLEMAP pass (map simple cells to gate primitives).
 
 2.37. Executing ICE40_FFINIT pass (implement FF init values).
 Handling FF init values in reset.
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$710 (SB_DFFE): \bit_counter [2] = 1
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$680 (SB_DFFE): \state [2] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$681 (SB_DFFE): \state [3] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$682 (SB_DFFE): \state [4] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$679 (SB_DFFE): \state [1] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$712 (SB_DFF): \scl = 1
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$683 (SB_DFFE): \state [5] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$678 (SB_DFFE): \state [0] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$700 (SB_DFFE): \data [0] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$701 (SB_DFFE): \data [1] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$702 (SB_DFFE): \data [2] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$703 (SB_DFFE): \data [3] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$704 (SB_DFFE): \data [4] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$705 (SB_DFFE): \data [5] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$706 (SB_DFFE): \data [6] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$707 (SB_DFFE): \data [7] = 0
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$709 (SB_DFFE): \bit_counter [1] = 1
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$708 (SB_DFFE): \bit_counter [0] = 1
-FF init value for cell $auto$simplemap.cc:420:simplemap_dff$711 (SB_DFFE): \cmd_counter = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1026 (SB_DFFE): \bit_counter [2] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$999 (SB_DFFE): \state [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$994 (SB_DFFE): \state [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1016 (SB_DFFE): \data [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1017 (SB_DFFE): \data [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1018 (SB_DFFE): \data [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1019 (SB_DFFE): \data [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1020 (SB_DFFE): \data [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1021 (SB_DFFE): \data [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1022 (SB_DFFE): \data [6] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1023 (SB_DFFE): \data [7] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1025 (SB_DFFE): \bit_counter [1] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1024 (SB_DFFE): \bit_counter [0] = 1
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1027 (SB_DFFE): \cmd_counter = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$996 (SB_DFFE): \state [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$997 (SB_DFFE): \state [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$998 (SB_DFFE): \state [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$995 (SB_DFFE): \state [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$1030 (SB_DFF): \scl = 1
 
 2.38. Executing ICE40_FFSSR pass (merge synchronous set/reset into FF cells).
 Merging set/reset $_MUX_ cells into SB_FFs in reset.
+  Merging $auto$simplemap.cc:277:simplemap_mux$1413 (A=1'0, B=$auto$simplemap.cc:127:simplemap_reduce$1270 [3], S=$techmap$procmux$158.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$856_Y) into $auto$simplemap.cc:420:simplemap_dff$999 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1088 (A=1'0, B=$procmux$111.Y_B [1], S=$techmap$procmux$111.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$591_Y) into $auto$simplemap.cc:420:simplemap_dff$1017 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1089 (A=1'0, B=$procmux$111.Y_B [2], S=$techmap$procmux$111.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$591_Y) into $auto$simplemap.cc:420:simplemap_dff$1018 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1090 (A=1'0, B=$procmux$111.Y_B [3], S=$techmap$procmux$111.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$591_Y) into $auto$simplemap.cc:420:simplemap_dff$1019 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1091 (A=1'0, B=$procmux$111.Y_B [4], S=$techmap$procmux$111.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$591_Y) into $auto$simplemap.cc:420:simplemap_dff$1020 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1092 (A=1'0, B=$procmux$111.Y_B [5], S=$techmap$procmux$111.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$591_Y) into $auto$simplemap.cc:420:simplemap_dff$1021 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1093 (A=1'0, B=$procmux$111.Y_B [6], S=$techmap$procmux$111.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$591_Y) into $auto$simplemap.cc:420:simplemap_dff$1022 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1094 (A=1'0, B=$procmux$111.Y_B [7], S=$techmap$procmux$111.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$591_Y) into $auto$simplemap.cc:420:simplemap_dff$1023 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1626 (A=1'1, B=$procmux$222.Y_B, S=$techmap$procmux$222.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$934_Y) into $auto$simplemap.cc:420:simplemap_dff$991 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1412 (A=1'0, B=$auto$simplemap.cc:127:simplemap_reduce$1283 [3], S=$techmap$procmux$158.$reduce_or$/usr/bin/../share/yosys/techmap.v:445$856_Y) into $auto$simplemap.cc:420:simplemap_dff$998 (SB_DFFE).
 
 2.39. Executing ICE40_OPT pass (performing simple optimizations).
 
@@ -970,19 +1061,19 @@ Merging set/reset $_MUX_ cells into SB_FFs in reset.
 
 2.39.2. Executing OPT_EXPR pass (perform const folding).
 Optimizing module reset.
-<suppressed ~55 debug messages>
+<suppressed ~59 debug messages>
 
 2.39.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\reset'.
-<suppressed ~36 debug messages>
-Removed a total of 12 cells.
+<suppressed ~87 debug messages>
+Removed a total of 29 cells.
 
 2.39.4. Executing OPT_RMDFF pass (remove dff with constant values).
 
 2.39.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \reset..
-Removed 0 unused cells and 265 unused wires.
-<suppressed ~1 debug messages>
+Removed 10 unused cells and 285 unused wires.
+<suppressed ~11 debug messages>
 
 2.39.6. Rerunning OPT passes. (Removed registers in this run.)
 
@@ -1016,7 +1107,7 @@ No more expansions possible.
 2.41. Executing ABC pass (technology mapping using ABC).
 
 2.41.1. Extracting gate netlist of module `\reset' to `<abc-temp-dir>/input.blif'..
-Extracted 290 gates and 348 wires to a netlist network with 56 inputs and 59 outputs.
+Extracted 366 gates and 425 wires to a netlist network with 57 inputs and 71 outputs.
 
 2.41.1.1. Executing ABC.
 Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
@@ -1037,22 +1128,22 @@ ABC: + if
 ABC: + mfs2 
 ABC: + lutpack -S 1 
 ABC: + dress 
-ABC: Total number of equiv classes                =      77.
-ABC: Participating nodes from both networks       =     187.
-ABC: Participating nodes from the first network   =      79. (  79.00 % of nodes)
-ABC: Participating nodes from the second network  =     108. ( 108.00 % of nodes)
-ABC: Node pairs (any polarity)                    =      79. (  79.00 % of names can be moved)
-ABC: Node pairs (same polarity)                   =      73. (  73.00 % of names can be moved)
-ABC: Total runtime =     0.05 sec
+ABC: Total number of equiv classes                =      82.
+ABC: Participating nodes from both networks       =     203.
+ABC: Participating nodes from the first network   =      87. (  74.36 % of nodes)
+ABC: Participating nodes from the second network  =     116. (  99.15 % of nodes)
+ABC: Node pairs (any polarity)                    =      87. (  74.36 % of names can be moved)
+ABC: Node pairs (same polarity)                   =      80. (  68.38 % of names can be moved)
+ABC: Total runtime =     0.07 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 2.41.1.2. Re-integrating ABC results.
-ABC RESULTS:              $lut cells:      194
-ABC RESULTS:        internal signals:      233
-ABC RESULTS:           input signals:       56
-ABC RESULTS:          output signals:       59
+ABC RESULTS:              $lut cells:      228
+ABC RESULTS:        internal signals:      297
+ABC RESULTS:           input signals:       57
+ABC RESULTS:          output signals:       71
 Removing temp directory.
-Removed 0 unused cells and 169 unused wires.
+Removed 0 unused cells and 215 unused wires.
 
 2.42. Executing TECHMAP pass (map to technology primitives).
 
@@ -1084,46 +1175,53 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 2.42.2. Continuing TECHMAP pass.
-Using template $paramod\$lut\WIDTH=1\LUT=2'01 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0100000000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'1000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000100000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'00000111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1000000000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0001000000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'10000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111010000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1010000000001100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1100111110100000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111110000001010 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0011010100000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000001100000101 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'00010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000011101111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0100000011111111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'00000001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'0100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0101000011001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00001011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111110100001100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11100011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111000010001000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=1\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000011100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1000000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1000111100000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111111011111111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000111011000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000010100000011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11101111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'0001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1011000010111011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111010011111111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'0110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01110000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0111000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0111011100001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001110000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00000111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111101110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111110110000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111111111111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01010011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00110101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000001100000101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0011010100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100111100010101 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=2\LUT=4'1110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111111110000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'1011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011111100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111010000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1110111100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00001110 for cells of type $lut.
 No more expansions possible.
-<suppressed ~504 debug messages>
-Removed 0 unused cells and 194 unused wires.
+<suppressed ~596 debug messages>
+Removed 0 unused cells and 224 unused wires.
 
 2.43. Executing HIERARCHY pass (managing design hierarchy).
 
@@ -1138,18 +1236,20 @@ Removed 0 unused modules.
 
 === reset ===
 
-   Number of wires:                119
-   Number of wire bits:            239
-   Number of public wires:          19
-   Number of public wire bits:      63
+   Number of wires:                137
+   Number of wire bits:            257
+   Number of public wires:          22
+   Number of public wire bits:      66
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                193
+   Number of cells:                208
      SB_CARRY                       40
      SB_DFF                          1
-     SB_DFFE                        38
-     SB_LUT4                       114
+     SB_DFFE                        28
+     SB_DFFESR                       9
+     SB_DFFESS                       1
+     SB_LUT4                       129
 
 2.45. Executing CHECK pass (checking for obvious problems).
 checking module reset..
@@ -1159,7 +1259,8 @@ found and reported 0 problems.
 
 2.47. Executing JSON backend.
 
-End of script. Logfile hash: 4335040737
-CPU: user 1.34s system 0.04s, MEM: 31.51 MB total, 25.82 MB resident
+Warnings: 6 unique messages, 6 total
+End of script. Logfile hash: 396f2c2334
+CPU: user 1.66s system 0.03s, MEM: 31.66 MB total, 26.10 MB resident
 Yosys 0.9 (git sha1 1979e0b)
-Time spent: 16% 10x read_verilog (0 sec), 16% 26x opt_clean (0 sec), ...
+Time spent: 18% 29x opt_expr (0 sec), 16% 28x opt_clean (0 sec), ...
