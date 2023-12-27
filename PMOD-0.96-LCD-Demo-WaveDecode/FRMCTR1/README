@@ -1,0 +1,7 @@
+Send command FRMCTR1 to ST7735 LCD Driver.
+
+I will soon debug the parameters section.
+After that I will move from 1 cmd sent to n commands sent.
+
+This with provide the next level of robustness.
+I plan to have several levels of robustness in order to make frames easier to change and send to LCD screen.
