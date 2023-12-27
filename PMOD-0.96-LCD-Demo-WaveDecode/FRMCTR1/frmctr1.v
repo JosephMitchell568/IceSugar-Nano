@@ -22,10 +22,10 @@ module reset(
  localparam sm = 6'd6;
  localparam lcs = 6'd7;
  localparam slb = 6'd8;
- localparam rcs = 6'd12;
- localparam send = 6'd9;
- localparam rdc = 6'd10;
- localparam lp = 6'd11;
+ localparam rcs = 6'd9;
+ localparam send = 6'd10;
+ localparam rdc = 6'd11;
+ localparam lp = 6'd12;
  
 
  reg rst, scl, dc, mosi, cs;
@@ -63,6 +63,7 @@ module reset(
   bit_counter = 3'b111;
   cmd_counter = 1'b0; // Points to command
   param_counter = 2'b00; // Points to parameter
+  params_left = 14'd0; // Determines number of remaining parameters for cmd
  end
 
  always@(posedge CLK)
@@ -180,7 +181,7 @@ module reset(
     end
     else // If last byte was a parameter,
     begin // check if it is the last parameter
-     if(num_params == 14'd0)
+     if(params_left == 14'd0)
      begin
       state <= lc; // Load cmd eventually lowers dc line
      end
