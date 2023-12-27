@@ -30,8 +30,7 @@ module reset(
  reg [5:0] state;
  reg [15:0] delay; // 120 for 10us, 60000 for 5ms
 
- reg [7:0] cmd;
- reg [7:0] param;
+ reg [7:0] data;
 
  reg [7:0] frmctr3_c [0:1];
  reg [7:0] frmctr3_num_params [0:1]; // Number of parameters for each command including NOP
@@ -42,7 +41,6 @@ module reset(
  reg cmd_counter;
  reg [1:0] param_counter;
  reg [7:0] params_left;
- reg [7:0] data;
 
  initial
  begin
@@ -58,13 +56,11 @@ module reset(
   frmctr3_p[1] = 8'h3C;
   frmctr3_p[2] = 8'h3C;
 
-  cmd = 8'h00;
-  param = 8'h00;
+  data = 8'h00; // Internal Reg to hold mosi data
 
   bit_counter = 3'b111;
   cmd_counter = 1'b0; // Points to command
   param_counter = 2'b00; // Points to parameter
-  data = 8'h00;
  end
 
  always@(posedge CLK)
@@ -109,7 +105,7 @@ module reset(
     end
    end
    lc: begin // Load Cmd
-    cmd <= frmctr3_c[cmd_counter];
+    data <= frmctr3_c[cmd_counter];
     cmd_counter <= cmd_counter + 1'b1; // Point to next cmd
     state <= ldc; //Move to lower DC
    end
@@ -118,54 +114,55 @@ module reset(
     state <= sm; //Set mosi
    end
    sm: begin
-    //if(bit_counter == 3'b111)
-    //begin
-    // state <= lcs; //Lower CS
-    //end
-    //else if(bit_counter == 3'b000)
-    //begin
-    // state <= slb; //Send last bit
-    // bit_counter <= 3'b111; //Reset bit counter
-    //end
-    //else
-    //begin
-    // state <= send; //Send non last bit
-    //end
+    if(bit_counter == 3'b111)
+    begin
+     state <= lcs; //Lower CS
+    end
+    else if(bit_counter == 3'b000)
+    begin
+     state <= slb; //Send last bit
+     bit_counter <= 3'b111; //Reset bit counter
+    end
+    else
+    begin
+     state <= send; //Send non last bit
+    end
 
     mosi <= data[bit_counter]; //Set on falling edge
-    //bit_counter <= bit_counter - 3'b001;
+    bit_counter <= bit_counter - 3'b001;
    end
-   //lcs: begin // Lower CS
-   // if(scl == 1'b1)
-   // begin
-   //  cs <= 1'b0;
-   //  state <= send; //Send first bit
-   // end
-   // else
-   // begin
-   //  state <= lcs; //Wait until scl is about to fall
-   // end
-   //end
-   //send: begin
-   // if(scl == 1'b1) //MOSI gets sent on rising scl
-   // begin
-   //  state <= sm; //Set mosi after sending
-   // end
-   // else
-   // begin
-   //  state <= send;
-   // end
-   //end
-   //slb: begin
-   // if(scl == 1'b1) // Send Last bit of byte
-   // begin
-   //  state <= rcs; // Raise CS, after write byte
-   // end
-   // else
-   // begin
-   //  state <= slb; // Send last bit
-   // end
-   //end
+   lcs: begin // Lower CS
+    if(scl == 1'b1)
+    begin
+     cs <= 1'b0;
+     state <= send; //Send first bit
+    end
+    else
+    begin
+     state <= lcs; //Wait until scl is about to fall
+    end
+   end
+   send: begin
+    if(scl == 1'b1) //MOSI gets sent on rising scl
+    begin
+     state <= sm; //Set mosi after sending
+    end
+    else
+    begin
+     state <= send;
+    end
+   end
+   slb: begin
+    if(scl == 1'b1) // Send Last bit of byte
+    begin
+     //state <= rcs; // Raise CS, after write byte
+     state <= slb; // THIS LINE FOR DEBUG
+    end
+    else
+    begin
+     state <= slb; // Send last bit
+    end
+   end
    //rcs: begin
    // cs <= 1'b1; // First Raise CS to prepare next data
    // if(dc == 1'b0) // If cmd, raise dc for param
