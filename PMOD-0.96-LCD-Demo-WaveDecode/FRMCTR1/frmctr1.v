@@ -22,9 +22,11 @@ module reset(
  localparam sm = 6'd6;
  localparam lcs = 6'd7;
  localparam slb = 6'd8;
+ localparam rcs = 6'd12;
  localparam send = 6'd9;
  localparam rdc = 6'd10;
  localparam lp = 6'd11;
+ 
 
  reg rst, scl, dc, mosi, cs;
  reg [5:0] state;
@@ -194,7 +196,7 @@ module reset(
     state <= lp; // After setting dc line load first parameter
    end
    lp: begin // Load next parameter for cmd
-    data <= frmctr3_p[param_counter];
+    data <= frmctr1_p[param_counter];
     params_left <= params_left - 8'd1; // decrement params left
     param_counter <= param_counter + 2'b01;
     state <= sm; // Send the first mosi bit 
