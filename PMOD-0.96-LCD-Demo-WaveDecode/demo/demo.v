@@ -179,7 +179,7 @@ module demo(
 
   bit_counter = 3'b111;
   cmd_counter = 1'b0; // Points to command
-  param_counter = 2'b00; // Points to parameter
+  param_counter = 7'b00; // Points to parameter
   params_left = 14'd0; // Determines number of remaining parameters for cmd
  end
 
@@ -232,7 +232,7 @@ module demo(
     else
     begin
      data <= cmd[cmd_counter];
-     cmd_counter <= cmd_counter + 1'b1; // Point to next cmd
+     cmd_counter <= cmd_counter + 5'b1; // Point to next cmd
      state <= ldc; //Move to lower DC
     end
    end
@@ -310,13 +310,16 @@ module demo(
    end
    rdc: begin // Should also set params_left...
     dc <= 1'b1;
-    params_left <= num_params[cmd_counter - 1'b1];
+    params_left <= num_params[cmd_counter - 5'b1];
     state <= lp; // After setting dc line load first parameter
    end
    lp: begin // Load next parameter for cmd
     data <= params[param_counter];
     params_left <= params_left - 14'd1; // decrement params left
-    param_counter <= param_counter + 2'b01;
+    if(param_counter != 7'd75) //Only when not last param
+    begin
+     param_counter <= param_counter + 7'd01;
+    end
     state <= sm; // Send the first mosi bit 
    end
   endcase
