@@ -298,14 +298,7 @@ module demo(
     end
     else // If last byte was a parameter,
     begin // check if it is the last parameter
-     if(params_left == 14'd0)
-     begin
-      state <= lc; // Load cmd eventually lowers dc line
-     end
-     else
-     begin
-      state <= lp; // load parameter if more parameters exist
-     end
+     state <= lp; // load parameter if more parameters exist
     end
    end
    rdc: begin // Should also set params_left...
@@ -315,12 +308,19 @@ module demo(
    end
    lp: begin // Load next parameter for cmd
     data <= params[param_counter];
-    params_left <= params_left - 14'd1; // decrement params left
+    if(params_left == 14'd0)
+    begin
+     state <= lc;
+    end
+    else
+    begin
+     params_left <= params_left - 14'd1;
+     state <= sm;
+    end
     if(param_counter != 7'd75) //Only when not last param
     begin
      param_counter <= param_counter + 7'd01;
-    end
-    state <= sm; // Send the first mosi bit 
+    end 
    end
   endcase
  end
