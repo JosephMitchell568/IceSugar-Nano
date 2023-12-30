@@ -315,12 +315,13 @@ module demo(
     else
     begin
      params_left <= params_left - 14'd1;
+     if(param_counter != 7'd75) //Only when not last param
+     begin
+      param_counter <= param_counter + 7'd01;
+     end                                                    
      state <= sm;
     end
-    if(param_counter != 7'd75) //Only when not last param
-    begin
-     param_counter <= param_counter + 7'd01;
-    end 
+    //Moved the param_counter decrementation to else
    end
   endcase
  end

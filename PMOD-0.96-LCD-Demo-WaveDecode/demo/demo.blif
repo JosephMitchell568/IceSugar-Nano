@@ -7,799 +7,763 @@
 .names $true
 1
 .names $undef
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$2222_new_inv_ I1=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2902[0]_new_ I2=$false I3=$false O=$0\dc[0:0]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$2232_new_inv_ I1=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[0]_new_ I2=$false I3=$false O=$0\dc[0:0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1110
-.gate SB_LUT4 I0=state[2] I1=state[3] I2=$abc$4085$new_n189_ I3=$false O=$abc$4085$auto$simplemap.cc:168:logic_reduce$2222_new_inv_
+.gate SB_LUT4 I0=state[2] I1=state[3] I2=$abc$4194$new_n189_ I3=$false O=$abc$4194$auto$simplemap.cc:168:logic_reduce$2232_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00010000
-.gate SB_LUT4 I0=state[0] I1=state[1] I2=state[4] I3=state[5] O=$abc$4085$new_n189_
+.gate SB_LUT4 I0=state[0] I1=state[1] I2=state[4] I3=state[5] O=$abc$4194$new_n189_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=$abc$4085$new_n191_ I1=state[0] I2=state[1] I3=$false O=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2902[0]_new_
+.gate SB_LUT4 I0=$abc$4194$new_n191_ I1=state[0] I2=state[1] I3=$false O=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[0]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10000000
-.gate SB_LUT4 I0=state[2] I1=state[4] I2=state[5] I3=state[3] O=$abc$4085$new_n191_
+.gate SB_LUT4 I0=state[2] I1=state[4] I2=state[5] I3=state[3] O=$abc$4194$new_n191_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000100000000
-.gate SB_LUT4 I0=params_left[3] I1=params_left[4] I2=$abc$4085$new_n195_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ O=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_
+.gate SB_LUT4 I0=params_left[3] I1=params_left[4] I2=$abc$4194$new_n195_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ O=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111100000000
-.gate SB_LUT4 I0=$abc$4085$new_n189_ I1=state[2] I2=state[3] I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_
+.gate SB_LUT4 I0=$abc$4194$new_n189_ I1=state[2] I2=state[3] I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10000000
-.gate SB_LUT4 I0=$abc$4085$new_n196_ I1=$abc$4085$new_n197_ I2=$abc$4085$new_n198_ I3=$false O=$abc$4085$new_n195_
+.gate SB_LUT4 I0=$abc$4194$new_n196_ I1=$abc$4194$new_n197_ I2=$abc$4194$new_n198_ I3=$false O=$abc$4194$new_n195_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10000000
-.gate SB_LUT4 I0=params_left[6] I1=params_left[9] I2=params_left[11] I3=params_left[12] O=$abc$4085$new_n196_
+.gate SB_LUT4 I0=params_left[6] I1=params_left[9] I2=params_left[11] I3=params_left[12] O=$abc$4194$new_n196_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=params_left[0] I1=params_left[1] I2=params_left[2] I3=params_left[5] O=$abc$4085$new_n197_
+.gate SB_LUT4 I0=params_left[0] I1=params_left[1] I2=params_left[2] I3=params_left[5] O=$abc$4194$new_n197_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=params_left[7] I1=params_left[8] I2=params_left[10] I3=params_left[13] O=$abc$4085$new_n198_
+.gate SB_LUT4 I0=params_left[7] I1=params_left[8] I2=params_left[10] I3=params_left[13] O=$abc$4194$new_n198_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=$false I3=$false O=$abc$4085$memory\num_params$rdmux[0][2][0]$b$938[0]_new_
+.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=$false I3=$false O=$abc$4194$memory\num_params$rdmux[0][2][0]$b$941[0]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0110
-.gate SB_LUT4 I0=$abc$4085$sub$demo.v:306$145_Y[4] I1=state[0] I2=state[1] I3=$abc$4085$new_n191_ O=$abc$4085$new_n203_
+.gate SB_LUT4 I0=$abc$4194$sub$demo.v:306$145_Y[4] I1=state[0] I2=state[1] I3=$abc$4194$new_n191_ O=$abc$4194$new_n203_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0100000000000000
-.gate SB_LUT4 I0=$abc$4085$memory\num_params$rdmux[0][0][0]$a$928[4]_new_ I1=$abc$4085$new_n203_ I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I3=$abc$4085$sub$demo.v:317$148_Y[4] O=$0\params_left[13:0][4]
+.gate SB_LUT4 I0=$abc$4194$memory\num_params$rdmux[0][0][0]$a$931[4]_new_ I1=$abc$4194$new_n203_ I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I3=$abc$4194$sub$demo.v:317$148_Y[4] O=$0\params_left[13:0][4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111100010001000
-.gate SB_LUT4 I0=$abc$4085$memory\num_params$rdmux[0][2][0]$b$938[0]_new_ I1=$abc$4085$sub$demo.v:306$145_Y[2] I2=$abc$4085$sub$demo.v:306$145_Y[3] I3=$false O=$abc$4085$memory\num_params$rdmux[0][0][0]$a$928[4]_new_
+.gate SB_LUT4 I0=$abc$4194$memory\num_params$rdmux[0][2][0]$b$941[0]_new_ I1=$abc$4194$sub$demo.v:306$145_Y[2] I2=$abc$4194$sub$demo.v:306$145_Y[3] I3=$false O=$abc$4194$memory\num_params$rdmux[0][0][0]$a$931[4]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00010000
-.gate SB_LUT4 I0=$abc$4085$new_n209_ I1=$abc$4085$new_n207_ I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I3=$abc$4085$sub$demo.v:317$148_Y[0] O=$0\params_left[13:0][0]
+.gate SB_LUT4 I0=$abc$4194$new_n209_ I1=$abc$4194$new_n207_ I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I3=$abc$4194$sub$demo.v:317$148_Y[0] O=$0\params_left[13:0][0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010001000100
-.gate SB_LUT4 I0=$abc$4085$sub$demo.v:306$145_Y[3] I1=$abc$4085$memory\num_params$rdmux[0][2][0]$a$937[2]_new_ I2=$abc$4085$new_n203_ I3=$false O=$abc$4085$new_n207_
+.gate SB_LUT4 I0=$abc$4194$sub$demo.v:306$145_Y[3] I1=$abc$4194$memory\num_params$rdmux[0][2][0]$a$940[2]_new_ I2=$abc$4194$new_n203_ I3=$false O=$abc$4194$new_n207_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10110000
-.gate SB_LUT4 I0=$abc$4085$memory\num_params$rdmux[0][2][0]$b$938[0]_new_ I1=$abc$4085$memory\num_params$rdmux[0][3][0]$b$950[0] I2=$false I3=$false O=$abc$4085$memory\num_params$rdmux[0][2][0]$a$937[2]_new_
+.gate SB_LUT4 I0=$abc$4194$memory\num_params$rdmux[0][2][0]$b$941[0]_new_ I1=$abc$4194$memory\num_params$rdmux[0][3][0]$b$953[0] I2=$false I3=$false O=$abc$4194$memory\num_params$rdmux[0][2][0]$a$940[2]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0001
-.gate SB_LUT4 I0=$abc$4085$memory\num_params$rdmux[0][2][0]$b$938[0]_new_ I1=$abc$4085$memory\num_params$rdmux[0][3][0]$b$950[0] I2=$abc$4085$sub$demo.v:306$145_Y[3] I3=$abc$4085$sub$demo.v:306$145_Y[2] O=$abc$4085$new_n209_
+.gate SB_LUT4 I0=$abc$4194$memory\num_params$rdmux[0][2][0]$b$941[0]_new_ I1=$abc$4194$memory\num_params$rdmux[0][3][0]$b$953[0] I2=$abc$4194$sub$demo.v:306$145_Y[3] I3=$abc$4194$sub$demo.v:306$145_Y[2] O=$abc$4194$new_n209_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0100010001110000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[9] I2=$abc$4085$procmux$527.B_AND_S[27]_new_ I3=$false O=$0\params_left[13:0][9]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[9] I2=$abc$4194$procmux$527.B_AND_S[27]_new_ I3=$false O=$0\params_left[13:0][9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2902[0]_new_ I1=$abc$4085$memory\num_params$rdmux[0][2][0]$a$937[2]_new_ I2=$abc$4085$sub$demo.v:306$145_Y[2] I3=$abc$4085$sub$demo.v:306$145_Y[4] O=$abc$4085$procmux$527.B_AND_S[27]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[0]_new_ I1=$abc$4194$memory\num_params$rdmux[0][2][0]$a$940[2]_new_ I2=$abc$4194$sub$demo.v:306$145_Y[2] I3=$abc$4194$sub$demo.v:306$145_Y[4] O=$abc$4194$procmux$527.B_AND_S[27]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000000000000000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[12] I2=$abc$4085$procmux$527.B_AND_S[27]_new_ I3=$false O=$0\params_left[13:0][12]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[12] I2=$abc$4194$procmux$527.B_AND_S[27]_new_ I3=$false O=$0\params_left[13:0][12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[13] I2=$abc$4085$procmux$527.B_AND_S[27]_new_ I3=$false O=$0\params_left[13:0][13]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[13] I2=$abc$4194$procmux$527.B_AND_S[27]_new_ I3=$false O=$0\params_left[13:0][13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[2] I2=$abc$4085$procmux$527.B_AND_S[16]_new_inv_ I3=$false O=$0\params_left[13:0][2]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[2] I2=$abc$4194$procmux$527.B_AND_S[16]_new_inv_ I3=$false O=$0\params_left[13:0][2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10001111
-.gate SB_LUT4 I0=$abc$4085$new_n207_ I1=$abc$4085$memory\num_params$rdmux[0][0][0]$b$929[2]_new_ I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2902[0]_new_ I3=$false O=$abc$4085$procmux$527.B_AND_S[16]_new_inv_
+.gate SB_LUT4 I0=$abc$4194$new_n207_ I1=$abc$4194$memory\num_params$rdmux[0][0][0]$b$932[2]_new_ I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[0]_new_ I3=$false O=$abc$4194$procmux$527.B_AND_S[16]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10111111
-.gate SB_LUT4 I0=$abc$4085$memory\num_params$rdmux[0][3][0]$b$950[0] I1=$abc$4085$sub$demo.v:306$145_Y[2] I2=$abc$4085$memory\num_params$rdmux[0][2][0]$b$938[0]_new_ I3=$false O=$abc$4085$memory\num_params$rdmux[0][0][0]$b$929[2]_new_
+.gate SB_LUT4 I0=$abc$4194$memory\num_params$rdmux[0][3][0]$b$953[0] I1=$abc$4194$sub$demo.v:306$145_Y[2] I2=$abc$4194$memory\num_params$rdmux[0][2][0]$b$941[0]_new_ I3=$false O=$abc$4194$memory\num_params$rdmux[0][0][0]$b$932[2]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11100001
-.gate SB_LUT4 I0=$abc$4085$memrd$\params$demo.v:310$146_DATA[7]_new_inv_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I2=$abc$4085$procmux$555.B_AND_S[15]_new_ I3=$false O=$0\data[7:0][7]
+.gate SB_LUT4 I0=$abc$4194$memrd$\params$demo.v:310$146_DATA[7]_new_inv_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I2=$abc$4194$procmux$558.B_AND_S[15]_new_ I3=$false O=$0\data[7:0][7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11110100
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[2]_new_inv_ I1=data[7] I2=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[3]_new_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ O=$abc$4085$procmux$555.B_AND_S[15]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[2]_new_inv_ I1=data[7] I2=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[3]_new_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ O=$abc$4194$procmux$558.B_AND_S[15]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111100000000000
-.gate SB_LUT4 I0=state[0] I1=$abc$4085$new_n221_ I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_
+.gate SB_LUT4 I0=state[0] I1=$abc$4194$new_n221_ I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=state[1] I1=$abc$4085$new_n222_ I2=$false I3=$false O=$abc$4085$new_n221_
+.gate SB_LUT4 I0=state[1] I1=$abc$4194$new_n222_ I2=$false I3=$false O=$abc$4194$new_n221_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=state[3] I1=state[4] I2=state[5] I3=state[2] O=$abc$4085$new_n222_
+.gate SB_LUT4 I0=state[3] I1=state[4] I2=state[5] I3=state[2] O=$abc$4194$new_n222_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000100000000
-.gate SB_LUT4 I0=$abc$4085$memory\cmd$rdmux[0][0][0]$a$787[7]_new_inv_ I1=cmd_counter[4] I2=$false I3=$false O=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[3]_new_
+.gate SB_LUT4 I0=$abc$4194$memory\cmd$rdmux[0][0][0]$a$790[7]_new_inv_ I1=cmd_counter[4] I2=$false I3=$false O=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[3]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0001
-.gate SB_LUT4 I0=cmd_counter[1] I1=cmd_counter[0] I2=cmd_counter[2] I3=cmd_counter[3] O=$abc$4085$memory\cmd$rdmux[0][0][0]$a$787[7]_new_inv_
+.gate SB_LUT4 I0=cmd_counter[1] I1=cmd_counter[0] I2=cmd_counter[2] I3=cmd_counter[3] O=$abc$4194$memory\cmd$rdmux[0][0][0]$a$790[7]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110000000000000
-.gate SB_LUT4 I0=$abc$4085$new_n226_ I1=$abc$4085$new_n227_ I2=$false I3=$false O=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[2]_new_inv_
+.gate SB_LUT4 I0=$abc$4194$new_n226_ I1=$abc$4194$new_n227_ I2=$false I3=$false O=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[2]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=cmd_counter[2] I3=cmd_counter[4] O=$abc$4085$new_n226_
+.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=cmd_counter[2] I3=cmd_counter[4] O=$abc$4194$new_n226_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0111111100000000
-.gate SB_LUT4 I0=cmd_counter[1] I1=cmd_counter[4] I2=cmd_counter[2] I3=cmd_counter[3] O=$abc$4085$new_n227_
+.gate SB_LUT4 I0=cmd_counter[1] I1=cmd_counter[4] I2=cmd_counter[2] I3=cmd_counter[3] O=$abc$4194$new_n227_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1100110111111100
-.gate SB_LUT4 I0=$abc$4085$new_n232_ I1=$abc$4085$new_n234_ I2=$abc$4085$new_n229_ I3=$abc$4085$new_n237_ O=$abc$4085$memrd$\params$demo.v:310$146_DATA[7]_new_inv_
+.gate SB_LUT4 I0=$abc$4194$new_n232_ I1=$abc$4194$new_n234_ I2=$abc$4194$new_n229_ I3=$abc$4194$new_n237_ O=$abc$4194$memrd$\params$demo.v:310$146_DATA[7]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0100111100000000
-.gate SB_LUT4 I0=param_counter[2] I1=$abc$4085$new_n230_ I2=param_counter[5] I3=param_counter[6] O=$abc$4085$new_n229_
+.gate SB_LUT4 I0=param_counter[2] I1=$abc$4194$new_n230_ I2=param_counter[5] I3=param_counter[6] O=$abc$4194$new_n229_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000001001111
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=$abc$4085$new_n231_ I3=$false O=$abc$4085$new_n230_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=$abc$4194$new_n231_ I3=$false O=$abc$4194$new_n230_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00010000
-.gate SB_LUT4 I0=param_counter[4] I1=param_counter[3] I2=$false I3=$false O=$abc$4085$new_n231_
+.gate SB_LUT4 I0=param_counter[4] I1=param_counter[3] I2=$false I3=$false O=$abc$4194$new_n231_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[1] I3=$abc$4085$new_n233_ O=$abc$4085$new_n232_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[1] I3=$abc$4194$new_n233_ O=$abc$4194$new_n232_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0110100100000000
-.gate SB_LUT4 I0=param_counter[3] I1=param_counter[4] I2=$false I3=$false O=$abc$4085$new_n233_
+.gate SB_LUT4 I0=param_counter[3] I1=param_counter[4] I2=$false I3=$false O=$abc$4194$new_n233_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][4][1]$a$1221[0]_new_ I1=$abc$4085$new_n236_ I2=param_counter[2] I3=param_counter[5] O=$abc$4085$new_n234_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][4][1]$a$1224[0]_new_ I1=$abc$4194$new_n236_ I2=param_counter[2] I3=param_counter[5] O=$abc$4194$new_n234_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000001111111
-.gate SB_LUT4 I0=param_counter[1] I1=param_counter[0] I2=$false I3=$false O=$abc$4085$memory\params$rdmux[0][4][1]$a$1221[0]_new_
+.gate SB_LUT4 I0=param_counter[1] I1=param_counter[0] I2=$false I3=$false O=$abc$4194$memory\params$rdmux[0][4][1]$a$1224[0]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=param_counter[4] I1=param_counter[3] I2=$false I3=$false O=$abc$4085$new_n236_
+.gate SB_LUT4 I0=param_counter[4] I1=param_counter[3] I2=$false I3=$false O=$abc$4194$new_n236_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[3] I2=param_counter[1] I3=param_counter[6] O=$abc$4085$new_n237_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[3] I2=param_counter[1] I3=param_counter[6] O=$abc$4194$new_n237_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0110111111111111
-.gate SB_LUT4 I0=data[6] I1=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_ I2=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[6]_new_ I3=$false O=$abc$4085$procmux$558_Y[6]_new_inv_
+.gate SB_LUT4 I0=data[6] I1=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_ I2=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[6]_new_ I3=$false O=$abc$4194$procmux$561_Y[6]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00000111
-.gate SB_LUT4 I0=cmd_counter[3] I1=cmd_counter[2] I2=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[3]_new_ I3=$false O=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[6]_new_
+.gate SB_LUT4 I0=cmd_counter[3] I1=cmd_counter[2] I2=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[3]_new_ I3=$false O=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[6]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11100000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[3]_new_ I1=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[2]_new_inv_ I2=$false I3=$false O=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[3]_new_ I1=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[2]_new_inv_ I2=$false I3=$false O=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][0][0]$b$1174[6]_new_ I1=param_counter[6] I2=$false I3=$false O=$abc$4085$new_n243_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][0][0]$b$1177[6]_new_ I1=param_counter[6] I2=$false I3=$false O=$abc$4194$new_n243_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=param_counter[1] I1=param_counter[3] I2=$false I3=$false O=$abc$4085$memory\params$rdmux[0][0][0]$b$1174[6]_new_
+.gate SB_LUT4 I0=param_counter[1] I1=param_counter[3] I2=$false I3=$false O=$abc$4194$memory\params$rdmux[0][0][0]$b$1177[6]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=$false I3=$false O=$abc$4085$memory\params$rdmux[0][4][0]$b$1219[5]_new_inv_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=$false I3=$false O=$abc$4194$memory\params$rdmux[0][4][0]$b$1222[5]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=$abc$4085$new_n251_ I1=$abc$4085$new_n257_ I2=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I3=$abc$4085$procmux$555.B_AND_S[13]_new_ O=$0\data[7:0][5]
+.gate SB_LUT4 I0=$abc$4194$new_n251_ I1=$abc$4194$new_n257_ I2=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I3=$abc$4194$procmux$558.B_AND_S[13]_new_ O=$0\data[7:0][5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111111110110000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[3]_new_ I1=data[5] I2=$abc$4085$auto$simplemap.cc:168:logic_reduce$1750[2]_new_inv_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ O=$abc$4085$procmux$555.B_AND_S[13]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[3]_new_ I1=data[5] I2=$abc$4194$auto$simplemap.cc:168:logic_reduce$1759[2]_new_inv_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ O=$abc$4194$procmux$558.B_AND_S[13]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0100111100000000
-.gate SB_LUT4 I0=$abc$4085$new_n254_ I1=$abc$4085$new_n252_ I2=$abc$4085$new_n234_ I3=$abc$4085$new_n255_ O=$abc$4085$new_n251_
+.gate SB_LUT4 I0=$abc$4194$new_n254_ I1=$abc$4194$new_n252_ I2=$abc$4194$new_n234_ I3=$abc$4194$new_n255_ O=$abc$4194$new_n251_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1011111100000000
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][2][0]$a$1182[4]_new_inv_ I1=param_counter[4] I2=$false I3=$false O=$abc$4085$new_n252_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][2][0]$a$1185[4]_new_inv_ I1=param_counter[4] I2=$false I3=$false O=$abc$4194$new_n252_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1110
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[3] I2=param_counter[1] I3=param_counter[0] O=$abc$4085$memory\params$rdmux[0][2][0]$a$1182[4]_new_inv_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[3] I2=param_counter[1] I3=param_counter[0] O=$abc$4194$memory\params$rdmux[0][2][0]$a$1185[4]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001110010101001
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[2] I2=$abc$4085$new_n233_ I3=$false O=$abc$4085$new_n254_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[2] I2=$abc$4194$new_n233_ I3=$false O=$abc$4194$new_n254_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=$abc$4085$new_n256_ I1=param_counter[1] I2=param_counter[5] I3=param_counter[6] O=$abc$4085$new_n255_
+.gate SB_LUT4 I0=$abc$4194$new_n256_ I1=param_counter[1] I2=param_counter[5] I3=param_counter[6] O=$abc$4194$new_n255_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000001001111
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[4] I2=param_counter[2] I3=param_counter[3] O=$abc$4085$new_n256_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[4] I2=param_counter[2] I3=param_counter[3] O=$abc$4194$new_n256_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1011101111110000
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][0][0]$b$1174[6]_new_ I1=$abc$4085$memory\params$rdmux[0][4][0]$b$1219[5]_new_inv_ I2=param_counter[6] I3=$false O=$abc$4085$new_n257_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][0][0]$b$1177[6]_new_ I1=$abc$4194$memory\params$rdmux[0][4][0]$b$1222[5]_new_inv_ I2=param_counter[6] I3=$false O=$abc$4194$new_n257_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00011111
-.gate SB_LUT4 I0=$abc$4085$new_n262_ I1=$abc$4085$new_n267_ I2=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I3=$abc$4085$procmux$555.B_AND_S[12]_new_ O=$0\data[7:0][4]
+.gate SB_LUT4 I0=$abc$4194$new_n262_ I1=$abc$4194$new_n267_ I2=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I3=$abc$4194$procmux$558.B_AND_S[12]_new_ O=$0\data[7:0][4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111111111100000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_ I1=data[4] I2=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[4]_new_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ O=$abc$4085$procmux$555.B_AND_S[12]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_ I1=data[4] I2=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[4]_new_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ O=$abc$4194$procmux$558.B_AND_S[12]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111100000000000
-.gate SB_LUT4 I0=$abc$4085$memory\cmd$rdmux[0][2][1]$b$800[4]_new_inv_ I1=cmd_counter[4] I2=cmd_counter[3] I3=cmd_counter[2] O=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[4]_new_
+.gate SB_LUT4 I0=$abc$4194$memory\cmd$rdmux[0][2][1]$b$803[4]_new_inv_ I1=cmd_counter[4] I2=cmd_counter[3] I3=cmd_counter[2] O=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[4]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0001000000000011
-.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=$false I3=$false O=$abc$4085$memory\cmd$rdmux[0][2][1]$b$800[4]_new_inv_
+.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=$false I3=$false O=$abc$4194$memory\cmd$rdmux[0][2][1]$b$803[4]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$new_n266_ I1=param_counter[5] I2=$abc$4085$new_n252_ I3=$abc$4085$new_n263_ O=$abc$4085$new_n262_
+.gate SB_LUT4 I0=$abc$4194$new_n266_ I1=param_counter[5] I2=$abc$4194$new_n252_ I3=$abc$4194$new_n263_ O=$abc$4194$new_n262_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111100000000
-.gate SB_LUT4 I0=$abc$4085$new_n265_ I1=$abc$4085$new_n264_ I2=param_counter[6] I3=$false O=$abc$4085$new_n263_
+.gate SB_LUT4 I0=$abc$4194$new_n265_ I1=$abc$4194$new_n264_ I2=param_counter[6] I3=$false O=$abc$4194$new_n263_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00000111
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[2] I2=param_counter[1] I3=$abc$4085$new_n231_ O=$abc$4085$new_n264_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[2] I2=param_counter[1] I3=$abc$4194$new_n231_ O=$abc$4194$new_n264_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110101111111111
-.gate SB_LUT4 I0=param_counter[3] I1=param_counter[1] I2=param_counter[0] I3=param_counter[5] O=$abc$4085$new_n265_
+.gate SB_LUT4 I0=param_counter[3] I1=param_counter[1] I2=param_counter[0] I3=param_counter[5] O=$abc$4194$new_n265_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1011111100000000
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=$abc$4085$new_n231_ I3=param_counter[2] O=$abc$4085$new_n266_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=$abc$4194$new_n231_ I3=param_counter[2] O=$abc$4194$new_n266_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0001000000000000
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][4][0]$b$1219[5]_new_inv_ I1=$abc$4085$new_n268_ I2=$false I3=$false O=$abc$4085$new_n267_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][4][0]$b$1222[5]_new_inv_ I1=$abc$4194$new_n268_ I2=$false I3=$false O=$abc$4194$new_n267_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][4][1]$a$1221[0]_new_ I1=param_counter[3] I2=param_counter[6] I3=$false O=$abc$4085$new_n268_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][4][1]$a$1224[0]_new_ I1=param_counter[3] I2=param_counter[6] I3=$false O=$abc$4194$new_n268_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_ I1=data[3] I2=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[3]_new_inv_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ O=$abc$4085$procmux$555.B_AND_S[11]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_ I1=data[3] I2=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[3]_new_inv_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ O=$abc$4194$procmux$558.B_AND_S[11]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000111100000000
-.gate SB_LUT4 I0=cmd_counter[1] I1=$abc$4085$new_n272_ I2=cmd_counter[2] I3=$abc$4085$new_n226_ O=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[3]_new_inv_
+.gate SB_LUT4 I0=cmd_counter[1] I1=$abc$4194$new_n272_ I2=cmd_counter[2] I3=$abc$4194$new_n226_ O=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[3]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000010111111
-.gate SB_LUT4 I0=cmd_counter[4] I1=cmd_counter[3] I2=$false I3=$false O=$abc$4085$new_n272_
+.gate SB_LUT4 I0=cmd_counter[4] I1=cmd_counter[3] I2=$false I3=$false O=$abc$4194$new_n272_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[1] I3=param_counter[3] O=$abc$4085$new_n276_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[1] I3=param_counter[3] O=$abc$4194$new_n276_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110101100000000
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=param_counter[3] I3=param_counter[0] O=$abc$4085$memory\params$rdmux[0][2][0]$a$1182[3]_new_inv_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=param_counter[3] I3=param_counter[0] O=$abc$4194$memory\params$rdmux[0][2][0]$a$1185[3]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001010000101001
-.gate SB_LUT4 I0=$abc$4085$new_n281_ I1=$abc$4085$new_n280_ I2=param_counter[3] I3=param_counter[5] O=$abc$4085$new_n279_
+.gate SB_LUT4 I0=$abc$4194$new_n281_ I1=$abc$4194$new_n280_ I2=param_counter[3] I3=param_counter[5] O=$abc$4194$new_n279_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111100000000
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[1] I3=param_counter[4] O=$abc$4085$new_n280_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[1] I3=param_counter[4] O=$abc$4194$new_n280_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000011101000
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=param_counter[0] I3=param_counter[4] O=$abc$4085$new_n281_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=param_counter[0] I3=param_counter[4] O=$abc$4194$new_n281_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111000100000000
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[2] I2=param_counter[1] I3=param_counter[3] O=$abc$4085$new_n282_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[2] I2=param_counter[1] I3=param_counter[3] O=$abc$4194$new_n282_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000001011
-.gate SB_LUT4 I0=$abc$4085$memrd$\params$demo.v:310$146_DATA[2]_new_inv_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I2=$abc$4085$procmux$555.B_AND_S[10]_new_ I3=$false O=$0\data[7:0][2]
+.gate SB_LUT4 I0=$abc$4194$memrd$\params$demo.v:310$146_DATA[2]_new_inv_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I2=$abc$4194$procmux$558.B_AND_S[10]_new_ I3=$false O=$0\data[7:0][2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11110100
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_ I1=data[2] I2=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[2]_new_inv_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ O=$abc$4085$procmux$555.B_AND_S[10]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_ I1=data[2] I2=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[2]_new_inv_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ O=$abc$4194$procmux$558.B_AND_S[10]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000111100000000
-.gate SB_LUT4 I0=$abc$4085$memory\cmd$rdmux[0][1][0]$a$790[0]_new_ I1=cmd_counter[1] I2=$abc$4085$memory\cmd$rdmux[0][0][0]$a$787[2]_new_ I3=cmd_counter[4] O=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[2]_new_inv_
+.gate SB_LUT4 I0=$abc$4194$memory\cmd$rdmux[0][1][0]$a$793[0]_new_ I1=cmd_counter[1] I2=$abc$4194$memory\cmd$rdmux[0][0][0]$a$790[2]_new_ I3=cmd_counter[4] O=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[2]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1011101100001111
-.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[2] I2=$false I3=$false O=$abc$4085$memory\cmd$rdmux[0][1][0]$a$790[0]_new_
+.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[2] I2=$false I3=$false O=$abc$4194$memory\cmd$rdmux[0][1][0]$a$793[0]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1001
-.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=cmd_counter[2] I3=cmd_counter[3] O=$abc$4085$memory\cmd$rdmux[0][0][0]$a$787[2]_new_
+.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[1] I2=cmd_counter[2] I3=cmd_counter[3] O=$abc$4194$memory\cmd$rdmux[0][0][0]$a$790[2]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0101001100001000
-.gate SB_LUT4 I0=param_counter[6] I1=$abc$4085$new_n290_ I2=$abc$4085$new_n294_ I3=$abc$4085$new_n289_ O=$abc$4085$memrd$\params$demo.v:310$146_DATA[2]_new_inv_
+.gate SB_LUT4 I0=param_counter[6] I1=$abc$4194$new_n290_ I2=$abc$4194$new_n294_ I3=$abc$4194$new_n289_ O=$abc$4194$memrd$\params$demo.v:310$146_DATA[2]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000011111110
-.gate SB_LUT4 I0=$abc$4085$new_n243_ I1=param_counter[0] I2=$false I3=$false O=$abc$4085$new_n289_
+.gate SB_LUT4 I0=$abc$4194$new_n243_ I1=param_counter[0] I2=$false I3=$false O=$abc$4194$new_n289_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=param_counter[3] I1=$abc$4085$memory\params$rdmux[0][2][0]$a$1182[4]_new_inv_ I2=$abc$4085$new_n281_ I3=$abc$4085$new_n292_ O=$abc$4085$new_n290_
+.gate SB_LUT4 I0=param_counter[3] I1=$abc$4194$memory\params$rdmux[0][2][0]$a$1185[4]_new_inv_ I2=$abc$4194$new_n281_ I3=$abc$4194$new_n292_ O=$abc$4194$new_n290_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000101100000000
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][3][0]$b$1195[2]_new_inv_ I1=param_counter[3] I2=param_counter[4] I3=param_counter[5] O=$abc$4085$new_n292_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][3][0]$b$1198[2]_new_inv_ I1=param_counter[3] I2=param_counter[4] I3=param_counter[5] O=$abc$4194$new_n292_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000011111000
-.gate SB_LUT4 I0=param_counter[1] I1=param_counter[0] I2=param_counter[2] I3=$false O=$abc$4085$memory\params$rdmux[0][3][0]$b$1195[2]_new_inv_
+.gate SB_LUT4 I0=param_counter[1] I1=param_counter[0] I2=param_counter[2] I3=$false O=$abc$4194$memory\params$rdmux[0][3][0]$b$1198[2]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01110000
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][2][1]$b$1186[2]_new_ I1=$abc$4085$new_n295_ I2=$false I3=$false O=$abc$4085$new_n294_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][2][1]$b$1189[2]_new_ I1=$abc$4194$new_n295_ I2=$false I3=$false O=$abc$4194$new_n294_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][3][2]$b$1201[2]_new_inv_ I1=$abc$4085$new_n236_ I2=param_counter[5] I3=$false O=$abc$4085$new_n295_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][3][2]$b$1204[2]_new_inv_ I1=$abc$4194$new_n236_ I2=param_counter[5] I3=$false O=$abc$4194$new_n295_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10110000
-.gate SB_LUT4 I0=param_counter[1] I1=param_counter[2] I2=param_counter[0] I3=$false O=$abc$4085$memory\params$rdmux[0][3][2]$b$1201[2]_new_inv_
+.gate SB_LUT4 I0=param_counter[1] I1=param_counter[2] I2=param_counter[0] I3=$false O=$abc$4194$memory\params$rdmux[0][3][2]$b$1204[2]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00001011
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[3] I3=param_counter[1] O=$abc$4085$memory\params$rdmux[0][2][1]$b$1186[2]_new_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[0] I2=param_counter[3] I3=param_counter[1] O=$abc$4194$memory\params$rdmux[0][2][1]$b$1189[2]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000011101000100
-.gate SB_LUT4 I0=$abc$4085$new_n267_ I1=$abc$4085$new_n299_ I2=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I3=$abc$4085$procmux$555.B_AND_S[9]_new_ O=$0\data[7:0][1]
+.gate SB_LUT4 I0=$abc$4194$new_n267_ I1=$abc$4194$new_n299_ I2=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I3=$abc$4194$procmux$558.B_AND_S[9]_new_ O=$0\data[7:0][1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111111111100000
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][1][0]$b$1177[1]_new_inv_ I1=param_counter[5] I2=$abc$4085$new_n300_ I3=param_counter[6] O=$abc$4085$new_n299_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][1][0]$b$1180[1]_new_inv_ I1=param_counter[5] I2=$abc$4194$new_n300_ I3=param_counter[6] O=$abc$4194$new_n299_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000011110100
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][3][1]$a$1197[1]_new_ I1=$abc$4085$new_n233_ I2=$abc$4085$new_n264_ I3=$abc$4085$new_n292_ O=$abc$4085$new_n300_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][3][1]$a$1200[1]_new_ I1=$abc$4194$new_n233_ I2=$abc$4194$new_n264_ I3=$abc$4194$new_n292_ O=$abc$4194$new_n300_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1011000000000000
-.gate SB_LUT4 I0=param_counter[1] I1=param_counter[0] I2=param_counter[2] I3=$false O=$abc$4085$memory\params$rdmux[0][3][1]$a$1197[1]_new_
+.gate SB_LUT4 I0=param_counter[1] I1=param_counter[0] I2=param_counter[2] I3=$false O=$abc$4194$memory\params$rdmux[0][3][1]$a$1200[1]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10110000
-.gate SB_LUT4 I0=param_counter[4] I1=$abc$4085$new_n276_ I2=$abc$4085$new_n266_ I3=$abc$4085$new_n303_ O=$abc$4085$memory\params$rdmux[0][1][0]$b$1177[1]_new_inv_
+.gate SB_LUT4 I0=param_counter[4] I1=$abc$4194$new_n276_ I2=$abc$4194$new_n266_ I3=$abc$4194$new_n303_ O=$abc$4194$memory\params$rdmux[0][1][0]$b$1180[1]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000101100000000
-.gate SB_LUT4 I0=param_counter[2] I1=$abc$4085$memory\params$rdmux[0][4][1]$a$1221[0]_new_ I2=$abc$4085$new_n233_ I3=$abc$4085$new_n304_ O=$abc$4085$new_n303_
+.gate SB_LUT4 I0=param_counter[2] I1=$abc$4194$memory\params$rdmux[0][4][1]$a$1224[0]_new_ I2=$abc$4194$new_n233_ I3=$abc$4194$new_n304_ O=$abc$4194$new_n303_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000010111111
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[4] I2=param_counter[3] I3=param_counter[0] O=$abc$4085$new_n304_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[4] I2=param_counter[3] I3=param_counter[0] O=$abc$4194$new_n304_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000100000000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_ I1=data[1] I2=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[1]_new_inv_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ O=$abc$4085$procmux$555.B_AND_S[9]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_ I1=data[1] I2=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[1]_new_inv_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ O=$abc$4194$procmux$558.B_AND_S[9]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000111100000000
-.gate SB_LUT4 I0=cmd_counter[4] I1=$abc$4085$memory\cmd$rdmux[0][0][0]$a$787[1]_new_inv_ I2=$abc$4085$new_n307_ I3=$false O=$abc$4085$memrd$\cmd$demo.v:228$132_DATA[1]_new_inv_
+.gate SB_LUT4 I0=cmd_counter[4] I1=$abc$4194$memory\cmd$rdmux[0][0][0]$a$790[1]_new_inv_ I2=$abc$4194$new_n307_ I3=$false O=$abc$4194$memrd$\cmd$demo.v:228$132_DATA[1]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00001110
-.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[2] I2=cmd_counter[1] I3=cmd_counter[4] O=$abc$4085$new_n307_
+.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[2] I2=cmd_counter[1] I3=cmd_counter[4] O=$abc$4194$new_n307_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0001111000000000
-.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[3] I2=cmd_counter[2] I3=cmd_counter[1] O=$abc$4085$memory\cmd$rdmux[0][0][0]$a$787[1]_new_inv_
+.gate SB_LUT4 I0=cmd_counter[0] I1=cmd_counter[3] I2=cmd_counter[2] I3=cmd_counter[1] O=$abc$4194$memory\cmd$rdmux[0][0][0]$a$790[1]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000111001111101
-.gate SB_LUT4 I0=$abc$4085$memrd$\params$demo.v:310$146_DATA[0]_new_inv_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I2=$abc$4085$procmux$558_Y[0]_new_inv_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ O=$0\data[7:0][0]
+.gate SB_LUT4 I0=$abc$4194$memrd$\params$demo.v:310$146_DATA[0]_new_inv_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I2=$abc$4194$procmux$561_Y[0]_new_inv_ I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ O=$0\data[7:0][0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0100111101000100
-.gate SB_LUT4 I0=data[0] I1=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_ I2=$abc$4085$new_n312_ I3=$abc$4085$new_n311_ O=$abc$4085$procmux$558_Y[0]_new_inv_
+.gate SB_LUT4 I0=data[0] I1=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_ I2=$abc$4194$new_n312_ I3=$abc$4194$new_n311_ O=$abc$4194$procmux$561_Y[0]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000111
-.gate SB_LUT4 I0=cmd_counter[2] I1=cmd_counter[1] I2=$abc$4085$new_n272_ I3=cmd_counter[0] O=$abc$4085$new_n311_
+.gate SB_LUT4 I0=cmd_counter[2] I1=cmd_counter[1] I2=$abc$4194$new_n272_ I3=cmd_counter[0] O=$abc$4194$new_n311_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1101000000000000
-.gate SB_LUT4 I0=cmd_counter[3] I1=$abc$4085$memory\cmd$rdmux[0][2][1]$b$800[4]_new_inv_ I2=cmd_counter[4] I3=$abc$4085$memory\cmd$rdmux[0][1][0]$a$790[0]_new_ O=$abc$4085$new_n312_
+.gate SB_LUT4 I0=cmd_counter[3] I1=$abc$4194$memory\cmd$rdmux[0][2][1]$b$803[4]_new_inv_ I2=cmd_counter[4] I3=$abc$4194$memory\cmd$rdmux[0][1][0]$a$793[0]_new_ O=$abc$4194$new_n312_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0011010100000000
-.gate SB_LUT4 I0=param_counter[6] I1=$abc$4085$new_n317_ I2=$abc$4085$new_n314_ I3=$abc$4085$new_n321_ O=$abc$4085$memrd$\params$demo.v:310$146_DATA[0]_new_inv_
+.gate SB_LUT4 I0=param_counter[6] I1=$abc$4194$new_n317_ I2=$abc$4194$new_n314_ I3=$abc$4194$new_n321_ O=$abc$4194$memrd$\params$demo.v:310$146_DATA[0]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000011111110
-.gate SB_LUT4 I0=param_counter[4] I1=$abc$4085$memory\params$rdmux[0][2][0]$a$1182[0]_new_inv_ I2=$abc$4085$new_n315_ I3=param_counter[5] O=$abc$4085$new_n314_
+.gate SB_LUT4 I0=param_counter[4] I1=$abc$4194$memory\params$rdmux[0][2][0]$a$1185[0]_new_inv_ I2=$abc$4194$new_n315_ I3=param_counter[5] O=$abc$4194$new_n314_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000001110
-.gate SB_LUT4 I0=param_counter[2] I1=$abc$4085$memory\params$rdmux[0][4][1]$a$1221[0]_new_ I2=param_counter[3] I3=$abc$4085$new_n281_ O=$abc$4085$new_n315_
+.gate SB_LUT4 I0=param_counter[2] I1=$abc$4194$memory\params$rdmux[0][4][1]$a$1224[0]_new_ I2=param_counter[3] I3=$abc$4194$new_n281_ O=$abc$4194$new_n315_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1011111100000000
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[3] I2=param_counter[0] I3=param_counter[1] O=$abc$4085$memory\params$rdmux[0][2][0]$a$1182[0]_new_inv_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[3] I2=param_counter[0] I3=param_counter[1] O=$abc$4194$memory\params$rdmux[0][2][0]$a$1185[0]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110010100110110
-.gate SB_LUT4 I0=$abc$4085$new_n320_ I1=$abc$4085$new_n318_ I2=$abc$4085$new_n295_ I3=$false O=$abc$4085$new_n317_
+.gate SB_LUT4 I0=$abc$4194$new_n320_ I1=$abc$4194$new_n318_ I2=$abc$4194$new_n295_ I3=$false O=$abc$4194$new_n317_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][3][1]$a$1197[1]_new_ I1=param_counter[3] I2=$abc$4085$new_n280_ I3=$false O=$abc$4085$new_n318_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][3][1]$a$1200[1]_new_ I1=param_counter[3] I2=$abc$4194$new_n280_ I3=$false O=$abc$4194$new_n318_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11111110
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=param_counter[0] I3=$abc$4085$new_n231_ O=$abc$4085$new_n320_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=param_counter[0] I3=$abc$4194$new_n231_ O=$abc$4194$new_n320_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0001100000000000
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=param_counter[3] I3=param_counter[6] O=$abc$4085$new_n321_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[1] I2=param_counter[3] I3=param_counter[6] O=$abc$4194$new_n321_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1100000100000000
-.gate SB_LUT4 I0=$abc$4085$new_n189_ I1=state[2] I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573
+.gate SB_LUT4 I0=$abc$4194$new_n189_ I1=state[2] I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[15] O=$0\delay[15:0][15]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[15] O=$0\delay[15:0][15]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$700_new_inv_ I1=$abc$4085$new_n331_ I2=state[0] I3=state[1] O=$abc$4085$procmux$583.B_AND_S[54]_new_
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$703_new_inv_ I1=$abc$4194$new_n331_ I2=state[0] I3=state[1] O=$abc$4194$procmux$586.B_AND_S[54]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0100000000000000
-.gate SB_LUT4 I0=$abc$4085$new_n326_ I1=$abc$4085$new_n329_ I2=$abc$4085$new_n330_ I3=$abc$4085$auto$alumacc.cc:491:replace_alu$694[15] O=$abc$4085$auto$rtlil.cc:1836:ReduceOr$700_new_inv_
+.gate SB_LUT4 I0=$abc$4194$new_n326_ I1=$abc$4194$new_n329_ I2=$abc$4194$new_n330_ I3=$abc$4194$auto$alumacc.cc:491:replace_alu$697[15] O=$abc$4194$auto$rtlil.cc:1836:ReduceOr$703_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0111111100000000
-.gate SB_LUT4 I0=$abc$4085$new_n327_ I1=$abc$4085$new_n328_ I2=$false I3=$false O=$abc$4085$new_n326_
+.gate SB_LUT4 I0=$abc$4194$new_n327_ I1=$abc$4194$new_n328_ I2=$false I3=$false O=$abc$4194$new_n326_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=delay[7] I1=delay[8] I2=delay[12] I3=delay[10] O=$abc$4085$new_n327_
+.gate SB_LUT4 I0=delay[2] I1=delay[7] I2=delay[8] I3=delay[10] O=$abc$4194$new_n327_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=delay[1] I1=delay[0] I2=delay[2] I3=delay[6] O=$abc$4085$new_n328_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0000000100000000
-.gate SB_LUT4 I0=delay[15] I1=delay[14] I2=delay[13] I3=delay[11] O=$abc$4085$new_n329_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1000000000000000
-.gate SB_LUT4 I0=delay[3] I1=delay[4] I2=delay[9] I3=delay[5] O=$abc$4085$new_n330_
+.gate SB_LUT4 I0=delay[1] I1=delay[0] I2=delay[6] I3=delay[5] O=$abc$4194$new_n328_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0001000000000000
-.gate SB_LUT4 I0=state[2] I1=state[3] I2=state[4] I3=state[5] O=$abc$4085$new_n331_
+.gate SB_LUT4 I0=delay[15] I1=delay[14] I2=delay[13] I3=delay[11] O=$abc$4194$new_n329_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1000000000000000
+.gate SB_LUT4 I0=delay[4] I1=delay[12] I2=delay[3] I3=delay[9] O=$abc$4194$new_n330_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0000000100000000
+.gate SB_LUT4 I0=state[2] I1=state[3] I2=state[4] I3=state[5] O=$abc$4194$new_n331_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=$abc$4085$new_n326_ I1=$abc$4085$new_n333_ I2=$abc$4085$new_n334_ I3=$abc$4085$auto$alumacc.cc:491:replace_alu$703[15] O=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_
+.gate SB_LUT4 I0=$abc$4194$new_n326_ I1=$abc$4194$new_n333_ I2=$abc$4194$new_n334_ I3=$abc$4194$auto$alumacc.cc:491:replace_alu$706[15] O=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000001111111
-.gate SB_LUT4 I0=delay[15] I1=delay[14] I2=delay[13] I3=delay[11] O=$abc$4085$new_n333_
+.gate SB_LUT4 I0=delay[15] I1=delay[14] I2=delay[13] I3=delay[11] O=$abc$4194$new_n333_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=delay[9] I1=delay[5] I2=delay[3] I3=delay[4] O=$abc$4085$new_n334_
+.gate SB_LUT4 I0=delay[9] I1=delay[12] I2=delay[4] I3=delay[3] O=$abc$4194$new_n334_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0100000000000000
-.gate SB_LUT4 I0=state[0] I1=$abc$4085$new_n331_ I2=state[1] I3=$false O=$abc$4085$procmux$583.B_AND_S[61]_new_
+.param LUT_INIT 0001000000000000
+.gate SB_LUT4 I0=state[0] I1=$abc$4194$new_n331_ I2=state[1] I3=$false O=$abc$4194$procmux$586.B_AND_S[61]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[14] O=$0\delay[15:0][14]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[14] O=$0\delay[15:0][14]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[13] O=$0\delay[15:0][13]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[13] O=$0\delay[15:0][13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[12] O=$0\delay[15:0][12]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[12] O=$0\delay[15:0][12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[11] O=$0\delay[15:0][11]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[11] O=$0\delay[15:0][11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[10] O=$0\delay[15:0][10]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[10] O=$0\delay[15:0][10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[9] O=$0\delay[15:0][9]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[9] O=$0\delay[15:0][9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[8] O=$0\delay[15:0][8]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[8] O=$0\delay[15:0][8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[7] O=$0\delay[15:0][7]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[7] O=$0\delay[15:0][7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[6] O=$0\delay[15:0][6]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[6] O=$0\delay[15:0][6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[5] O=$0\delay[15:0][5]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[5] O=$0\delay[15:0][5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[4] O=$0\delay[15:0][4]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[4] O=$0\delay[15:0][4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[3] O=$0\delay[15:0][3]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[3] O=$0\delay[15:0][3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[2] O=$0\delay[15:0][2]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[2] O=$0\delay[15:0][2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[1]_new_ O=$0\delay[15:0][1]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[1]_new_ O=$0\delay[15:0][1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=delay[1] I1=delay[0] I2=$false I3=$false O=$abc$4085$add$demo.v:207$129_Y[1]_new_
+.gate SB_LUT4 I0=delay[1] I1=delay[0] I2=$false I3=$false O=$abc$4194$add$demo.v:207$129_Y[1]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0110
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I1=$abc$4085$procmux$583.B_AND_S[61]_new_ I2=$abc$4085$procmux$583.B_AND_S[54]_new_ I3=$abc$4085$add$demo.v:207$129_Y[0] O=$0\delay[15:0][0]
+.gate SB_LUT4 I0=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I1=$abc$4194$procmux$586.B_AND_S[61]_new_ I2=$abc$4194$procmux$586.B_AND_S[54]_new_ I3=$abc$4194$add$demo.v:207$129_Y[0] O=$0\delay[15:0][0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=state[1] I1=state[0] I2=$abc$4085$new_n331_ I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477
+.gate SB_LUT4 I0=state[1] I1=state[0] I2=$abc$4194$new_n331_ I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10110000
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[31]_new_ I1=$abc$4085$procmux$583.B_AND_S[25]_new_ I2=$0\scl[0:0] I3=$abc$4085$new_n354_ O=$0\state[5:0][3]
+.gate SB_LUT4 I0=$abc$4194$procmux$586.B_AND_S[31]_new_ I1=$abc$4194$procmux$586.B_AND_S[25]_new_ I2=$0\scl[0:0] I3=$abc$4194$new_n354_ O=$0\state[5:0][3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1100101011111111
-.gate SB_LUT4 I0=$abc$4085$auto$wreduce.cc:455:run$686[3]_new_inv_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2909[0]_new_ I3=$false O=$abc$4085$new_n354_
+.gate SB_LUT4 I0=$abc$4194$auto$wreduce.cc:455:run$689[3]_new_inv_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631 I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2919[0]_new_ I3=$false O=$abc$4194$new_n354_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00001011
-.gate SB_LUT4 I0=state[0] I1=$abc$4085$new_n222_ I2=state[1] I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621
+.gate SB_LUT4 I0=state[0] I1=$abc$4194$new_n222_ I2=state[1] I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=state[1] I1=state[0] I2=$abc$4085$new_n191_ I3=$false O=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2909[0]_new_
+.gate SB_LUT4 I0=state[1] I1=state[0] I2=$abc$4194$new_n191_ I3=$false O=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2919[0]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11010000
-.gate SB_LUT4 I0=$0\bit_counter[2:0][1] I1=$abc$4085$auto$ice40_ffinit.cc:141:execute$4075 I2=$abc$4085$auto$ice40_ffinit.cc:141:execute$4079 I3=$false O=$abc$4085$auto$wreduce.cc:455:run$686[3]_new_inv_
+.gate SB_LUT4 I0=$0\bit_counter[2:0][1] I1=$abc$4194$auto$ice40_ffinit.cc:141:execute$4184 I2=$abc$4194$auto$ice40_ffinit.cc:141:execute$4188 I3=$false O=$abc$4194$auto$wreduce.cc:455:run$689[3]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00000001
-.gate SB_LUT4 I0=state[0] I1=$abc$4085$new_n191_ I2=state[1] I3=$false O=$abc$4085$procmux$583.B_AND_S[25]_new_
+.gate SB_LUT4 I0=state[0] I1=$abc$4194$new_n191_ I2=state[1] I3=$false O=$abc$4194$procmux$586.B_AND_S[25]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=$abc$4085$new_n222_ I1=state[0] I2=state[1] I3=$false O=$abc$4085$procmux$583.B_AND_S[31]_new_
+.gate SB_LUT4 I0=$abc$4194$new_n222_ I1=state[0] I2=state[1] I3=$false O=$abc$4194$procmux$586.B_AND_S[31]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10000000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2902[0]_new_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[0]_new_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1110
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[56]_new_ I1=$abc$4085$new_n221_ I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2957[1]_new_inv_ I3=$abc$4085$new_n363_ O=$0\state[5:0][2]
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1110111111111111
-.gate SB_LUT4 I0=$abc$4085$auto$rtlil.cc:1836:ReduceOr$700_new_inv_ I1=$abc$4085$new_n331_ I2=state[0] I3=state[1] O=$abc$4085$procmux$583.B_AND_S[56]_new_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1000000000000000
-.gate SB_LUT4 I0=$0\scl[0:0] I1=$abc$4085$procmux$583.B_AND_S[25]_new_ I2=$abc$4085$new_n364_ I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 O=$abc$4085$new_n363_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0000000000001011
-.gate SB_LUT4 I0=state[0] I1=$abc$4085$new_n191_ I2=dc I3=$false O=$abc$4085$new_n364_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 10000000
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[31]_new_ I1=$0\scl[0:0] I2=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 I3=$abc$4085$auto$wreduce.cc:455:run$686[3]_new_inv_ O=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2957[1]_new_inv_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0000011101110111
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[54]_new_ I1=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I2=$abc$4085$new_n369_ I3=$abc$4085$new_n367_ O=$0\state[5:0][1]
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1110111111111111
-.gate SB_LUT4 I0=$abc$4085$new_n331_ I1=state[0] I2=state[1] I3=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[2]_new_inv_ O=$abc$4085$new_n367_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1101011100000000
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[25]_new_ I1=$abc$4085$procmux$583.B_AND_S[31]_new_ I2=$false I3=$false O=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[2]_new_inv_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 0001
-.gate SB_LUT4 I0=state[0] I1=$abc$4085$new_n221_ I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[1]_new_ I3=$abc$4085$procmux$583.B_AND_S[37]_new_ O=$abc$4085$new_n369_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0000000000000111
-.gate SB_LUT4 I0=$abc$4085$auto$ice40_ffinit.cc:141:execute$4079 I1=$0\bit_counter[2:0][1] I2=$abc$4085$auto$ice40_ffinit.cc:141:execute$4075 I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 O=$abc$4085$procmux$583.B_AND_S[37]_new_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0111111100000000
-.gate SB_LUT4 I0=state[1] I1=dc I2=$abc$4085$new_n191_ I3=state[0] O=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[1]_new_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0001000000000000
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[54]_new_ I1=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3667 I2=$abc$4085$new_n375_ I3=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2961[0]_new_inv_ O=$0\state[5:0][0]
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1110111111111111
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[1]_new_ I1=$abc$4085$procmux$583.B_AND_S[18]_new_ I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2957[1]_new_inv_ I3=$false O=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2961[0]_new_inv_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 00010000
-.gate SB_LUT4 I0=$0\scl[0:0] I1=state[2] I2=$abc$4085$new_n189_ I3=state[3] O=$abc$4085$procmux$583.B_AND_S[18]_new_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0001000000000000
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[61]_new_ I1=$abc$4085$auto$rtlil.cc:1836:ReduceOr$713_new_inv_ I2=$abc$4085$auto$simplemap.cc:168:logic_reduce$2222_new_inv_ I3=$false O=$abc$4085$new_n375_
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 00000111
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$1755[1]_new_inv_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3667
+.gate SB_LUT4 I0=state[1] I1=$abc$4194$new_n191_ I2=$false I3=$false O=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[1]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 I1=$abc$4085$new_n221_ I2=$abc$4085$new_n378_ I3=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[2]_new_inv_ O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3441
+.gate SB_LUT4 I0=$abc$4194$procmux$586.B_AND_S[31]_new_ I1=$0\scl[0:0] I2=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631 I3=$abc$4194$auto$wreduce.cc:455:run$689[3]_new_inv_ O=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2967[1]_new_inv_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0000011101110111
+.gate SB_LUT4 I0=$0\bit_counter[2:0][1] I1=$abc$4194$auto$ice40_ffinit.cc:141:execute$4184 I2=$abc$4194$auto$ice40_ffinit.cc:141:execute$4188 I3=$false O=$abc$4194$auto$wreduce.cc:455:run$689[1]_new_inv_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 10000000
+.gate SB_LUT4 I0=dc I1=state[0] I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[1]_new_ I3=$false O=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[1]_new_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01000000
+.gate SB_LUT4 I0=$abc$4194$procmux$586.B_AND_S[54]_new_ I1=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3677 I2=$abc$4194$new_n378_ I3=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2971[0]_new_inv_ O=$0\state[5:0][0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111111111111
-.gate SB_LUT4 I0=$abc$4085$new_n191_ I1=$abc$4085$new_n331_ I2=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 I3=$false O=$abc$4085$new_n378_
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[1]_new_ I1=$abc$4194$procmux$586.B_AND_S[18]_new_ I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2967[1]_new_inv_ I3=$false O=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2971[0]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 00000001
-.gate SB_LUT4 I0=cs I1=$abc$4085$procmux$583.B_AND_S[31]_new_ I2=$0\scl[0:0] I3=$abc$4085$auto$opt_reduce.cc:132:opt_mux$677_new_inv_ O=$0\cs[0:0]
+.param LUT_INIT 00010000
+.gate SB_LUT4 I0=$0\scl[0:0] I1=state[2] I2=$abc$4194$new_n189_ I3=state[3] O=$abc$4194$procmux$586.B_AND_S[18]_new_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0001000000000000
+.gate SB_LUT4 I0=$abc$4194$procmux$586.B_AND_S[61]_new_ I1=$abc$4194$auto$rtlil.cc:1836:ReduceOr$716_new_inv_ I2=$abc$4194$auto$simplemap.cc:168:logic_reduce$2232_new_inv_ I3=$false O=$abc$4194$new_n378_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 00000111
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$1764[1]_new_inv_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3677
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0100
+.gate SB_LUT4 I0=cs I1=$abc$4194$procmux$586.B_AND_S[31]_new_ I2=$0\scl[0:0] I3=$abc$4194$auto$opt_reduce.cc:132:opt_mux$680_new_inv_ O=$0\cs[0:0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000000011111111
-.gate SB_LUT4 I0=state[1] I1=state[0] I2=$abc$4085$new_n191_ I3=$abc$4085$auto$simplemap.cc:168:logic_reduce$2222_new_inv_ O=$abc$4085$auto$opt_reduce.cc:132:opt_mux$677_new_inv_
+.gate SB_LUT4 I0=state[0] I1=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[1]_new_ I2=$abc$4194$auto$simplemap.cc:168:logic_reduce$2232_new_inv_ I3=$false O=$abc$4194$auto$opt_reduce.cc:132:opt_mux$680_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0000000010111111
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[31]_new_ I1=$abc$4085$auto$opt_reduce.cc:132:opt_mux$677_new_inv_ I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3435
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 00000111
+.gate SB_LUT4 I0=$abc$4194$procmux$586.B_AND_S[31]_new_ I1=$abc$4194$auto$opt_reduce.cc:132:opt_mux$680_new_inv_ I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3445
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1011
-.gate SB_LUT4 I0=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 I1=$abc$4085$auto$ice40_ffinit.cc:141:execute$4079 I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3642
+.gate SB_LUT4 I0=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631 I1=$abc$4194$auto$ice40_ffinit.cc:141:execute$4188 I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3652
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$new_n389_ I1=$abc$4085$new_n388_ I2=$abc$4085$auto$ice40_ffinit.cc:141:execute$4079 I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 O=$abc$4085$new_n387_
+.gate SB_LUT4 I0=$abc$4194$new_n392_ I1=$abc$4194$new_n391_ I2=$abc$4194$auto$ice40_ffinit.cc:141:execute$4188 I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631 O=$abc$4194$new_n390_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000111000000000
-.gate SB_LUT4 I0=data[5] I1=data[1] I2=$abc$4085$auto$ice40_ffinit.cc:141:execute$4075 I3=$0\bit_counter[2:0][1] O=$abc$4085$new_n388_
+.gate SB_LUT4 I0=data[5] I1=data[1] I2=$abc$4194$auto$ice40_ffinit.cc:141:execute$4184 I3=$0\bit_counter[2:0][1] O=$abc$4194$new_n391_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=data[7] I1=data[3] I2=$0\bit_counter[2:0][1] I3=$abc$4085$auto$ice40_ffinit.cc:141:execute$4075 O=$abc$4085$new_n389_
+.gate SB_LUT4 I0=data[7] I1=data[3] I2=$0\bit_counter[2:0][1] I3=$abc$4194$auto$ice40_ffinit.cc:141:execute$4184 O=$abc$4194$new_n392_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000110000001010
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:168:logic_reduce$2222_new_inv_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3429
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:168:logic_reduce$2232_new_inv_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631 I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3439
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1110
-.gate SB_LUT4 I0=$abc$4085$new_n221_ I1=state[0] I2=$0\dc[0:0] I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3423
+.gate SB_LUT4 I0=$abc$4194$new_n221_ I1=state[0] I2=$0\dc[0:0] I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3433
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4085$procmux$583.B_AND_S[61]_new_ I1=rst I2=$abc$4085$new_n375_ I3=$false O=$0\rst[0:0]
+.gate SB_LUT4 I0=$abc$4194$procmux$586.B_AND_S[61]_new_ I1=rst I2=$abc$4194$new_n378_ I3=$false O=$0\rst[0:0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10001111
-.gate SB_LUT4 I0=state[1] I1=state[0] I2=$abc$4085$new_n331_ I3=$false O=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3417
+.gate SB_LUT4 I0=state[1] I1=state[0] I2=$abc$4194$new_n331_ I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3427
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01110000
-.gate SB_LUT4 I0=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3667 I1=cmd_counter[0] I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3698
+.gate SB_LUT4 I0=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3677 I1=cmd_counter[0] I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3708
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776 I1=param_counter[0] I2=$false I3=$false O=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3807
+.gate SB_LUT4 I0=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798 I1=param_counter[0] I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3845
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$new_n397_ I1=$abc$4085$new_n243_ I2=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I3=$false O=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776
+.gate SB_LUT4 I0=$abc$4194$new_n400_ I1=$abc$4194$new_n243_ I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I3=$false O=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01110000
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[4] I2=param_counter[5] I3=param_counter[0] O=$abc$4085$new_n397_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[4] I2=param_counter[5] I3=param_counter[0] O=$abc$4194$new_n400_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000100000000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[3] I2=$false I3=$false O=$0\params_left[13:0][3]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[3] I2=$false I3=$false O=$0\params_left[13:0][3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[5] I2=$false I3=$false O=$0\params_left[13:0][5]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[5] I2=$false I3=$false O=$0\params_left[13:0][5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[6] I2=$false I3=$false O=$0\params_left[13:0][6]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[6] I2=$false I3=$false O=$0\params_left[13:0][6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[7] I2=$false I3=$false O=$0\params_left[13:0][7]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[7] I2=$false I3=$false O=$0\params_left[13:0][7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[8] I2=$false I3=$false O=$0\params_left[13:0][8]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[8] I2=$false I3=$false O=$0\params_left[13:0][8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[10] I2=$false I3=$false O=$0\params_left[13:0][10]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[10] I2=$false I3=$false O=$0\params_left[13:0][10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I1=$abc$4085$sub$demo.v:317$148_Y[11] I2=$false I3=$false O=$0\params_left[13:0][11]
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$sub$demo.v:317$148_Y[11] I2=$false I3=$false O=$0\params_left[13:0][11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$0\bit_counter[2:0][2] I1=$false I2=$false I3=$false O=$abc$4085$auto$ice40_ffinit.cc:140:execute$4074
+.gate SB_LUT4 I0=$0\bit_counter[2:0][2] I1=$false I2=$false I3=$false O=$abc$4194$auto$ice40_ffinit.cc:140:execute$4183
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=$0\bit_counter[2:0][0] I1=$false I2=$false I3=$false O=$abc$4085$auto$ice40_ffinit.cc:140:execute$4078
+.gate SB_LUT4 I0=$0\bit_counter[2:0][0] I1=$false I2=$false I3=$false O=$abc$4194$auto$ice40_ffinit.cc:140:execute$4187
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
@@ -811,59 +775,59 @@
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=$abc$4085$auto$ice40_ffinit.cc:141:execute$4075 I1=$false I2=$false I3=$false O=bit_counter[2]
+.gate SB_LUT4 I0=$abc$4194$auto$ice40_ffinit.cc:141:execute$4184 I1=$false I2=$false I3=$false O=bit_counter[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=$abc$4085$auto$ice40_ffinit.cc:141:execute$4079 I1=$false I2=$false I3=$false O=bit_counter[0]
+.gate SB_LUT4 I0=$abc$4194$auto$ice40_ffinit.cc:141:execute$4188 I1=$false I2=$false I3=$false O=bit_counter[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[15] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[15]
+.gate SB_LUT4 I0=delay[15] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[15]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[14] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[14]
+.gate SB_LUT4 I0=delay[14] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[14]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[13] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[13]
+.gate SB_LUT4 I0=delay[13] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[12] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[12]
+.gate SB_LUT4 I0=delay[12] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[11] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[11]
+.gate SB_LUT4 I0=delay[11] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[10] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[10]
+.gate SB_LUT4 I0=delay[10] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[9] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[9]
+.gate SB_LUT4 I0=delay[9] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[8] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[8]
+.gate SB_LUT4 I0=delay[8] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[7] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[7]
+.gate SB_LUT4 I0=delay[7] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[2] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[2]
+.gate SB_LUT4 I0=delay[2] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[1] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[1]
+.gate SB_LUT4 I0=delay[1] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[0] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[0]
+.gate SB_LUT4 I0=delay[0] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
@@ -875,630 +839,666 @@
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[5] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[5]
+.gate SB_LUT4 I0=delay[4] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[3] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[3]
+.gate SB_LUT4 I0=delay[3] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[4] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[4]
+.gate SB_LUT4 I0=delay[5] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=delay[6] I1=$false I2=$false I3=$false O=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[6]
+.gate SB_LUT4 I0=delay[6] I1=$false I2=$false I3=$false O=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=params_left[0] I1=params_left[1] I2=$abc$4085$auto$simplemap.cc:127:simplemap_reduce$2934[0]_new_ I3=$false O=$abc$4085$procmux$527.B_AND_S[1]_new_inv_
+.gate SB_LUT4 I0=params_left[0] I1=params_left[1] I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I3=$false O=$abc$4194$procmux$527.B_AND_S[1]_new_inv_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01101111
-.gate SB_LUT4 I0=$abc$4085$memory\num_params$rdmux[0][3][0]$b$950[0] I1=$abc$4085$sub$demo.v:306$145_Y[3] I2=$abc$4085$sub$demo.v:306$145_Y[2] I3=$abc$4085$memory\num_params$rdmux[0][2][0]$b$938[0]_new_ O=$abc$4085$memory\num_params$rdmux[0][0][0]$a$928[1]_new_
+.gate SB_LUT4 I0=$abc$4194$memory\num_params$rdmux[0][3][0]$b$953[0] I1=$abc$4194$sub$demo.v:306$145_Y[3] I2=$abc$4194$sub$demo.v:306$145_Y[2] I3=$abc$4194$memory\num_params$rdmux[0][2][0]$b$941[0]_new_ O=$abc$4194$memory\num_params$rdmux[0][0][0]$a$931[1]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0001011100110001
-.gate SB_LUT4 I0=$abc$4085$memory\num_params$rdmux[0][0][0]$a$928[1]_new_ I1=$abc$4085$new_n203_ I2=$abc$4085$procmux$527.B_AND_S[1]_new_inv_ I3=$false O=$0\params_left[13:0][1]
+.gate SB_LUT4 I0=$abc$4194$memory\num_params$rdmux[0][0][0]$a$931[1]_new_ I1=$abc$4194$new_n203_ I2=$abc$4194$procmux$527.B_AND_S[1]_new_inv_ I3=$false O=$0\params_left[13:0][1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10001111
-.gate SB_LUT4 I0=param_counter[5] I1=param_counter[6] I2=$false I3=$false O=$abc$4085$new_n434_
+.gate SB_LUT4 I0=param_counter[5] I1=param_counter[6] I2=$false I3=$false O=$abc$4194$new_n437_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0001
-.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=$abc$4085$new_n434_ I3=param_counter[3] O=$abc$4085$new_n435_
+.gate SB_LUT4 I0=param_counter[2] I1=param_counter[1] I2=$abc$4194$new_n437_ I3=param_counter[3] O=$abc$4194$new_n438_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000110010110000
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[4] I2=param_counter[6] I3=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ O=$abc$4085$new_n436_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[4] I2=param_counter[6] I3=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ O=$abc$4194$new_n439_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010000000000
-.gate SB_LUT4 I0=$abc$4085$procmux$558_Y[6]_new_inv_ I1=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3661_new_ I2=$abc$4085$new_n435_ I3=$abc$4085$new_n436_ O=$0\data[7:0][6]
+.gate SB_LUT4 I0=$abc$4194$procmux$561_Y[6]_new_inv_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3671_new_ I2=$abc$4194$new_n438_ I3=$abc$4194$new_n439_ O=$0\data[7:0][6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010001000100
-.gate SB_LUT4 I0=param_counter[0] I1=param_counter[3] I2=param_counter[2] I3=$abc$4085$new_n276_ O=$abc$4085$memory\params$rdmux[0][2][0]$b$1183[3]_new_
+.gate SB_LUT4 I0=param_counter[0] I1=param_counter[3] I2=param_counter[2] I3=$abc$4194$new_n276_ O=$abc$4194$memory\params$rdmux[0][2][0]$b$1186[3]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000011111110
-.gate SB_LUT4 I0=$abc$4085$memory\params$rdmux[0][2][0]$a$1182[3]_new_inv_ I1=$abc$4085$memory\params$rdmux[0][2][0]$b$1183[3]_new_ I2=param_counter[5] I3=param_counter[4] O=$abc$4085$new_n439_
+.gate SB_LUT4 I0=$abc$4194$memory\params$rdmux[0][2][0]$a$1185[3]_new_inv_ I1=$abc$4194$memory\params$rdmux[0][2][0]$b$1186[3]_new_ I2=param_counter[5] I3=param_counter[4] O=$abc$4194$new_n442_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111110011110101
-.gate SB_LUT4 I0=$abc$4085$new_n282_ I1=$abc$4085$new_n279_ I2=param_counter[6] I3=$abc$4085$new_n439_ O=$abc$4085$new_n440_
+.gate SB_LUT4 I0=$abc$4194$new_n282_ I1=$abc$4194$new_n279_ I2=param_counter[6] I3=$abc$4194$new_n442_ O=$abc$4194$new_n443_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111010011111111
-.gate SB_LUT4 I0=$abc$4085$new_n268_ I1=$abc$4085$new_n440_ I2=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3770_new_ I3=$abc$4085$procmux$555.B_AND_S[11]_new_ O=$0\data[7:0][3]
+.gate SB_LUT4 I0=$abc$4194$new_n268_ I1=$abc$4194$new_n443_ I2=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3792_new_ I3=$abc$4194$procmux$558.B_AND_S[11]_new_ O=$0\data[7:0][3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111111110110000
-.gate SB_LUT4 I0=data[4] I1=data[0] I2=$0\bit_counter[2:0][1] I3=$abc$4085$auto$ice40_ffinit.cc:141:execute$4075 O=$abc$4085$new_n442_
+.gate SB_LUT4 I0=dc I1=$0\scl[0:0] I2=$abc$4194$new_n191_ I3=state[1] O=$abc$4194$new_n445_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1100111110100000
-.gate SB_LUT4 I0=data[6] I1=data[2] I2=$0\bit_counter[2:0][1] I3=$abc$4085$new_n442_ O=$abc$4085$techmap$shiftx$demo.v:258$138.$4\buffer[7:0][0]_new_
+.gate SB_LUT4 I0=$abc$4194$new_n445_ I1=$abc$4194$auto$rtlil.cc:1836:ReduceOr$703_new_inv_ I2=$abc$4194$new_n331_ I3=state[1] O=$abc$4194$new_n446_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1000000011111111
+.gate SB_LUT4 I0=$abc$4194$new_n221_ I1=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2967[1]_new_inv_ I3=$false O=$abc$4194$new_n447_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 00010000
+.gate SB_LUT4 I0=state[0] I1=$abc$4194$new_n447_ I2=$abc$4194$new_n446_ I3=$abc$4194$new_n445_ O=$0\state[5:0][2]
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1011001100111111
+.gate SB_LUT4 I0=$abc$4194$auto$wreduce.cc:455:run$689[1]_new_inv_ I1=$abc$4194$new_n222_ I2=state[0] I3=$abc$4194$new_n191_ O=$abc$4194$new_n449_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0011000000111011
+.gate SB_LUT4 I0=$abc$4194$new_n331_ I1=state[1] I2=state[0] I3=$abc$4194$new_n449_ O=$abc$4194$new_n450_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1101011100000011
+.gate SB_LUT4 I0=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[0]_new_ I1=$abc$4194$procmux$586.B_AND_S[54]_new_ I2=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2944[1]_new_ I3=$abc$4194$new_n450_ O=$0\state[5:0][1]
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1111111011111111
+.gate SB_LUT4 I0=$abc$4194$new_n222_ I1=$abc$4194$new_n331_ I2=$abc$4194$procmux$586.B_AND_S[25]_new_ I3=$abc$4194$auto$simplemap.cc:127:simplemap_reduce$2912[1]_new_ O=$abc$4194$new_n452_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0000000000000001
+.gate SB_LUT4 I0=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 I1=$abc$4194$new_n452_ I2=$false I3=$false O=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3451
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1011
+.gate SB_LUT4 I0=data[4] I1=data[0] I2=$0\bit_counter[2:0][1] I3=$abc$4194$auto$ice40_ffinit.cc:141:execute$4184 O=$abc$4194$new_n454_
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100111110100000
+.gate SB_LUT4 I0=data[6] I1=data[2] I2=$0\bit_counter[2:0][1] I3=$abc$4194$new_n454_ O=$abc$4194$techmap$shiftx$demo.v:258$138.$4\buffer[7:0][0]_new_
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111110000001010
-.gate SB_LUT4 I0=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3642 I1=$abc$4085$techmap$shiftx$demo.v:258$138.$4\buffer[7:0][0]_new_ I2=$abc$4085$auto$simplemap.cc:168:logic_reduce$2222_new_inv_ I3=$abc$4085$new_n387_ O=$0\mosi[0:0]
+.gate SB_LUT4 I0=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3652 I1=$abc$4194$techmap$shiftx$demo.v:258$138.$4\buffer[7:0][0]_new_ I2=$abc$4194$auto$simplemap.cc:168:logic_reduce$2232_new_inv_ I3=$abc$4194$new_n390_ O=$0\mosi[0:0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/usr/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1111111111111000
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[10] CO=$auto$alumacc.cc:474:replace_alu$692.C[11] I0=delay[10] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[10] CO=$auto$alumacc.cc:474:replace_alu$695.C[11] I0=delay[10] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[11] CO=$auto$alumacc.cc:474:replace_alu$692.C[12] I0=delay[11] I1=$false
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[11] CO=$auto$alumacc.cc:474:replace_alu$695.C[12] I0=delay[11] I1=$false
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[12] CO=$auto$alumacc.cc:474:replace_alu$692.C[13] I0=delay[12] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[12] CO=$auto$alumacc.cc:474:replace_alu$695.C[13] I0=delay[12] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[13] CO=$auto$alumacc.cc:474:replace_alu$692.C[14] I0=delay[13] I1=$false
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[13] CO=$auto$alumacc.cc:474:replace_alu$695.C[14] I0=delay[13] I1=$false
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[14] CO=$auto$alumacc.cc:474:replace_alu$692.C[15] I0=delay[14] I1=$false
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[14] CO=$auto$alumacc.cc:474:replace_alu$695.C[15] I0=delay[14] I1=$false
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[15] CO=$abc$4085$auto$alumacc.cc:491:replace_alu$694[15] I0=delay[15] I1=$false
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[15] CO=$abc$4194$auto$alumacc.cc:491:replace_alu$697[15] I0=delay[15] I1=$false
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=delay[5] CO=$auto$alumacc.cc:474:replace_alu$692.C[7] I0=delay[6] I1=$false
+.gate SB_CARRY CI=delay[5] CO=$auto$alumacc.cc:474:replace_alu$695.C[7] I0=delay[6] I1=$false
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[7] CO=$auto$alumacc.cc:474:replace_alu$692.C[8] I0=delay[7] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[7] CO=$auto$alumacc.cc:474:replace_alu$695.C[8] I0=delay[7] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[8] CO=$auto$alumacc.cc:474:replace_alu$692.C[9] I0=delay[8] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[8] CO=$auto$alumacc.cc:474:replace_alu$695.C[9] I0=delay[8] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$692.C[9] CO=$auto$alumacc.cc:474:replace_alu$692.C[10] I0=delay[9] I1=$false
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$695.C[9] CO=$auto$alumacc.cc:474:replace_alu$695.C[10] I0=delay[9] I1=$false
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:217|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[10] CO=$auto$alumacc.cc:474:replace_alu$701.C[11] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[10]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[10] CO=$auto$alumacc.cc:474:replace_alu$704.C[11] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[11] CO=$auto$alumacc.cc:474:replace_alu$701.C[12] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[11]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[11] CO=$auto$alumacc.cc:474:replace_alu$704.C[12] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[12] CO=$auto$alumacc.cc:474:replace_alu$701.C[13] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[12]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[12] CO=$auto$alumacc.cc:474:replace_alu$704.C[13] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[13] CO=$auto$alumacc.cc:474:replace_alu$701.C[14] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[13]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[13] CO=$auto$alumacc.cc:474:replace_alu$704.C[14] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[14] CO=$auto$alumacc.cc:474:replace_alu$701.C[15] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[14]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[14] CO=$auto$alumacc.cc:474:replace_alu$704.C[15] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[14]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[15] CO=$abc$4085$auto$alumacc.cc:491:replace_alu$703[15] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[15]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[15] CO=$abc$4194$auto$alumacc.cc:491:replace_alu$706[15] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[15]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[0] CO=$auto$alumacc.cc:474:replace_alu$701.C[2] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[1]
+.gate SB_CARRY CI=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[0] CO=$auto$alumacc.cc:474:replace_alu$704.C[2] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[2] CO=$auto$alumacc.cc:474:replace_alu$701.C[3] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[2]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[2] CO=$auto$alumacc.cc:474:replace_alu$704.C[3] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[3] CO=$auto$alumacc.cc:474:replace_alu$701.C[4] I0=$true I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[3]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[3] CO=$auto$alumacc.cc:474:replace_alu$704.C[4] I0=$true I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[4] CO=$auto$alumacc.cc:474:replace_alu$701.C[5] I0=$true I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[4]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[4] CO=$auto$alumacc.cc:474:replace_alu$704.C[5] I0=$true I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[5] CO=$auto$alumacc.cc:474:replace_alu$701.C[6] I0=$true I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[5]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[5] CO=$auto$alumacc.cc:474:replace_alu$704.C[6] I0=$true I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[6] CO=$auto$alumacc.cc:474:replace_alu$701.C[7] I0=$true I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[6]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[6] CO=$auto$alumacc.cc:474:replace_alu$704.C[7] I0=$true I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[7] CO=$auto$alumacc.cc:474:replace_alu$701.C[8] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[7]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[7] CO=$auto$alumacc.cc:474:replace_alu$704.C[8] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[8] CO=$auto$alumacc.cc:474:replace_alu$701.C[9] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[8]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[8] CO=$auto$alumacc.cc:474:replace_alu$704.C[9] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$701.C[9] CO=$auto$alumacc.cc:474:replace_alu$701.C[10] I0=$false I1=$abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[9]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$704.C[9] CO=$auto$alumacc.cc:474:replace_alu$704.C[10] I0=$false I1=$abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:205|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$true I2=delay[0] I3=$false O=$abc$4085$add$demo.v:207$129_Y[0]
+.gate SB_LUT4 I0=$false I1=$true I2=delay[0] I3=$false O=$abc$4194$add$demo.v:207$129_Y[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=$false I2=delay[10] I3=$auto$alumacc.cc:474:replace_alu$714.C[10] O=$abc$4085$add$demo.v:207$129_Y[10]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[10] I3=$auto$alumacc.cc:474:replace_alu$717.C[10] O=$abc$4194$add$demo.v:207$129_Y[10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[10] CO=$auto$alumacc.cc:474:replace_alu$714.C[11] I0=$false I1=delay[10]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[10] CO=$auto$alumacc.cc:474:replace_alu$717.C[11] I0=$false I1=delay[10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[11] I3=$auto$alumacc.cc:474:replace_alu$714.C[11] O=$abc$4085$add$demo.v:207$129_Y[11]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[11] I3=$auto$alumacc.cc:474:replace_alu$717.C[11] O=$abc$4194$add$demo.v:207$129_Y[11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[11] CO=$auto$alumacc.cc:474:replace_alu$714.C[12] I0=$false I1=delay[11]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[11] CO=$auto$alumacc.cc:474:replace_alu$717.C[12] I0=$false I1=delay[11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[12] I3=$auto$alumacc.cc:474:replace_alu$714.C[12] O=$abc$4085$add$demo.v:207$129_Y[12]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[12] I3=$auto$alumacc.cc:474:replace_alu$717.C[12] O=$abc$4194$add$demo.v:207$129_Y[12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[12] CO=$auto$alumacc.cc:474:replace_alu$714.C[13] I0=$false I1=delay[12]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[12] CO=$auto$alumacc.cc:474:replace_alu$717.C[13] I0=$false I1=delay[12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[13] I3=$auto$alumacc.cc:474:replace_alu$714.C[13] O=$abc$4085$add$demo.v:207$129_Y[13]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[13] I3=$auto$alumacc.cc:474:replace_alu$717.C[13] O=$abc$4194$add$demo.v:207$129_Y[13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[13] CO=$auto$alumacc.cc:474:replace_alu$714.C[14] I0=$false I1=delay[13]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[13] CO=$auto$alumacc.cc:474:replace_alu$717.C[14] I0=$false I1=delay[13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[14] I3=$auto$alumacc.cc:474:replace_alu$714.C[14] O=$abc$4085$add$demo.v:207$129_Y[14]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[14] I3=$auto$alumacc.cc:474:replace_alu$717.C[14] O=$abc$4194$add$demo.v:207$129_Y[14]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[14] CO=$auto$alumacc.cc:474:replace_alu$714.C[15] I0=$false I1=delay[14]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[14] CO=$auto$alumacc.cc:474:replace_alu$717.C[15] I0=$false I1=delay[14]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[15] I3=$auto$alumacc.cc:474:replace_alu$714.C[15] O=$abc$4085$add$demo.v:207$129_Y[15]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[15] I3=$auto$alumacc.cc:474:replace_alu$717.C[15] O=$abc$4194$add$demo.v:207$129_Y[15]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=delay[0] CO=$auto$alumacc.cc:474:replace_alu$714.C[2] I0=$false I1=delay[1]
+.gate SB_CARRY CI=delay[0] CO=$auto$alumacc.cc:474:replace_alu$717.C[2] I0=$false I1=delay[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[2] I3=$auto$alumacc.cc:474:replace_alu$714.C[2] O=$abc$4085$add$demo.v:207$129_Y[2]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[2] I3=$auto$alumacc.cc:474:replace_alu$717.C[2] O=$abc$4194$add$demo.v:207$129_Y[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[2] CO=$auto$alumacc.cc:474:replace_alu$714.C[3] I0=$false I1=delay[2]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[2] CO=$auto$alumacc.cc:474:replace_alu$717.C[3] I0=$false I1=delay[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[3] I3=$auto$alumacc.cc:474:replace_alu$714.C[3] O=$abc$4085$add$demo.v:207$129_Y[3]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[3] I3=$auto$alumacc.cc:474:replace_alu$717.C[3] O=$abc$4194$add$demo.v:207$129_Y[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[3] CO=$auto$alumacc.cc:474:replace_alu$714.C[4] I0=$false I1=delay[3]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[3] CO=$auto$alumacc.cc:474:replace_alu$717.C[4] I0=$false I1=delay[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[4] I3=$auto$alumacc.cc:474:replace_alu$714.C[4] O=$abc$4085$add$demo.v:207$129_Y[4]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[4] I3=$auto$alumacc.cc:474:replace_alu$717.C[4] O=$abc$4194$add$demo.v:207$129_Y[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[4] CO=$auto$alumacc.cc:474:replace_alu$714.C[5] I0=$false I1=delay[4]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[4] CO=$auto$alumacc.cc:474:replace_alu$717.C[5] I0=$false I1=delay[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[5] I3=$auto$alumacc.cc:474:replace_alu$714.C[5] O=$abc$4085$add$demo.v:207$129_Y[5]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[5] I3=$auto$alumacc.cc:474:replace_alu$717.C[5] O=$abc$4194$add$demo.v:207$129_Y[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[5] CO=$auto$alumacc.cc:474:replace_alu$714.C[6] I0=$false I1=delay[5]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[5] CO=$auto$alumacc.cc:474:replace_alu$717.C[6] I0=$false I1=delay[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[6] I3=$auto$alumacc.cc:474:replace_alu$714.C[6] O=$abc$4085$add$demo.v:207$129_Y[6]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[6] I3=$auto$alumacc.cc:474:replace_alu$717.C[6] O=$abc$4194$add$demo.v:207$129_Y[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[6] CO=$auto$alumacc.cc:474:replace_alu$714.C[7] I0=$false I1=delay[6]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[6] CO=$auto$alumacc.cc:474:replace_alu$717.C[7] I0=$false I1=delay[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[7] I3=$auto$alumacc.cc:474:replace_alu$714.C[7] O=$abc$4085$add$demo.v:207$129_Y[7]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[7] I3=$auto$alumacc.cc:474:replace_alu$717.C[7] O=$abc$4194$add$demo.v:207$129_Y[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[7] CO=$auto$alumacc.cc:474:replace_alu$714.C[8] I0=$false I1=delay[7]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[7] CO=$auto$alumacc.cc:474:replace_alu$717.C[8] I0=$false I1=delay[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[8] I3=$auto$alumacc.cc:474:replace_alu$714.C[8] O=$abc$4085$add$demo.v:207$129_Y[8]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[8] I3=$auto$alumacc.cc:474:replace_alu$717.C[8] O=$abc$4194$add$demo.v:207$129_Y[8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[8] CO=$auto$alumacc.cc:474:replace_alu$714.C[9] I0=$false I1=delay[8]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[8] CO=$auto$alumacc.cc:474:replace_alu$717.C[9] I0=$false I1=delay[8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=delay[9] I3=$auto$alumacc.cc:474:replace_alu$714.C[9] O=$abc$4085$add$demo.v:207$129_Y[9]
+.gate SB_LUT4 I0=$false I1=$false I2=delay[9] I3=$auto$alumacc.cc:474:replace_alu$717.C[9] O=$abc$4194$add$demo.v:207$129_Y[9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$714.C[9] CO=$auto$alumacc.cc:474:replace_alu$714.C[10] I0=$false I1=delay[9]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[9] CO=$auto$alumacc.cc:474:replace_alu$717.C[10] I0=$false I1=delay[9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:207|/usr/bin/../share/yosys/ice40/arith_map.v:47"
 .gate SB_LUT4 I0=$false I1=$true I2=cmd_counter[0] I3=$false O=$0\cmd_counter[4:0][0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:235|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=cmd_counter[0] CO=$auto$alumacc.cc:474:replace_alu$717.C[2] I0=$false I1=cmd_counter[1]
+.gate SB_CARRY CI=cmd_counter[0] CO=$auto$alumacc.cc:474:replace_alu$720.C[2] I0=$false I1=cmd_counter[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:235|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=cmd_counter[2] I3=$auto$alumacc.cc:474:replace_alu$717.C[2] O=$0\cmd_counter[4:0][2]
+.gate SB_LUT4 I0=$false I1=$false I2=cmd_counter[2] I3=$auto$alumacc.cc:474:replace_alu$720.C[2] O=$0\cmd_counter[4:0][2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:235|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[2] CO=$auto$alumacc.cc:474:replace_alu$717.C[3] I0=$false I1=cmd_counter[2]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$720.C[2] CO=$auto$alumacc.cc:474:replace_alu$720.C[3] I0=$false I1=cmd_counter[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:235|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=cmd_counter[3] I3=$auto$alumacc.cc:474:replace_alu$717.C[3] O=$0\cmd_counter[4:0][3]
+.gate SB_LUT4 I0=$false I1=$false I2=cmd_counter[3] I3=$auto$alumacc.cc:474:replace_alu$720.C[3] O=$0\cmd_counter[4:0][3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:235|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$717.C[3] CO=$auto$alumacc.cc:474:replace_alu$717.C[4] I0=$false I1=cmd_counter[3]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$720.C[3] CO=$auto$alumacc.cc:474:replace_alu$720.C[4] I0=$false I1=cmd_counter[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:235|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=cmd_counter[4] I3=$auto$alumacc.cc:474:replace_alu$717.C[4] O=$0\cmd_counter[4:0][4]
+.gate SB_LUT4 I0=$false I1=$false I2=cmd_counter[4] I3=$auto$alumacc.cc:474:replace_alu$720.C[4] O=$0\cmd_counter[4:0][4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:235|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
 .gate SB_LUT4 I0=$false I1=$true I2=param_counter[0] I3=$false O=$0\param_counter[6:0][0]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=param_counter[0] CO=$auto$alumacc.cc:474:replace_alu$720.C[2] I0=$false I1=param_counter[1]
+.gate SB_CARRY CI=param_counter[0] CO=$auto$alumacc.cc:474:replace_alu$723.C[2] I0=$false I1=param_counter[1]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=param_counter[2] I3=$auto$alumacc.cc:474:replace_alu$720.C[2] O=$0\param_counter[6:0][2]
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=param_counter[2] I3=$auto$alumacc.cc:474:replace_alu$723.C[2] O=$0\param_counter[6:0][2]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$720.C[2] CO=$auto$alumacc.cc:474:replace_alu$720.C[3] I0=$false I1=param_counter[2]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$723.C[2] CO=$auto$alumacc.cc:474:replace_alu$723.C[3] I0=$false I1=param_counter[2]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=param_counter[3] I3=$auto$alumacc.cc:474:replace_alu$720.C[3] O=$0\param_counter[6:0][3]
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=param_counter[3] I3=$auto$alumacc.cc:474:replace_alu$723.C[3] O=$0\param_counter[6:0][3]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$720.C[3] CO=$auto$alumacc.cc:474:replace_alu$720.C[4] I0=$false I1=param_counter[3]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$723.C[3] CO=$auto$alumacc.cc:474:replace_alu$723.C[4] I0=$false I1=param_counter[3]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=param_counter[4] I3=$auto$alumacc.cc:474:replace_alu$720.C[4] O=$0\param_counter[6:0][4]
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=param_counter[4] I3=$auto$alumacc.cc:474:replace_alu$723.C[4] O=$0\param_counter[6:0][4]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$720.C[4] CO=$auto$alumacc.cc:474:replace_alu$720.C[5] I0=$false I1=param_counter[4]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$723.C[4] CO=$auto$alumacc.cc:474:replace_alu$723.C[5] I0=$false I1=param_counter[4]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=param_counter[5] I3=$auto$alumacc.cc:474:replace_alu$720.C[5] O=$0\param_counter[6:0][5]
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=param_counter[5] I3=$auto$alumacc.cc:474:replace_alu$723.C[5] O=$0\param_counter[6:0][5]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$720.C[5] CO=$auto$alumacc.cc:474:replace_alu$720.C[6] I0=$false I1=param_counter[5]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$723.C[5] CO=$auto$alumacc.cc:474:replace_alu$723.C[6] I0=$false I1=param_counter[5]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=param_counter[6] I3=$auto$alumacc.cc:474:replace_alu$720.C[6] O=$0\param_counter[6:0][6]
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=param_counter[6] I3=$auto$alumacc.cc:474:replace_alu$723.C[6] O=$0\param_counter[6:0][6]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "demo.v:322|/usr/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "demo.v:320|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
 .gate SB_LUT4 I0=$false I1=bit_counter[0] I2=$false I3=$true O=$0\bit_counter[2:0][0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:259|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=bit_counter[0] CO=$auto$alumacc.cc:474:replace_alu$723.C[2] I0=bit_counter[1] I1=$true
+.gate SB_CARRY CI=bit_counter[0] CO=$auto$alumacc.cc:474:replace_alu$726.C[2] I0=bit_counter[1] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:259|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=bit_counter[2] I2=$true I3=$auto$alumacc.cc:474:replace_alu$723.C[2] O=$0\bit_counter[2:0][2]
+.gate SB_LUT4 I0=$false I1=bit_counter[2] I2=$true I3=$auto$alumacc.cc:474:replace_alu$726.C[2] O=$0\bit_counter[2:0][2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:259|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=cmd_counter[0] I2=$false I3=$true O=$abc$4085$memory\num_params$rdmux[0][3][0]$b$950[0]
+.gate SB_LUT4 I0=$false I1=cmd_counter[0] I2=$false I3=$true O=$abc$4194$memory\num_params$rdmux[0][3][0]$b$953[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:306|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=cmd_counter[0] CO=$auto$alumacc.cc:474:replace_alu$726.C[2] I0=cmd_counter[1] I1=$true
+.gate SB_CARRY CI=cmd_counter[0] CO=$auto$alumacc.cc:474:replace_alu$729.C[2] I0=cmd_counter[1] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:306|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=cmd_counter[2] I2=$true I3=$auto$alumacc.cc:474:replace_alu$726.C[2] O=$abc$4085$sub$demo.v:306$145_Y[2]
+.gate SB_LUT4 I0=$false I1=cmd_counter[2] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[2] O=$abc$4194$sub$demo.v:306$145_Y[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:306|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$726.C[2] CO=$auto$alumacc.cc:474:replace_alu$726.C[3] I0=cmd_counter[2] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[2] CO=$auto$alumacc.cc:474:replace_alu$729.C[3] I0=cmd_counter[2] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:306|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=cmd_counter[3] I2=$true I3=$auto$alumacc.cc:474:replace_alu$726.C[3] O=$abc$4085$sub$demo.v:306$145_Y[3]
+.gate SB_LUT4 I0=$false I1=cmd_counter[3] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[3] O=$abc$4194$sub$demo.v:306$145_Y[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:306|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$726.C[3] CO=$auto$alumacc.cc:474:replace_alu$726.C[4] I0=cmd_counter[3] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[3] CO=$auto$alumacc.cc:474:replace_alu$729.C[4] I0=cmd_counter[3] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:306|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=cmd_counter[4] I2=$true I3=$auto$alumacc.cc:474:replace_alu$726.C[4] O=$abc$4085$sub$demo.v:306$145_Y[4]
+.gate SB_LUT4 I0=$false I1=cmd_counter[4] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[4] O=$abc$4194$sub$demo.v:306$145_Y[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:306|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=params_left[0] I2=$false I3=$true O=$abc$4085$sub$demo.v:317$148_Y[0]
+.gate SB_LUT4 I0=$false I1=params_left[0] I2=$false I3=$true O=$abc$4194$sub$demo.v:317$148_Y[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=params_left[10] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[10] O=$abc$4085$sub$demo.v:317$148_Y[10]
+.gate SB_LUT4 I0=$false I1=params_left[10] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[10] O=$abc$4194$sub$demo.v:317$148_Y[10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[10] CO=$auto$alumacc.cc:474:replace_alu$729.C[11] I0=params_left[10] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[10] CO=$auto$alumacc.cc:474:replace_alu$732.C[11] I0=params_left[10] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[11] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[11] O=$abc$4085$sub$demo.v:317$148_Y[11]
+.gate SB_LUT4 I0=$false I1=params_left[11] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[11] O=$abc$4194$sub$demo.v:317$148_Y[11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[11] CO=$auto$alumacc.cc:474:replace_alu$729.C[12] I0=params_left[11] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[11] CO=$auto$alumacc.cc:474:replace_alu$732.C[12] I0=params_left[11] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[12] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[12] O=$abc$4085$sub$demo.v:317$148_Y[12]
+.gate SB_LUT4 I0=$false I1=params_left[12] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[12] O=$abc$4194$sub$demo.v:317$148_Y[12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[12] CO=$auto$alumacc.cc:474:replace_alu$729.C[13] I0=params_left[12] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[12] CO=$auto$alumacc.cc:474:replace_alu$732.C[13] I0=params_left[12] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[13] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[13] O=$abc$4085$sub$demo.v:317$148_Y[13]
+.gate SB_LUT4 I0=$false I1=params_left[13] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[13] O=$abc$4194$sub$demo.v:317$148_Y[13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=params_left[0] CO=$auto$alumacc.cc:474:replace_alu$729.C[2] I0=params_left[1] I1=$true
+.gate SB_CARRY CI=params_left[0] CO=$auto$alumacc.cc:474:replace_alu$732.C[2] I0=params_left[1] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[2] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[2] O=$abc$4085$sub$demo.v:317$148_Y[2]
+.gate SB_LUT4 I0=$false I1=params_left[2] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[2] O=$abc$4194$sub$demo.v:317$148_Y[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[2] CO=$auto$alumacc.cc:474:replace_alu$729.C[3] I0=params_left[2] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[2] CO=$auto$alumacc.cc:474:replace_alu$732.C[3] I0=params_left[2] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[3] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[3] O=$abc$4085$sub$demo.v:317$148_Y[3]
+.gate SB_LUT4 I0=$false I1=params_left[3] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[3] O=$abc$4194$sub$demo.v:317$148_Y[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[3] CO=$auto$alumacc.cc:474:replace_alu$729.C[4] I0=params_left[3] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[3] CO=$auto$alumacc.cc:474:replace_alu$732.C[4] I0=params_left[3] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[4] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[4] O=$abc$4085$sub$demo.v:317$148_Y[4]
+.gate SB_LUT4 I0=$false I1=params_left[4] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[4] O=$abc$4194$sub$demo.v:317$148_Y[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[4] CO=$auto$alumacc.cc:474:replace_alu$729.C[5] I0=params_left[4] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[4] CO=$auto$alumacc.cc:474:replace_alu$732.C[5] I0=params_left[4] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[5] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[5] O=$abc$4085$sub$demo.v:317$148_Y[5]
+.gate SB_LUT4 I0=$false I1=params_left[5] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[5] O=$abc$4194$sub$demo.v:317$148_Y[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[5] CO=$auto$alumacc.cc:474:replace_alu$729.C[6] I0=params_left[5] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[5] CO=$auto$alumacc.cc:474:replace_alu$732.C[6] I0=params_left[5] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[6] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[6] O=$abc$4085$sub$demo.v:317$148_Y[6]
+.gate SB_LUT4 I0=$false I1=params_left[6] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[6] O=$abc$4194$sub$demo.v:317$148_Y[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[6] CO=$auto$alumacc.cc:474:replace_alu$729.C[7] I0=params_left[6] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[6] CO=$auto$alumacc.cc:474:replace_alu$732.C[7] I0=params_left[6] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[7] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[7] O=$abc$4085$sub$demo.v:317$148_Y[7]
+.gate SB_LUT4 I0=$false I1=params_left[7] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[7] O=$abc$4194$sub$demo.v:317$148_Y[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[7] CO=$auto$alumacc.cc:474:replace_alu$729.C[8] I0=params_left[7] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[7] CO=$auto$alumacc.cc:474:replace_alu$732.C[8] I0=params_left[7] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[8] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[8] O=$abc$4085$sub$demo.v:317$148_Y[8]
+.gate SB_LUT4 I0=$false I1=params_left[8] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[8] O=$abc$4194$sub$demo.v:317$148_Y[8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[8] CO=$auto$alumacc.cc:474:replace_alu$729.C[9] I0=params_left[8] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[8] CO=$auto$alumacc.cc:474:replace_alu$732.C[9] I0=params_left[8] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=params_left[9] I2=$true I3=$auto$alumacc.cc:474:replace_alu$729.C[9] O=$abc$4085$sub$demo.v:317$148_Y[9]
+.gate SB_LUT4 I0=$false I1=params_left[9] I2=$true I3=$auto$alumacc.cc:474:replace_alu$732.C[9] O=$abc$4194$sub$demo.v:317$148_Y[9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$729.C[9] CO=$auto$alumacc.cc:474:replace_alu$729.C[10] I0=params_left[9] I1=$true
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$732.C[9] CO=$auto$alumacc.cc:474:replace_alu$732.C[10] I0=params_left[9] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:317|/usr/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_DFFE C=CLK D=$0\rst[0:0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3417 Q=rst
+.gate SB_DFFE C=CLK D=$0\rst[0:0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3427 Q=rst
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\dc[0:0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3423 Q=dc
+.gate SB_DFFE C=CLK D=$0\dc[0:0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3433 Q=dc
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\mosi[0:0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3429 Q=mosi
+.gate SB_DFFE C=CLK D=$0\mosi[0:0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3439 Q=mosi
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\cs[0:0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3435 Q=cs
+.gate SB_DFFE C=CLK D=$0\cs[0:0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3445 Q=cs
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\state[5:0][0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3441 Q=state[0]
+.gate SB_DFFE C=CLK D=$0\state[5:0][0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3451 Q=state[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\state[5:0][1] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3441 Q=state[1]
+.gate SB_DFFE C=CLK D=$0\state[5:0][1] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3451 Q=state[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\state[5:0][2] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3441 Q=state[2]
+.gate SB_DFFE C=CLK D=$0\state[5:0][2] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3451 Q=state[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\state[5:0][3] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3441 Q=state[3]
+.gate SB_DFFE C=CLK D=$0\state[5:0][3] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3451 Q=state[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$false E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3441 Q=state[4]
+.gate SB_DFFE C=CLK D=$false E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3451 Q=state[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$false E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3441 Q=state[5]
+.gate SB_DFFE C=CLK D=$false E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3451 Q=state[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[0]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][1] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[1]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][1] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][2] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[2]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][2] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][3] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[3]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][3] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][4] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[4]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][4] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][5] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[5]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][5] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][6] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[6]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][6] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][7] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[7]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][7] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][8] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[8]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][8] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][9] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[9]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][9] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][10] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[10]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][10] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][11] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[11]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][11] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][12] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[12]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][12] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][13] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[13]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][13] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][14] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[14]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][14] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[14]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\delay[15:0][15] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3477 Q=delay[15]
+.gate SB_DFFE C=CLK D=$0\delay[15:0][15] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3487 Q=delay[15]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[0]
+.gate SB_DFFE C=CLK D=$0\data[7:0][0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][1] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[1]
+.gate SB_DFFE C=CLK D=$0\data[7:0][1] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][2] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[2]
+.gate SB_DFFE C=CLK D=$0\data[7:0][2] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][3] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[3]
+.gate SB_DFFE C=CLK D=$0\data[7:0][3] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][4] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[4]
+.gate SB_DFFE C=CLK D=$0\data[7:0][4] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][5] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[5]
+.gate SB_DFFE C=CLK D=$0\data[7:0][5] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][6] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[6]
+.gate SB_DFFE C=CLK D=$0\data[7:0][6] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\data[7:0][7] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3573 Q=data[7]
+.gate SB_DFFE C=CLK D=$0\data[7:0][7] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3583 Q=data[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$abc$4085$auto$ice40_ffinit.cc:140:execute$4078 E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 Q=$abc$4085$auto$ice40_ffinit.cc:141:execute$4079
+.gate SB_DFFE C=CLK D=$abc$4194$auto$ice40_ffinit.cc:140:execute$4187 E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631 Q=$abc$4194$auto$ice40_ffinit.cc:141:execute$4188
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=bit_counter[1] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3642 Q=$0\bit_counter[2:0][1]
+.gate SB_DFFE C=CLK D=bit_counter[1] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3652 Q=$0\bit_counter[2:0][1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$abc$4085$auto$ice40_ffinit.cc:140:execute$4074 E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3621 Q=$abc$4085$auto$ice40_ffinit.cc:141:execute$4075
+.gate SB_DFFE C=CLK D=$abc$4194$auto$ice40_ffinit.cc:140:execute$4183 E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$3631 Q=$abc$4194$auto$ice40_ffinit.cc:141:execute$4184
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][0] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3667 Q=cmd_counter[0]
+.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][0] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3677 Q=cmd_counter[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][1] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3698 Q=cmd_counter[1]
+.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][1] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3708 Q=cmd_counter[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][2] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3667 Q=cmd_counter[2]
+.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][2] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3677 Q=cmd_counter[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][3] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3667 Q=cmd_counter[3]
+.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][3] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3677 Q=cmd_counter[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][4] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3667 Q=cmd_counter[4]
+.gate SB_DFFE C=CLK D=$0\cmd_counter[4:0][4] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3677 Q=cmd_counter[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\param_counter[6:0][0] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776 Q=param_counter[0]
+.gate SB_DFFE C=CLK D=$0\param_counter[6:0][0] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798 Q=param_counter[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\param_counter[6:0][1] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3807 Q=param_counter[1]
+.gate SB_DFFE C=CLK D=$0\param_counter[6:0][1] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3845 Q=param_counter[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\param_counter[6:0][2] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776 Q=param_counter[2]
+.gate SB_DFFE C=CLK D=$0\param_counter[6:0][2] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798 Q=param_counter[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\param_counter[6:0][3] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776 Q=param_counter[3]
+.gate SB_DFFE C=CLK D=$0\param_counter[6:0][3] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798 Q=param_counter[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\param_counter[6:0][4] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776 Q=param_counter[4]
+.gate SB_DFFE C=CLK D=$0\param_counter[6:0][4] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798 Q=param_counter[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\param_counter[6:0][5] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776 Q=param_counter[5]
+.gate SB_DFFE C=CLK D=$0\param_counter[6:0][5] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798 Q=param_counter[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\param_counter[6:0][6] E=$abc$4085$auto$dff2dffe.cc:175:make_patterns_logic$3776 Q=param_counter[6]
+.gate SB_DFFE C=CLK D=$0\param_counter[6:0][6] E=$abc$4194$auto$dff2dffe.cc:175:make_patterns_logic$3798 Q=param_counter[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][0] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[0]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][0] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[0]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][1] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[1]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][1] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[1]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][2] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[2]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][2] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[2]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][3] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[3]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][3] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[3]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][4] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[4]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][4] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[4]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][5] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[5]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][5] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[5]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][6] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[6]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][6] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[6]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][7] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[7]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][7] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[7]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][8] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[8]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][8] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[8]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][9] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[9]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][9] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[9]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][10] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[10]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][10] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[10]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][11] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[11]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][11] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[11]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][12] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[12]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][12] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[12]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$0\params_left[13:0][13] E=$abc$4085$auto$dff2dffe.cc:158:make_patterns_logic$3908 Q=params_left[13]
+.gate SB_DFFE C=CLK D=$0\params_left[13:0][13] E=$abc$4194$auto$dff2dffe.cc:158:make_patterns_logic$4017 Q=params_left[13]
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "demo.v:189|/usr/bin/../share/yosys/ice40/cells_map.v:8"
 .gate SB_DFF C=CLK D=scl Q=$0\scl[0:0]
@@ -1508,47 +1508,47 @@
 1 1
 .names $false $0\state[5:0][5]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$692.C[0]
+.names $true $auto$alumacc.cc:474:replace_alu$695.C[0]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$692.C[1]
+.names $true $auto$alumacc.cc:474:replace_alu$695.C[1]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$692.C[2]
+.names $true $auto$alumacc.cc:474:replace_alu$695.C[2]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$692.C[3]
+.names $true $auto$alumacc.cc:474:replace_alu$695.C[3]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$692.C[4]
+.names $true $auto$alumacc.cc:474:replace_alu$695.C[4]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$692.C[5]
+.names $true $auto$alumacc.cc:474:replace_alu$695.C[5]
 1 1
-.names delay[5] $auto$alumacc.cc:474:replace_alu$692.C[6]
+.names delay[5] $auto$alumacc.cc:474:replace_alu$695.C[6]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$701.C[0]
+.names $true $auto$alumacc.cc:474:replace_alu$704.C[0]
 1 1
-.names $abc$4085$auto$alumacc.cc:474:replace_alu$701.BB[0] $auto$alumacc.cc:474:replace_alu$701.C[1]
-1 1
-.names $false $auto$alumacc.cc:474:replace_alu$714.C[0]
-1 1
-.names delay[0] $auto$alumacc.cc:474:replace_alu$714.C[1]
+.names $abc$4194$auto$alumacc.cc:474:replace_alu$704.BB[0] $auto$alumacc.cc:474:replace_alu$704.C[1]
 1 1
 .names $false $auto$alumacc.cc:474:replace_alu$717.C[0]
 1 1
-.names cmd_counter[0] $auto$alumacc.cc:474:replace_alu$717.C[1]
+.names delay[0] $auto$alumacc.cc:474:replace_alu$717.C[1]
 1 1
 .names $false $auto$alumacc.cc:474:replace_alu$720.C[0]
 1 1
-.names param_counter[0] $auto$alumacc.cc:474:replace_alu$720.C[1]
+.names cmd_counter[0] $auto$alumacc.cc:474:replace_alu$720.C[1]
 1 1
-.names $true $auto$alumacc.cc:474:replace_alu$723.C[0]
+.names $false $auto$alumacc.cc:474:replace_alu$723.C[0]
 1 1
-.names bit_counter[0] $auto$alumacc.cc:474:replace_alu$723.C[1]
+.names param_counter[0] $auto$alumacc.cc:474:replace_alu$723.C[1]
 1 1
 .names $true $auto$alumacc.cc:474:replace_alu$726.C[0]
 1 1
-.names cmd_counter[0] $auto$alumacc.cc:474:replace_alu$726.C[1]
+.names bit_counter[0] $auto$alumacc.cc:474:replace_alu$726.C[1]
 1 1
 .names $true $auto$alumacc.cc:474:replace_alu$729.C[0]
 1 1
-.names params_left[0] $auto$alumacc.cc:474:replace_alu$729.C[1]
+.names cmd_counter[0] $auto$alumacc.cc:474:replace_alu$729.C[1]
+1 1
+.names $true $auto$alumacc.cc:474:replace_alu$732.C[0]
+1 1
+.names params_left[0] $auto$alumacc.cc:474:replace_alu$732.C[1]
 1 1
 .names cs CS
 1 1
