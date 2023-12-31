@@ -7,11 +7,6 @@ module demo(
   output CS
  );
 
- // --- Summary of Reset FSM states ---
- // (*) Init --- initializes LCD Signals -> RST
- // (2) RST --- assert active low RST -> DRST
- // (3) DRST --- delay and deassert RST -> DDRST
- // (4) DDRST --- delay post deassert RST (RST cmd is finished)
 
  localparam init = 6'd0;
  localparam actRst = 6'd1;
@@ -27,21 +22,23 @@ module demo(
  localparam rdc = 6'd11;
  localparam lp = 6'd12;
  
-
  reg rst, scl, dc, mosi, cs;
  reg [5:0] state;
- reg [15:0] delay; // 120 for 10us, 60000 for 5ms
+ reg [15:0] delay;
 
  reg [7:0] data;
+ reg [2:0] bit_counter; 
+ 
+ reg [15:0] pixel_data;
+ reg [3:0] pixel_bit_counter;
 
  reg [7:0] cmd [0:23];
- reg [13:0] num_params [0:23]; // Number of parameters for each command including NOP
+ reg [13:0] num_params [0:23];
+ reg [4:0] cmd_counter;
 
- reg [7:0] params [0:75]; // Holds parameters for cmds
- 
- reg [2:0] bit_counter;
- reg [4:0] cmd_counter; // 5 bit counter
- reg [6:0] param_counter; // 7 bit counter
+ reg [7:0] params [0:75];
+ reg [6:0] param_counter;
+
  reg [13:0] params_left;
 
  initial
@@ -97,6 +94,7 @@ module demo(
   num_params[21] = 14'h04;
   num_params[22] = 14'd12800;
   num_params[23] = 8'h00;
+  cmd_counter = 5'b0;
 
   params[0]  = 8'h05;
   params[1]  = 8'h3C;
@@ -174,161 +172,250 @@ module demo(
   params[73] = 8'h00;
   params[74] = 8'h69;
   params[75] = 8'hFF;
+  param_counter = 7'b00;
+  params_left = 14'd0;
 
-  data = 8'h00; // Internal Reg to hold mosi data
 
+  data = 8'h00;
   bit_counter = 3'b111;
-  cmd_counter = 1'b0; // Points to command
-  param_counter = 7'b00; // Points to parameter
-  params_left = 14'd0; // Determines number of remaining parameters for cmd
+
+  pixel_data = 16'h00_00;
+  pixel_bit_counter = 4'b1111;
  end
 
  always@(posedge CLK)
+ begin
+
   scl <= ~scl; //Toggle scl each rising edge
 
+ end
+
  always@(posedge CLK)
- begin
+ begin // FSM Start [begin 1]
+
   case(state)
-   init: begin //Initialize Signals (Init)
+
+   init: 
+   begin // Init Start [begin 2]
+
     rst <= 1'b1;
     dc <= 1'b1;
     mosi <= 1'b1;
     cs <= 1'b1;
     state <= actRst;
     delay <= 16'd0;
-   end
-   actRst: begin // Activate Reset (RST)
-    rst <= 1'b0; //Activate reset
+
+   end // Init End [end 40]
+
+   actRst: 
+   begin // actRst Start [begin 3]
+
+    rst <= 1'b0;
     state <= drst;
-   end
-   drst: begin // Delay & Deassert RST (DRST)
+
+   end // actRst End [end 39]
+
+   drst: 
+   begin // drst Start [begin 4]
+
     if(delay <= 16'd120)
-    begin
+    begin // [begin 5]
      delay <= delay + 16'd1; 
-    end
+    end// [end 38]
     else
-    begin
-     rst <= 1'b1; //Deactivate reset
+    begin // [begin 6]
+     rst <= 1'b1;
      delay <= 16'd0;
      state <= ddrst;
-    end
-   end
-   ddrst: begin // Delay Deassert RST (DDRST)
+    end// [end 37]
+
+   end // drst End [end 36]
+
+   ddrst: 
+   begin // ddrst Start [begin 7]
+
     if(delay <= 16'd60000)
-    begin
+    begin // [begin 8]
      delay <= delay + 16'd1;
-    end
+    end// [end 35]
     else
-    begin
+    begin // [begin 9]
      delay <= 16'd0;
      state <= lc;
-    end
-   end
-   lc: begin // Load Cmd
-    if(cmd[cmd_counter] == 8'h00)
-    begin
-     state <= lc; // Deadstate when no more cmds left
-    end
-    else
-    begin
-     data <= cmd[cmd_counter];
-     cmd_counter <= cmd_counter + 5'b1; // Point to next cmd
-     state <= ldc; //Move to lower DC
-    end
-   end
-   ldc: begin
-    dc <= 1'b0;
-    state <= sm; //Set mosi
-   end
-   sm: begin
-    if(bit_counter == 3'b111)
-    begin
-     state <= lcs; //Lower CS
-    end
-    else if(bit_counter == 3'b000)
-    begin
-     state <= slb; //Send last bit
-     bit_counter <= 3'b111; //Reset bit counter
-    end
-    else
-    begin
-     state <= send; //Send non last bit
-    end
+    end // [end 34]
 
-    mosi <= data[bit_counter]; //Set on falling edge
-    bit_counter <= bit_counter - 3'b001;
-   end
-   lcs: begin // Lower CS
+   end // ddrst End [end 33]
+
+   lc: 
+   begin // lc Start [begin 10]
+
+    if(cmd[cmd_counter] == 8'h00)
+    begin // [begin 11]
+     state <= lc;
+    end// [end 32]
+    else
+    begin // [begin 12]
+     data <= cmd[cmd_counter];
+     cmd_counter <= cmd_counter + 5'b1;
+     state <= ldc;
+    end// [end 31]
+ 
+   end // lc End [end 30]
+
+   ldc: 
+   begin // ldc Start [begin 13]
+
+    dc <= 1'b0;
+    state <= sm;
+
+   end // ldc End [end 29]
+
+   sm: 
+   begin // sm Start [begin 14]
+
+    if(dc == 1'b1 && cmd[cmd_counter-5'd1] == 8'h2C)
+    begin // [begin 15]
+     if(pixel_bit_counter == 4'b1111)
+     begin// [begin 16]
+      state <= lcs;
+     end// [end 28]
+     else if(pixel_bit_counter == 4'b0000)
+     begin// [begin 17]
+      state <= slb;
+      pixel_bit_counter <= 4'b1111;
+     end// [end 27]
+     else
+     begin// [begin 18]
+      state <= send;
+     end// [end 26]
+
+     mosi <= pixel_data[pixel_bit_counter];
+     pixel_bit_counter <= pixel_bit_counter - 4'b0001;
+    end// [end 25]
+    else
+    begin// [begin 19]
+     if(bit_counter == 3'b111)
+     begin
+      state <= lcs; //Lower CS
+     end// [end 24]
+     else if(bit_counter == 3'b000)
+     begin// [begin 20]
+      state <= slb; //Send last bit
+      bit_counter <= 3'b111; //Reset bit counter
+     end// [end 23]
+     else
+     begin// [begin 21]
+      state <= send;
+     end// [end 22]
+
+     mosi <= data[bit_counter];
+     bit_counter <= bit_counter - 3'b001;
+    end// [end 21]
+ 
+   end // sm End [end 20]
+
+   lcs: 
+   begin // lcs Start [begin 22]
+
     if(scl == 1'b1)
-    begin
+    begin// [begin 23]
      cs <= 1'b0;
-     state <= send; //Send first bit
-    end
-    else
-    begin
-     state <= lcs; //Wait until scl is about to fall
-    end
-   end
-   send: begin
-    if(scl == 1'b1) //MOSI gets sent on rising scl
-    begin
-     state <= sm; //Set mosi after sending
-    end
-    else
-    begin
      state <= send;
-    end
-   end
-   slb: begin
-    if(scl == 1'b1) // Send Last bit of byte
-    begin
-     state <= rcs; // Raise CS, after write byte
-     //state <= slb; // THIS LINE FOR DEBUG
-    end
+    end// [end 19]
     else
-    begin
-     state <= slb; // Send last bit
-    end
-   end
-   rcs: begin
-    cs <= 1'b1; // First Raise CS to prepare next data
-    if(dc == 1'b0) // If cmd, raise dc for param
-    begin
-     state <= rdc; // Need to raise dc line, sets data, lowers cs
-    end
-    else // If last byte was a parameter,
-    begin // check if it is the last parameter
-     state <= lp; // load parameter if more parameters exist
-    end
-   end
-   rdc: begin // Should also set params_left...
+    begin// [begin 24]
+     state <= lcs;
+    end// [end 18]
+
+   end // lcs End [end 17]
+
+   send: 
+   begin // send Start [begin 25]
+
+    if(scl == 1'b1)
+    begin// [begin 26]
+     state <= sm;
+    end// [end 16]
+    else
+    begin// [begin 27]
+     state <= send;
+    end// [end 15]
+
+   end // send End [end 14]
+
+   slb: 
+   begin // slb Start [begin 28]
+
+    if(scl == 1'b1)
+    begin// [begin 29]
+     state <= rcs;
+    end// [end 13]
+    else
+    begin// [begin 30]
+     state <= slb;
+    end// [end 12]
+
+   end // slb End [end 11]
+
+   rcs: 
+   begin // rcs Start [begin 31]
+   
+    cs <= 1'b1;
+    if(dc == 1'b0)
+    begin// [begin 32]
+     state <= rdc;
+    end// [end 10]
+    else
+    begin// [begin 33]
+     state <= lp;
+    end// [end 10]
+   
+   end // rcs End [end 9]
+
+   rdc: 
+   begin // rdc Start [begin 34]
+
     dc <= 1'b1;
     params_left <= num_params[cmd_counter - 5'b1];
-    state <= lp; // After setting dc line load first parameter
-   end
-   lp: begin // Load next parameter for cmd
-    data <= params[param_counter];
-    if(params_left == 14'd0)
-    begin
-     state <= lc;
-    end
+    state <= lp;
+
+   end // rdc End [end 8]
+
+   lp: begin // lp Start [begin 35]
+
+    if(cmd[cmd_counter-5'd1] == 8'h2C)
+    begin// [begin 36]
+     pixel_data[15:8] <= params[param_counter];
+     pixel_data[7:0] <= params[param_counter];
+    end// [end 7]
     else
-    begin
-     params_left <= params_left - 14'd1;
-     if(param_counter != 7'd75) //Only when not last param
-     begin
+    begin// [begin 37]
+     data <= params[param_counter];
+    end// [end 6]
+
+    if(params_left == 14'd0)
+    begin// [begin 38]
+     state <= lc;
+    end // [end 5]
+    else
+    begin// [begin 39]
+     if(param_counter != 7'd75)
+     begin// [begin 40]
       param_counter <= param_counter + 7'd01;
-     end                                                    
+     end// [end 4]                           
+     params_left <= params_left - 14'd1;           
      state <= sm;
-    end
-    //Moved the param_counter decrementation to else
-   end
+    end // [end 3]
+
+   end // lp End [end 2]
+   
   endcase
- end
+ end // [end 1]
 
  assign RST = rst;
  assign SCL = scl;
  assign DC = dc;
  assign MOSI = mosi;
  assign CS = cs;
+
 endmodule
