@@ -21,7 +21,29 @@ module demo(
  localparam send = 6'd10;
  localparam rdc = 6'd11;
  localparam lp = 6'd12;
- 
+ localparam dsleep = 6'd13;
+ localparam dpcmd = 6'd14;
+ localparam dmw_c = 6'd15;
+ localparam dmw_p = 6'd16;
+ localparam dcrg_p = 6'd17;
+ localparam dfrmctr3_c = 6'd18;
+ localparam dfrmctr3_p = 6'd19;
+ localparam dgmctr_c = 6'd20;
+ localparam dgmctr_p = 6'd21;
+ localparam dcr_c = 6'd22;
+ localparam dcr_p = 6'd23;
+
+ localparam actRst_d = 16'd23817;
+ localparam dactRst_d = 16'd20858;
+ localparam sleep = 16'd20848;
+ localparam pcmd = 12'd36; // 3us post cmd delay
+ localparam mw_c = 12'd480; // 40us post memory write
+ localparam mw_p = 12'd72; // memory write param
+ localparam crg = 12'd36; //CASET/RASET/Gamma+/- del.
+ localparam frmctr3 = 12'd36;
+ localparam gmctr = 12'd36; // 3us for gamma ctr
+ localparam cr = 12'd36; // 3us for caset raset
+
  reg rst, scl, dc, mosi, cs;
  reg [5:0] state;
  reg [15:0] delay;
@@ -32,11 +54,11 @@ module demo(
  reg [15:0] pixel_data;
  reg [3:0] pixel_bit_counter;
 
- reg [7:0] cmd [0:23];
- reg [13:0] num_params [0:23];
+ reg [7:0] cmd [0:26];
+ reg [13:0] num_params [0:24];
  reg [4:0] cmd_counter;
 
- reg [7:0] params [0:75];
+ reg [7:0] params [0:83];
  reg [6:0] param_counter;
 
  reg [13:0] params_left;
@@ -46,54 +68,59 @@ module demo(
   state = 6'd0;
   scl = 1'b1;
 
-  cmd[0]  = 8'hB1;
-  cmd[1]  = 8'hB2;
-  cmd[2]  = 8'hB3;
-  cmd[3]  = 8'hB4;
-  cmd[4]  = 8'hC0;
-  cmd[5]  = 8'hC1;
-  cmd[6]  = 8'hC2;
-  cmd[7]  = 8'hC3;
-  cmd[8]  = 8'hC4;
-  cmd[9]  = 8'hC5;
-  cmd[10] = 8'hE0;
-  cmd[11] = 8'hE1;
-  cmd[12] = 8'hFC;
-  cmd[13] = 8'h3A;
-  cmd[14] = 8'h36;
-  cmd[15] = 8'h21;
-  cmd[16] = 8'h29;
-  cmd[17] = 8'h2A;
-  cmd[18] = 8'h2B;
-  cmd[19] = 8'h2C;
-  cmd[20] = 8'h2A;
-  cmd[21] = 8'h2B;
-  cmd[22] = 8'h2C;
-  cmd[23] = 8'h00; // NOP ; when reached deadstate...
-  num_params[0]  = 14'h03;
-  num_params[1]  = 14'h03; 
-  num_params[2]  = 14'h06;
-  num_params[3]  = 14'h01;
-  num_params[4]  = 14'h03;
-  num_params[5]  = 14'h01;
-  num_params[6]  = 14'h02;
+  cmd[0]  = 8'h11; // sleep out and booster on
+  cmd[1]  = 8'hB1;
+  cmd[2]  = 8'hB2;
+  cmd[3]  = 8'hB3;
+  cmd[4]  = 8'hB4;
+  cmd[5]  = 8'hC0;
+  cmd[6]  = 8'hC1;
+  cmd[7]  = 8'hC2;
+  cmd[8]  = 8'hC3;
+  cmd[9]  = 8'hC4;
+  cmd[10] = 8'hC5;
+  cmd[11] = 8'hE0;
+  cmd[12] = 8'hE1;
+  cmd[13] = 8'hFC;
+  cmd[14] = 8'h3A;
+  cmd[15] = 8'h36;
+  cmd[16] = 8'h21;
+  cmd[17] = 8'h29;
+  cmd[18] = 8'h2A;// CASET
+  cmd[19] = 8'h2B;// RASET
+  cmd[20] = 8'h2C; // MW 1
+  cmd[21] = 8'h2A;
+  cmd[22] = 8'h2B;
+  cmd[23] = 8'h2C; // MW 2
+  cmd[24] = 8'h2A;
+  cmd[25] = 8'h2B;
+  cmd[26] = 8'h00; //NOP
+  num_params[0]  = 14'h00;
+  num_params[1]  = 14'h03;
+  num_params[2]  = 14'h03; 
+  num_params[3]  = 14'h06;
+  num_params[4]  = 14'h01;
+  num_params[5]  = 14'h03;
+  num_params[6]  = 14'h01;
   num_params[7]  = 14'h02;
   num_params[8]  = 14'h02;
-  num_params[9]  = 14'h01;
-  num_params[10] = 14'h10;
+  num_params[9]  = 14'h02;
+  num_params[10]  = 14'h01;
   num_params[11] = 14'h10;
-  num_params[12] = 14'h01;
+  num_params[12] = 14'h10;
   num_params[13] = 14'h01;
   num_params[14] = 14'h01;
-  num_params[15] = 14'h00;
+  num_params[15] = 14'h01;
   num_params[16] = 14'h00;
-  num_params[17] = 14'h04;
+  num_params[17] = 14'h00;
   num_params[18] = 14'h04;
-  num_params[19] = 14'h00;
-  num_params[20] = 14'h04;
+  num_params[19] = 14'h04;
+  num_params[20] = 14'h00;
   num_params[21] = 14'h04;
-  num_params[22] = 14'd12800;
-  num_params[23] = 8'h00;
+  num_params[22] = 14'h04;
+  num_params[23] = 14'd12800;
+  num_params[24] = 8'h04;
+  num_params[25] = 8'h04;
   cmd_counter = 5'b0;
 
   params[0]  = 8'h05;
@@ -172,6 +199,15 @@ module demo(
   params[73] = 8'h00;
   params[74] = 8'h69;
   params[75] = 8'hFF;
+  params[76] = 8'h00;
+  params[77] = 8'h01;
+  params[78] = 8'h00;
+  params[79] = 8'hA0;
+  params[80] = 8'h00;
+  params[81] = 8'h1A;
+  params[82] = 8'h00;
+  params[83] = 8'h69;
+
   param_counter = 7'b00;
   params_left = 14'd0;
 
@@ -186,231 +222,442 @@ module demo(
  always@(posedge CLK)
  begin
 
-  scl <= ~scl; //Toggle scl each rising edge
+  scl <= ~scl;
 
  end
 
  always@(posedge CLK)
- begin // FSM Start [begin 1]
+ begin
 
   case(state)
 
    init: 
-   begin // Init Start [begin 2]
+   begin
 
     rst <= 1'b1;
-    dc <= 1'b1;
-    mosi <= 1'b1;
+    dc <= 1'b0;//initialize to low
+    mosi <= 1'b0;//initialize to low
     cs <= 1'b1;
     state <= actRst;
     delay <= 16'd0;
 
-   end // Init End [end 40]
+   end
 
    actRst: 
-   begin // actRst Start [begin 3]
+   begin
 
     rst <= 1'b0;
     state <= drst;
 
-   end // actRst End [end 39]
+   end
 
    drst: 
-   begin // drst Start [begin 4]
+   begin
 
-    if(delay <= 16'd120)
-    begin // [begin 5]
+    if(delay <= actRst_d)
+    begin
      delay <= delay + 16'd1; 
-    end// [end 38]
+    end
     else
-    begin // [begin 6]
+    begin
      rst <= 1'b1;
      delay <= 16'd0;
      state <= ddrst;
-    end// [end 37]
+    end
 
-   end // drst End [end 36]
+   end
 
    ddrst: 
-   begin // ddrst Start [begin 7]
+   begin
 
-    if(delay <= 16'd60000)
-    begin // [begin 8]
+    if(delay <= dactRst_d)
+    begin
      delay <= delay + 16'd1;
-    end// [end 35]
+    end
     else
-    begin // [begin 9]
+    begin
      delay <= 16'd0;
      state <= lc;
-    end // [end 34]
+    end
 
-   end // ddrst End [end 33]
+   end
 
    lc: 
-   begin // lc Start [begin 10]
+   begin
 
     if(cmd[cmd_counter] == 8'h00)
-    begin // [begin 11]
+    begin
      state <= lc;
-    end// [end 32]
+    end
     else
-    begin // [begin 12]
+    begin
      data <= cmd[cmd_counter];
      cmd_counter <= cmd_counter + 5'b1;
      state <= ldc;
-    end// [end 31]
+    end
  
-   end // lc End [end 30]
+   end
+
+   dpcmd: begin
+
+    if(delay < pcmd)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= lc;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dmw_c: begin
+
+    if(delay < mw_c)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc; // Raise dc for params
+     delay <= 16'd0; // Reset delay
+    end
+
+   end
 
    ldc: 
-   begin // ldc Start [begin 13]
+   begin
 
     dc <= 1'b0;
     state <= sm;
 
-   end // ldc End [end 29]
+   end
 
    sm: 
-   begin // sm Start [begin 14]
+   begin
 
     if(dc == 1'b1 && cmd[cmd_counter-5'd1] == 8'h2C)
-    begin // [begin 15]
+    begin
      if(pixel_bit_counter == 4'b1111)
-     begin// [begin 16]
+     begin
       state <= lcs;
-     end// [end 28]
+     end
      else if(pixel_bit_counter == 4'b0000)
-     begin// [begin 17]
+     begin
       state <= slb;
       pixel_bit_counter <= 4'b1111;
-     end// [end 27]
+     end
      else
-     begin// [begin 18]
+     begin
       state <= send;
-     end// [end 26]
+     end
 
      mosi <= pixel_data[pixel_bit_counter];
      pixel_bit_counter <= pixel_bit_counter - 4'b0001;
-    end// [end 25]
+    end
     else
-    begin// [begin 19]
+    begin
      if(bit_counter == 3'b111)
      begin
-      state <= lcs; //Lower CS
-     end// [end 24]
+      state <= lcs;
+     end
      else if(bit_counter == 3'b000)
-     begin// [begin 20]
-      state <= slb; //Send last bit
-      bit_counter <= 3'b111; //Reset bit counter
-     end// [end 23]
+     begin
+      state <= slb;
+      bit_counter <= 3'b111;
+     end
      else
-     begin// [begin 21]
+     begin
       state <= send;
-     end// [end 22]
+     end
 
      mosi <= data[bit_counter];
      bit_counter <= bit_counter - 3'b001;
-    end// [end 21]
+    end
  
-   end // sm End [end 20]
+   end
 
    lcs: 
-   begin // lcs Start [begin 22]
+   begin
 
     if(scl == 1'b1)
-    begin// [begin 23]
+    begin
      cs <= 1'b0;
      state <= send;
-    end// [end 19]
+    end
     else
-    begin// [begin 24]
+    begin
      state <= lcs;
-    end// [end 18]
+    end
 
-   end // lcs End [end 17]
+   end
 
    send: 
-   begin // send Start [begin 25]
+   begin
 
     if(scl == 1'b1)
-    begin// [begin 26]
+    begin
      state <= sm;
-    end// [end 16]
+    end
     else
-    begin// [begin 27]
+    begin
      state <= send;
-    end// [end 15]
+    end
 
-   end // send End [end 14]
+   end
 
    slb: 
-   begin // slb Start [begin 28]
+   begin
 
     if(scl == 1'b1)
-    begin// [begin 29]
+    begin
      state <= rcs;
-    end// [end 13]
+    end
     else
-    begin// [begin 30]
+    begin
      state <= slb;
-    end// [end 12]
+    end
 
-   end // slb End [end 11]
+   end
 
    rcs: 
-   begin // rcs Start [begin 31]
+   begin
    
     cs <= 1'b1;
     if(dc == 1'b0)
-    begin// [begin 32]
-     state <= rdc;
-    end// [end 10]
+    begin
+     if(cmd_counter == 5'd20)
+     begin
+      state <= dmw_p; // short
+     end
+     else if(cmd_counter == 5'd23)
+     begin
+      state <= dmw_c; // long
+     end
+     else
+     begin
+      if(cmd[cmd_counter-5'd1] == 8'hB3)
+      begin
+       state <= dfrmctr3_c;
+      end
+      else if(cmd[cmd_counter-5'd1] == 8'hE0 ||
+          cmd[cmd_counter-5'd1] == 8'hE1)
+      begin
+       state <= dgmctr_c;
+      end
+      else if(cmd[cmd_counter-5'd1] == 8'h2A ||
+	  cmd[cmd_counter-5'd1] == 8'h2B)
+      begin
+       state <= dcr_c;
+      end
+      else if(cmd[cmd_counter-5'd1] == 8'h11)
+      begin
+       state <= dsleep;
+      end
+      else
+      begin
+       state <= rdc;
+      end
+     end
+    end
     else
-    begin// [begin 33]
-     state <= lp;
-    end// [end 10]
+    begin
+     if(cmd_counter == 5'd23)
+     begin
+      state <= dmw_p; // Provide 6us delay after each parameter
+     end
+     else
+     begin
+      if(cmd[cmd_counter-5'd1] == 8'hB3)
+      begin
+       state <= dfrmctr3_p;
+      end
+      else if(cmd[cmd_counter-5'd1] == 8'hE0 ||
+	      cmd[cmd_counter-5'd1] == 8'hE1)
+      begin
+       state <= dgmctr_p;
+      end
+      else if(cmd[cmd_counter-5'd1] == 8'h2A ||
+	      cmd[cmd_counter-5'd1] == 8'h2B)
+      begin
+       state <= dcr_p;
+      end
+      else
+      begin
+       state <= lp;
+      end
+     end
+    end
    
-   end // rcs End [end 9]
+   end
 
    rdc: 
-   begin // rdc Start [begin 34]
+   begin
 
     dc <= 1'b1;
     params_left <= num_params[cmd_counter - 5'b1];
     state <= lp;
 
-   end // rdc End [end 8]
+   end
 
-   lp: begin // lp Start [begin 35]
+   lp: 
+   begin
 
     if(cmd[cmd_counter-5'd1] == 8'h2C)
-    begin// [begin 36]
+    begin
      pixel_data[15:8] <= params[param_counter];
      pixel_data[7:0] <= params[param_counter];
-    end// [end 7]
+    end
     else
-    begin// [begin 37]
+    begin
      data <= params[param_counter];
-    end// [end 6]
+    end
 
     if(params_left == 14'd0)
-    begin// [begin 38]
-     state <= lc;
-    end // [end 5]
+    begin
+     state <= dpcmd;// need to provide delay
+    end
     else
-    begin// [begin 39]
+    begin
      if(param_counter != 7'd75)
-     begin// [begin 40]
+     begin
       param_counter <= param_counter + 7'd01;
-     end// [end 4]                           
+     end                           
      params_left <= params_left - 14'd1;           
      state <= sm;
-    end // [end 3]
+    end
 
-   end // lp End [end 2]
-   
+   end
+
+   dmw_p: begin
+    
+    if(delay < mw_p)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     if(cmd_counter == 5'd20)
+     begin
+      state <= rdc;
+     end
+     else
+     begin
+      state <= lp;
+     end
+     delay <= 16'd0;
+    end
+
+   end
+
+   dfrmctr3_c: 
+   begin
+
+    if(delay < frmctr3)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0; 
+    end
+
+   end
+
+   dfrmctr3_p:
+   begin
+
+    if(delay < frmctr3)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= lp;
+     delay <= 16'd0;
+    end
+ 
+   end
+
+   dgmctr_c:
+   begin
+
+    if(delay < gmctr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dgmctr_p:
+   begin
+
+    if(delay < gmctr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= lp;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dcr_c:
+   begin
+
+    if(delay < cr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dcr_p:
+   begin
+
+    if(delay < cr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= lp;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dsleep:
+   begin
+
+    if(delay < sleep)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0;
+    end
+
+   end
+
   endcase
- end // [end 1]
+ end
 
  assign RST = rst;
  assign SCL = scl;
