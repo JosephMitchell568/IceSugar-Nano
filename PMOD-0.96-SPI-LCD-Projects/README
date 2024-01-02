@@ -1,0 +1,3 @@
+This directory contains several creative projects that I have come up with for the PMOD 0.96 SPI LCD screen designed for the IceSugar-Nano FPGA development board.
+
+At some point after further development stages have been completed I will transition to an FPGA with a larger number of IO pins since there are only 14 on the IceSugar-Nano...
