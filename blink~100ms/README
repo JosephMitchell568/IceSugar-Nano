@@ -1,3 +1,0 @@
-This design will blink an LED at roughly 100ms. (10 times a second)
-
-This is needed for the LCD reset process for the PMOD 160x80 0.96 SPI TFT LCD for the icesugar-nano
