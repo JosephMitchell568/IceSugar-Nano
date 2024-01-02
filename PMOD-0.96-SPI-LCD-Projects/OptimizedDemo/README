@@ -1,1 +1,3 @@
-Transferring content for optimized demo below LCD Projects directory
+This project will attempt to optimize the PMOD 0.96 LCD demo program by removing unnecessary commands and/or shrinking delays when possible.
+
+Final delay results and bare minimum commands in order to write the white frame will be provided here.
