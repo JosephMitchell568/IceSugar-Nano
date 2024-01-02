@@ -1,1 +1,3 @@
-Transfering contents of demo subfolder to new location...
+This project is designed to recreate the provided demo with a twist.
+
+Instead of the RISC V logo I will display only one color. (White [FF] to start)
