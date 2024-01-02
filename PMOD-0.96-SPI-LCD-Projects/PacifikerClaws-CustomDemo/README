@@ -1,1 +1,6 @@
-Relocating the contents of the Pacifiker Claws custom demo project below LCD Projects folder.
+In this custom demo I will display Pacifiker Claws provided image onto the lefthand side of the PMOD-0.96-LCD screen.
+
+First I will review the provided ST7735 documentation to ensure that I properly initialize the LCD screen.
+My goal is to perform the bare minimum initialization necessary to display my image.
+
+I will also try to provided the shortest delays for lcd parameters and commands to maximize the efficiency in the displayment of frames.
