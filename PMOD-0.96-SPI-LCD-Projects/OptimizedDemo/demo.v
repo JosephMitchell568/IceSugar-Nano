@@ -21,11 +21,9 @@ module demo(
  localparam send = 6'd10;
  localparam rdc = 6'd11;
  localparam lp = 6'd12;
- localparam dsleep = 6'd13;
 
- localparam actRst_d = 16'd23817;
- localparam dactRst_d = 16'd20858;
- localparam sleep = 16'd20848;
+ localparam actRst_d = 16'd290;
+ localparam dactRst_d = 16'd290;
 
  reg rst, scl, dc, mosi, cs;
  reg [5:0] state;
@@ -382,14 +380,7 @@ module demo(
     cs <= 1'b1;
     if(dc == 1'b0)
     begin
-     if(cmd[cmd_counter-5'd1] == 8'h11)
-     begin
-      state <= dsleep;
-     end
-     else
-     begin
-      state <= rdc;
-     end
+     state <= rdc;
     end
     else
     begin
@@ -432,21 +423,6 @@ module demo(
      end                           
      params_left <= params_left - 14'd1;           
      state <= sm;
-    end
-
-   end
-
-   dsleep:
-   begin
-
-    if(delay < sleep)
-    begin
-     delay <= delay + 16'd1;
-    end
-    else
-    begin
-     state <= rdc;
-     delay <= 16'd0;
     end
 
    end
