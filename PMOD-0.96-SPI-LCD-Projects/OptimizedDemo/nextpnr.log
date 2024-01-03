@@ -8,7 +8,7 @@ Info: constrained 'CS' to bel 'X13/Y9/io0'
 Info: Packing constants..
 Info: Packing IOs..
 Info: Packing LUT-FFs..
-Info:      274 LCs used as LUT4 only
+Info:      247 LCs used as LUT4 only
 Info:       62 LCs used as LUT4 and DFF
 Info: Packing non-LUT FFs..
 Info:       22 LCs used as DFF only
@@ -20,263 +20,172 @@ Info: Packing special functions..
 Info: Packing PLLs..
 Info: Promoting globals..
 Info: promoting CLK$SB_IO_IN (fanout 84)
-Info: promoting $abc$4979$auto$dff2dffe.cc:175:make_patterns_logic$4032 [cen] (fanout 16)
-Info: promoting $abc$4979$auto$dff2dffe.cc:158:make_patterns_logic$3802 [cen] (fanout 16)
+Info: promoting param_counter[6] [reset] (fanout 16)
+Info: promoting $abc$4764$auto$dff2dffe.cc:158:make_patterns_logic$3587 [cen] (fanout 16)
+Info: promoting $abc$4764$auto$dff2dffe.cc:175:make_patterns_logic$3817 [cen] (fanout 16)
 Info: Constraining chains...
-Info:        9 LCs used to legalise carry chains.
-Info: Checksum: 0x9dcf82ff
+Info:        8 LCs used to legalise carry chains.
+Info: Checksum: 0x32f1e66c
 
 Info: Annotating ports with timing budgets for target frequency 36.00 MHz
-Info: Checksum: 0xfb691901
+Info: Checksum: 0x971019c0
 
 Info: Device utilisation:
-Info: 	         ICESTORM_LC:   391/ 1280    30%
+Info: 	         ICESTORM_LC:   363/ 1280    28%
 Info: 	        ICESTORM_RAM:     0/   16     0%
 Info: 	               SB_IO:     6/  112     5%
-Info: 	               SB_GB:     3/    8    37%
+Info: 	               SB_GB:     4/    8    50%
 Info: 	        ICESTORM_PLL:     0/    1     0%
 Info: 	         SB_WARMBOOT:     0/    1     0%
 
 Info: Placed 6 cells based on constraints.
-Info: Creating initial analytic placement for 331 cells, random placement wirelen = 4613.
-Info:     at initial placer iter 0, wirelen = 67
-Info:     at initial placer iter 1, wirelen = 66
-Info:     at initial placer iter 2, wirelen = 76
-Info:     at initial placer iter 3, wirelen = 66
+Info: Creating initial analytic placement for 304 cells, random placement wirelen = 4271.
+Info:     at initial placer iter 0, wirelen = 80
+Info:     at initial placer iter 1, wirelen = 91
+Info:     at initial placer iter 2, wirelen = 89
+Info:     at initial placer iter 3, wirelen = 79
 Info: Running main analytical placer.
-Info:     at iteration #1, type ALL: wirelen solved = 76, spread = 1717, legal = 1770; time = 0.03s
-Info:     at iteration #2, type ALL: wirelen solved = 101, spread = 1492, legal = 1592; time = 0.03s
-Info:     at iteration #3, type ALL: wirelen solved = 126, spread = 1229, legal = 1300; time = 0.02s
-Info:     at iteration #4, type ALL: wirelen solved = 115, spread = 1177, legal = 1309; time = 0.02s
-Info:     at iteration #5, type ALL: wirelen solved = 176, spread = 1134, legal = 1297; time = 0.04s
-Info:     at iteration #6, type ALL: wirelen solved = 211, spread = 1105, legal = 1272; time = 0.02s
-Info:     at iteration #7, type ALL: wirelen solved = 193, spread = 1035, legal = 1081; time = 0.03s
-Info:     at iteration #8, type ALL: wirelen solved = 236, spread = 964, legal = 1038; time = 0.03s
-Info:     at iteration #9, type ALL: wirelen solved = 261, spread = 1028, legal = 1109; time = 0.04s
-Info:     at iteration #10, type ALL: wirelen solved = 265, spread = 944, legal = 1011; time = 0.04s
-Info:     at iteration #11, type ALL: wirelen solved = 269, spread = 916, legal = 965; time = 0.05s
-Info:     at iteration #12, type ALL: wirelen solved = 277, spread = 852, legal = 929; time = 0.02s
-Info:     at iteration #13, type ALL: wirelen solved = 305, spread = 884, legal = 952; time = 0.04s
-Info:     at iteration #14, type ALL: wirelen solved = 330, spread = 1036, legal = 1079; time = 0.03s
-Info:     at iteration #15, type ALL: wirelen solved = 341, spread = 878, legal = 921; time = 0.05s
-Info:     at iteration #16, type ALL: wirelen solved = 326, spread = 856, legal = 914; time = 0.03s
-Info:     at iteration #17, type ALL: wirelen solved = 321, spread = 849, legal = 925; time = 0.03s
-Info:     at iteration #18, type ALL: wirelen solved = 367, spread = 831, legal = 889; time = 0.04s
-Info:     at iteration #19, type ALL: wirelen solved = 376, spread = 868, legal = 938; time = 0.04s
-Info:     at iteration #20, type ALL: wirelen solved = 376, spread = 858, legal = 929; time = 0.04s
-Info:     at iteration #21, type ALL: wirelen solved = 382, spread = 847, legal = 923; time = 0.03s
-Info:     at iteration #22, type ALL: wirelen solved = 378, spread = 805, legal = 896; time = 0.02s
-Info:     at iteration #23, type ALL: wirelen solved = 388, spread = 818, legal = 900; time = 0.02s
-Info: HeAP Placer Time: 1.03s
-Info:   of which solving equations: 0.73s
-Info:   of which spreading cells: 0.07s
-Info:   of which strict legalisation: 0.03s
+Info:     at iteration #1, type ALL: wirelen solved = 86, spread = 1554, legal = 1584; time = 0.03s
+Info:     at iteration #2, type ALL: wirelen solved = 77, spread = 1286, legal = 1324; time = 0.03s
+Info:     at iteration #3, type ALL: wirelen solved = 138, spread = 1157, legal = 1177; time = 0.03s
+Info:     at iteration #4, type ALL: wirelen solved = 140, spread = 1016, legal = 1069; time = 0.04s
+Info:     at iteration #5, type ALL: wirelen solved = 144, spread = 994, legal = 1069; time = 0.03s
+Info:     at iteration #6, type ALL: wirelen solved = 175, spread = 964, legal = 1065; time = 0.02s
+Info:     at iteration #7, type ALL: wirelen solved = 193, spread = 873, legal = 974; time = 0.02s
+Info:     at iteration #8, type ALL: wirelen solved = 238, spread = 888, legal = 989; time = 0.02s
+Info:     at iteration #9, type ALL: wirelen solved = 244, spread = 885, legal = 954; time = 0.02s
+Info:     at iteration #10, type ALL: wirelen solved = 250, spread = 932, legal = 959; time = 0.03s
+Info:     at iteration #11, type ALL: wirelen solved = 298, spread = 889, legal = 912; time = 0.03s
+Info:     at iteration #12, type ALL: wirelen solved = 322, spread = 852, legal = 937; time = 0.04s
+Info:     at iteration #13, type ALL: wirelen solved = 306, spread = 825, legal = 840; time = 0.05s
+Info:     at iteration #14, type ALL: wirelen solved = 345, spread = 852, legal = 923; time = 0.03s
+Info:     at iteration #15, type ALL: wirelen solved = 374, spread = 804, legal = 839; time = 0.04s
+Info:     at iteration #16, type ALL: wirelen solved = 344, spread = 789, legal = 865; time = 0.02s
+Info:     at iteration #17, type ALL: wirelen solved = 401, spread = 776, legal = 846; time = 0.02s
+Info:     at iteration #18, type ALL: wirelen solved = 394, spread = 811, legal = 913; time = 0.04s
+Info:     at iteration #19, type ALL: wirelen solved = 399, spread = 795, legal = 843; time = 0.03s
+Info:     at iteration #20, type ALL: wirelen solved = 432, spread = 810, legal = 849; time = 0.03s
+Info: HeAP Placer Time: 0.93s
+Info:   of which solving equations: 0.69s
+Info:   of which spreading cells: 0.02s
+Info:   of which strict legalisation: 0.01s
 
 Info: Running simulated annealing placer for refinement.
-Info:   at iteration #1: temp = 0.000000, timing cost = 152, wirelen = 889
-Info:   at iteration #5: temp = 0.000000, timing cost = 154, wirelen = 781
-Info:   at iteration #10: temp = 0.000000, timing cost = 137, wirelen = 732
-Info:   at iteration #13: temp = 0.000000, timing cost = 122, wirelen = 705 
-Info: SA placement time 0.38s
+Info:   at iteration #1: temp = 0.000000, timing cost = 88, wirelen = 839
+Info:   at iteration #5: temp = 0.000000, timing cost = 108, wirelen = 732
+Info:   at iteration #10: temp = 0.000000, timing cost = 142, wirelen = 683
+Info:   at iteration #15: temp = 0.000000, timing cost = 154, wirelen = 658
+Info:   at iteration #17: temp = 0.000000, timing cost = 162, wirelen = 646 
+Info: SA placement time 0.47s
 
-Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 64.54 MHz (PASS at 36.00 MHz)
+Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 74.91 MHz (PASS at 36.00 MHz)
 
-Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 4.36 ns
+Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 4.45 ns
 
 Info: Slack histogram:
 Info:  legend: * represents 1 endpoint(s)
 Info:          + represents [1,1) endpoint(s)
-Info: [ 12282,  12945) |***************** 
-Info: [ 12945,  13608) |** 
-Info: [ 13608,  14271) |** 
-Info: [ 14271,  14934) |**************** 
-Info: [ 14934,  15597) |************************* 
-Info: [ 15597,  16260) |******************************************** 
-Info: [ 16260,  16923) |**************** 
-Info: [ 16923,  17586) |******************* 
-Info: [ 17586,  18249) |************ 
-Info: [ 18249,  18912) |**** 
-Info: [ 18912,  19575) |**** 
-Info: [ 19575,  20238) |******* 
-Info: [ 20238,  20901) |****** 
-Info: [ 20901,  21564) |******************* 
-Info: [ 21564,  22227) |******** 
-Info: [ 22227,  22890) |****** 
-Info: [ 22890,  23553) |** 
-Info: [ 23553,  24216) |******** 
-Info: [ 24216,  24879) |*********** 
-Info: [ 24879,  25542) |********************* 
-Info: Checksum: 0x8505ea24
+Info: [ 14427,  14983) |************************ 
+Info: [ 14983,  15539) |******* 
+Info: [ 15539,  16095) |*********************** 
+Info: [ 16095,  16651) |*********** 
+Info: [ 16651,  17207) |************* 
+Info: [ 17207,  17763) |******************** 
+Info: [ 17763,  18319) |** 
+Info: [ 18319,  18875) |**************** 
+Info: [ 18875,  19431) |************************* 
+Info: [ 19431,  19987) |******* 
+Info: [ 19987,  20543) |******************************* 
+Info: [ 20543,  21099) |************************ 
+Info: [ 21099,  21655) |****************** 
+Info: [ 21655,  22211) |************* 
+Info: [ 22211,  22767) |****** 
+Info: [ 22767,  23323) | 
+Info: [ 23323,  23879) |*** 
+Info: [ 23879,  24435) |*********** 
+Info: [ 24435,  24991) |**** 
+Info: [ 24991,  25547) |******************** 
+Info: Checksum: 0xf0574f85
 
 Info: Routing..
 Info: Setting up routing queue.
-Info: Routing 1157 arcs.
+Info: Routing 1131 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-Info:       1000 |       83        864 |   83   864 |       257|       0.14       0.14|
-Info:       1335 |      151       1132 |   68   268 |         0|       0.08       0.22|
+Info:       1000 |       95        852 |   95   852 |       241|       0.15       0.15|
+Info:       1333 |      172       1109 |   77   257 |         0|       0.09       0.24|
 Info: Routing complete.
-Info: Router1 time 0.22s
-Info: Checksum: 0xc5f149d9
+Info: Router1 time 0.24s
+Info: Checksum: 0x69015e37
 
 Info: Critical path report for clock 'CLK$SB_IO_IN_$glb_clk' (posedge -> posedge):
 Info: curr total
-Info:  0.8  0.8  Source $abc$4979$auto$blifparse.cc:492:parse_blif$5193_LC.O
-Info:  0.9  1.7    Net delay[0] budget 0.000000 ns (2,11) -> (2,10)
-Info:                Sink $abc$4979$auto$blifparse.cc:492:parse_blif$5246_LC.I0
+Info:  0.8  0.8  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4892_LC.O
+Info:  1.4  2.2    Net state[0] budget 3.219000 ns (2,4) -> (2,5)
+Info:                Sink $abc$4764$auto$blifparse.cc:492:parse_blif$4772_LC.I0
 Info:                Defined in:
-Info:                  demo.v:30
-Info:  0.7  2.3  Source $abc$4979$auto$blifparse.cc:492:parse_blif$5246_LC.O
-Info:  0.9  3.2    Net $auto$alumacc.cc:474:replace_alu$816.C[1] budget 0.000000 ns (2,10) -> (1,10)
-Info:                Sink $nextpnr_ICESTORM_LC_1.I1
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.4  3.6  Source $nextpnr_ICESTORM_LC_1.COUT
-Info:  0.0  3.6    Net $nextpnr_ICESTORM_LC_1$O budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[1].carry$CARRY.CIN
-Info:  0.2  3.8  Source $auto$alumacc.cc:474:replace_alu$816.slice[1].carry$CARRY.COUT
-Info:  0.0  3.8    Net $auto$alumacc.cc:474:replace_alu$816.C[2] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[2].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  3.9  Source $auto$alumacc.cc:474:replace_alu$816.slice[2].carry$CARRY.COUT
-Info:  0.0  3.9    Net $auto$alumacc.cc:474:replace_alu$816.C[3] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[3].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.1  Source $auto$alumacc.cc:474:replace_alu$816.slice[3].carry$CARRY.COUT
-Info:  0.0  4.1    Net $auto$alumacc.cc:474:replace_alu$816.C[4] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[4].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.3  Source $auto$alumacc.cc:474:replace_alu$816.slice[4].carry$CARRY.COUT
-Info:  0.0  4.3    Net $auto$alumacc.cc:474:replace_alu$816.C[5] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[5].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.5  Source $auto$alumacc.cc:474:replace_alu$816.slice[5].carry$CARRY.COUT
-Info:  0.0  4.5    Net $auto$alumacc.cc:474:replace_alu$816.C[6] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[6].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.7  Source $auto$alumacc.cc:474:replace_alu$816.slice[6].carry$CARRY.COUT
-Info:  0.0  4.7    Net $auto$alumacc.cc:474:replace_alu$816.C[7] budget 0.000000 ns (1,10) -> (1,10)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[7].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  4.9  Source $auto$alumacc.cc:474:replace_alu$816.slice[7].carry$CARRY.COUT
-Info:  0.3  5.2    Net $auto$alumacc.cc:474:replace_alu$816.C[8] budget 0.290000 ns (1,10) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[8].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  5.3  Source $auto$alumacc.cc:474:replace_alu$816.slice[8].carry$CARRY.COUT
-Info:  0.0  5.3    Net $auto$alumacc.cc:474:replace_alu$816.C[9] budget 0.000000 ns (1,11) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[9].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  5.5  Source $auto$alumacc.cc:474:replace_alu$816.slice[9].carry$CARRY.COUT
-Info:  0.0  5.5    Net $auto$alumacc.cc:474:replace_alu$816.C[10] budget 0.000000 ns (1,11) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[10].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  5.7  Source $auto$alumacc.cc:474:replace_alu$816.slice[10].carry$CARRY.COUT
-Info:  0.0  5.7    Net $auto$alumacc.cc:474:replace_alu$816.C[11] budget 0.000000 ns (1,11) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[11].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  5.9  Source $auto$alumacc.cc:474:replace_alu$816.slice[11].carry$CARRY.COUT
-Info:  0.0  5.9    Net $auto$alumacc.cc:474:replace_alu$816.C[12] budget 0.000000 ns (1,11) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[12].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  6.1  Source $auto$alumacc.cc:474:replace_alu$816.slice[12].carry$CARRY.COUT
-Info:  0.0  6.1    Net $auto$alumacc.cc:474:replace_alu$816.C[13] budget 0.000000 ns (1,11) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[13].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  6.3  Source $auto$alumacc.cc:474:replace_alu$816.slice[13].carry$CARRY.COUT
-Info:  0.0  6.3    Net $auto$alumacc.cc:474:replace_alu$816.C[14] budget 0.000000 ns (1,11) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[14].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  6.5  Source $auto$alumacc.cc:474:replace_alu$816.slice[14].carry$CARRY.COUT
-Info:  0.0  6.5    Net $auto$alumacc.cc:474:replace_alu$816.C[15] budget 0.000000 ns (1,11) -> (1,11)
-Info:                Sink $auto$alumacc.cc:474:replace_alu$816.slice[15].carry$CARRY.CIN
-Info:                Defined in:
-Info:                  demo.v:238
-Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
-Info:  0.2  6.7  Source $auto$alumacc.cc:474:replace_alu$816.slice[15].carry$CARRY.COUT
-Info:  0.7  7.3    Net $nextpnr_ICESTORM_LC_2$I3 budget 0.670000 ns (1,11) -> (1,12)
-Info:                Sink $nextpnr_ICESTORM_LC_2.I3
-Info:  0.5  7.8  Source $nextpnr_ICESTORM_LC_2.O
-Info:  0.9  8.7    Net $abc$4979$auto$alumacc.cc:491:replace_alu$818[15] budget 10.129000 ns (1,12) -> (1,12)
-Info:                Sink $abc$4979$auto$blifparse.cc:492:parse_blif$5144_LC.I1
-Info:  0.6  9.2  Source $abc$4979$auto$blifparse.cc:492:parse_blif$5144_LC.O
-Info:  0.9 10.1    Net $abc$4979$auto$rtlil.cc:1836:ReduceOr$828_new_inv_ budget 3.376000 ns (1,12) -> (2,12)
-Info:                Sink $abc$4979$auto$blifparse.cc:492:parse_blif$5159_LC.I0
-Info:  0.7 10.8  Source $abc$4979$auto$blifparse.cc:492:parse_blif$5159_LC.O
-Info:  2.0 12.7    Net $abc$4979$new_n425_ budget 3.455000 ns (2,12) -> (2,8)
-Info:                Sink $abc$4979$auto$blifparse.cc:492:parse_blif$5154_LC.I0
-Info:  0.7 13.4  Source $abc$4979$auto$blifparse.cc:492:parse_blif$5154_LC.O
-Info:  1.9 15.3    Net $abc$4979$new_n420_ budget 2.879000 ns (2,8) -> (4,7)
-Info:                Sink $abc$4979$auto$blifparse.cc:492:parse_blif$5153_LC.I1
-Info:  0.6 15.9  Setup $abc$4979$auto$blifparse.cc:492:parse_blif$5153_LC.I1
-Info: 7.6 ns logic, 8.3 ns routing
+Info:                  demo.v:51
+Info:  0.7  2.9  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4772_LC.O
+Info:  1.9  4.7    Net $abc$4764$new_n234_ budget 3.219000 ns (2,5) -> (5,3)
+Info:                Sink $abc$4764$auto$blifparse.cc:492:parse_blif$4796_LC.I2
+Info:  0.6  5.3  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4796_LC.O
+Info:  1.3  6.6    Net $abc$4764$auto$rtlil.cc:1906:Mux$703[2]_new_inv_ budget 3.219000 ns (5,3) -> (7,3)
+Info:                Sink $abc$4764$auto$blifparse.cc:492:parse_blif$4803_LC.I2
+Info:  0.6  7.2  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4803_LC.O
+Info:  0.9  8.1    Net $abc$4764$new_n270_ budget 3.219000 ns (7,3) -> (7,3)
+Info:                Sink $abc$4764$auto$blifparse.cc:492:parse_blif$4801_LC.I2
+Info:  0.6  8.6  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4801_LC.O
+Info:  0.9  9.5    Net $abc$4764$auto$simplemap.cc:250:simplemap_eqne$1746[4]_new_ budget 3.219000 ns (7,3) -> (6,4)
+Info:                Sink $abc$4764$auto$blifparse.cc:492:parse_blif$4893_LC.I1
+Info:  0.6 10.1  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4893_LC.O
+Info:  0.9 10.9    Net $abc$4764$auto$simplemap.cc:168:logic_reduce$1740[1]_new_inv_ budget 3.219000 ns (6,4) -> (5,3)
+Info:                Sink $abc$4764$auto$blifparse.cc:492:parse_blif$4912_LC.I0
+Info:  0.7 11.6  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4912_LC.O
+Info:  2.4 14.0    Net $abc$4764$auto$dff2dffe.cc:175:make_patterns_logic$4211 budget 3.219000 ns (5,3) -> (4,4)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$728.slice[2].adder_LC.CEN
+Info:  0.1 14.1  Setup $auto$alumacc.cc:474:replace_alu$728.slice[2].adder_LC.CEN
+Info: 4.5 ns logic, 9.6 ns routing
 
 Info: Critical path report for cross-domain path 'posedge CLK$SB_IO_IN_$glb_clk' -> '<async>':
 Info: curr total
-Info:  0.8  0.8  Source $auto$simplemap.cc:420:simplemap_dff$2879_DFFLC.O
-Info:  0.9  1.7    Net $0\scl[0:0] budget 12.815000 ns (1,9) -> (1,9)
-Info:                Sink $abc$4979$auto$blifparse.cc:492:parse_blif$5226_LC.I0
+Info:  0.8  0.8  Source $auto$simplemap.cc:420:simplemap_dff$2663_DFFLC.O
+Info:  0.9  1.7    Net $0\scl[0:0] budget 12.815000 ns (1,8) -> (1,8)
+Info:                Sink $abc$4764$auto$blifparse.cc:492:parse_blif$4958_LC.I0
 Info:                Defined in:
-Info:                  demo.v:203
-Info:  0.7  2.3  Source $abc$4979$auto$blifparse.cc:492:parse_blif$5226_LC.O
-Info:  2.4  4.7    Net SCL$SB_IO_OUT budget 13.160000 ns (1,9) -> (0,13)
+Info:                  demo.v:198
+Info:  0.7  2.3  Source $abc$4764$auto$blifparse.cc:492:parse_blif$4958_LC.O
+Info:  2.5  4.8    Net SCL$SB_IO_OUT budget 13.160000 ns (1,8) -> (0,13)
 Info:                Sink SCL$sb_io.D_OUT_0
 Info:                Defined in:
-Info:                  demo.v:28
-Info: 1.5 ns logic, 3.3 ns routing
+Info:                  demo.v:50
+Info: 1.5 ns logic, 3.4 ns routing
 
-Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 62.93 MHz (PASS at 36.00 MHz)
+Info: Max frequency for clock 'CLK$SB_IO_IN_$glb_clk': 70.97 MHz (PASS at 36.00 MHz)
 
-Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 4.75 ns
+Info: Max delay posedge CLK$SB_IO_IN_$glb_clk -> <async>: 4.83 ns
 
 Info: Slack histogram:
 Info:  legend: * represents 1 endpoint(s)
 Info:          + represents [1,1) endpoint(s)
-Info: [ 11886,  12569) |** 
-Info: [ 12569,  13252) |** 
-Info: [ 13252,  13935) |*** 
-Info: [ 13935,  14618) |************** 
-Info: [ 14618,  15301) |************************************** 
-Info: [ 15301,  15984) |************************* 
-Info: [ 15984,  16667) |************* 
-Info: [ 16667,  17350) |**************** 
-Info: [ 17350,  18033) |********************* 
-Info: [ 18033,  18716) |********************* 
-Info: [ 18716,  19399) |**** 
-Info: [ 19399,  20082) |******* 
-Info: [ 20082,  20765) |************** 
-Info: [ 20765,  21448) |********** 
-Info: [ 21448,  22131) |********** 
-Info: [ 22131,  22814) |****** 
-Info: [ 22814,  23497) |**** 
-Info: [ 23497,  24180) |********* 
-Info: [ 24180,  24863) |******** 
-Info: [ 24863,  25546) |********************** 
+Info: [ 13686,  14279) |******* 
+Info: [ 14279,  14872) |**** 
+Info: [ 14872,  15465) |******* 
+Info: [ 15465,  16058) |********************* 
+Info: [ 16058,  16651) |***************************** 
+Info: [ 16651,  17244) |********* 
+Info: [ 17244,  17837) |**** 
+Info: [ 17837,  18430) |*********** 
+Info: [ 18430,  19023) |************************ 
+Info: [ 19023,  19616) |****************************** 
+Info: [ 19616,  20209) |***************************** 
+Info: [ 20209,  20802) |************** 
+Info: [ 20802,  21395) |******************* 
+Info: [ 21395,  21988) |****** 
+Info: [ 21988,  22581) |********** 
+Info: [ 22581,  23174) |* 
+Info: [ 23174,  23767) |**************** 
+Info: [ 23767,  24360) |************* 
+Info: [ 24360,  24953) |**** 
+Info: [ 24953,  25546) |******************** 
 
 Info: Program finished normally.

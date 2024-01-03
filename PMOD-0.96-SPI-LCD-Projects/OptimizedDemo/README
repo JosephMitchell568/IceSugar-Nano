@@ -1,14 +1,3 @@
 This project will attempt to optimize the PMOD 0.96 LCD demo program by removing unnecessary commands and/or shrinking delays when possible.
 
-Final delay results and bare minimum commands in order to write the white frame will be provided here:
-
-Currently all delays from the demo example are not required in order to produce the white frame.
-So optimization has resulted in significant speed up, the free up of a lot of FPGA LUTs, and elimination of unnecessary verilog code.
-
-Next I will analyze the LCD commands to see which commands are not necessary to achieve white frame, those will be provided here:
-
-The majority of the lcd commands are necessary to fully initialize the screen.
-With the exception of the first set of incorrectly defined CASET/RASET/RAMWR commands
- CASET and RASET should have been swapped, and RAMWR should have been provided data.
-
-With this being analyzed I will eventually go through each initialization command and try different modes at a later date.
+Final delay results and bare minimum commands in order to write the white frame will be provided here.
