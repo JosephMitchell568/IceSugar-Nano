@@ -7,3 +7,8 @@ So optimization has resulted in significant speed up, the free up of a lot of FP
 
 Next I will analyze the LCD commands to see which commands are not necessary to achieve white frame, those will be provided here:
 
+The majority of the lcd commands are necessary to fully initialize the screen.
+With the exception of the first set of incorrectly defined CASET/RASET/RAMWR commands
+ CASET and RASET should have been swapped, and RAMWR should have been provided data.
+
+With this being analyzed I will eventually go through each initialization command and try different modes at a later date.
