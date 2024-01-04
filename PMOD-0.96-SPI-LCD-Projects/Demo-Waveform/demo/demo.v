@@ -7,6 +7,28 @@ module demo(
   output CS
  );
 
+ // LCD Command names from Pulse View
+ localparam SLPOUT  = 8'h11;
+ localparam FRMCTR1 = 8'hB1;
+ localparam FRMCTR2 = 8'hB2;
+ localparam FRMCTR3 = 8'hB3;
+ localparam INVCTR  = 8'hB4;
+ localparam PWCTR1  = 8'hC0;
+ localparam PWCTR2  = 8'hC1;
+ localparam PWCTR3  = 8'hC2;
+ localparam PWCTR4  = 8'hC3;
+ localparam PWCTR5  = 8'hC4;
+ localparam VMCTR1  = 8'hC5;
+ localparam GMCTRP1 = 8'hE0;
+ localparam GMCTRN1 = 8'hE1;
+ localparam PWCTR6  = 8'hFC;
+ localparam COLMOD  = 8'h3A;
+ localparam MADCTL  = 8'h36;
+ localparam INVON   = 8'h21;
+ localparam DISPON  = 8'h29;
+ localparam CASET   = 8'h2A;
+ localparam RASET   = 8'h2B;
+ localparam RAMWR   = 8'h2C;
 
  localparam init = 6'd0;
  localparam actRst = 6'd1;
@@ -54,11 +76,10 @@ module demo(
  reg [15:0] pixel_data;
  reg [3:0] pixel_bit_counter;
 
- reg [7:0] cmd [0:26];
- reg [13:0] num_params [0:24];
+ reg [7:0] cmd [0:21];
  reg [4:0] cmd_counter;
 
- reg [7:0] params [0:83];
+ reg [7:0] params [0:67];
  reg [6:0] param_counter;
 
  reg [13:0] params_left;
@@ -68,59 +89,28 @@ module demo(
   state = 6'd0;
   scl = 1'b1;
 
-  cmd[0]  = 8'h11; // sleep out and booster on
-  cmd[1]  = 8'hB1;
-  cmd[2]  = 8'hB2;
-  cmd[3]  = 8'hB3;
-  cmd[4]  = 8'hB4;
-  cmd[5]  = 8'hC0;
-  cmd[6]  = 8'hC1;
-  cmd[7]  = 8'hC2;
-  cmd[8]  = 8'hC3;
-  cmd[9]  = 8'hC4;
-  cmd[10] = 8'hC5;
-  cmd[11] = 8'hE0;
-  cmd[12] = 8'hE1;
-  cmd[13] = 8'hFC;
-  cmd[14] = 8'h3A;
-  cmd[15] = 8'h36;
-  cmd[16] = 8'h21;
-  cmd[17] = 8'h29;
-  cmd[18] = 8'h2A;// CASET
-  cmd[19] = 8'h2B;// RASET
-  cmd[20] = 8'h2C; // MW 1
-  cmd[21] = 8'h2A;
-  cmd[22] = 8'h2B;
-  cmd[23] = 8'h2C; // MW 2
-  cmd[24] = 8'h2A;
-  cmd[25] = 8'h2B;
-  cmd[26] = 8'h00; //NOP
-  num_params[0]  = 14'h00;
-  num_params[1]  = 14'h03;
-  num_params[2]  = 14'h03; 
-  num_params[3]  = 14'h06;
-  num_params[4]  = 14'h01;
-  num_params[5]  = 14'h03;
-  num_params[6]  = 14'h01;
-  num_params[7]  = 14'h02;
-  num_params[8]  = 14'h02;
-  num_params[9]  = 14'h02;
-  num_params[10]  = 14'h01;
-  num_params[11] = 14'h10;
-  num_params[12] = 14'h10;
-  num_params[13] = 14'h01;
-  num_params[14] = 14'h01;
-  num_params[15] = 14'h01;
-  num_params[16] = 14'h00;
-  num_params[17] = 14'h00;
-  num_params[18] = 14'h04;
-  num_params[19] = 14'h04;
-  num_params[20] = 14'h00;
-  num_params[21] = 14'h04;
-  num_params[22] = 14'h04;
-  num_params[23] = 14'd12800;
-  num_params[24] = 8'h04;
-  num_params[25] = 8'h04;
+  cmd[0]  = SLPOUT;
+  cmd[1]  = FRMCTR1;
+  cmd[2]  = FRMCTR2;
+  cmd[3]  = FRMCTR3;
+  cmd[4]  = INVCTR;
+  cmd[5]  = PWCTR1;
+  cmd[6]  = PWCTR2;
+  cmd[7]  = PWCTR3;
+  cmd[8]  = PWCTR4;
+  cmd[9]  = PWCTR5;
+  cmd[10] = VMCTR1;
+  cmd[11] = GMCTRP1;
+  cmd[12] = GMCTRN1;
+  cmd[13] = PWCTR6;
+  cmd[14] = COLMOD;
+  cmd[15] = MADCTL;
+  cmd[16] = INVON;
+  cmd[17] = DISPON;
+  cmd[18] = CASET;
+  cmd[19] = RASET;
+  cmd[20] = RAMWR; 
+  cmd[21] = 8'h00; //NOP
   cmd_counter = 5'b0;
 
   params[0]  = 8'h05;
@@ -183,34 +173,17 @@ module demo(
   params[57] = 8'h05;
   params[58] = 8'h78;
   params[59] = 8'h00;
-  params[60] = 8'h1A;
+  params[60] = 8'h01;
   params[61] = 8'h00;
-  params[62] = 8'h69;
+  params[62] = 8'hA0;
   params[63] = 8'h00;
-  params[64] = 8'h01;
+  params[64] = 8'h1A;
   params[65] = 8'h00;
-  params[66] = 8'hA0;
-  params[67] = 8'h00;
-  params[68] = 8'h01;
-  params[69] = 8'h00;
-  params[70] = 8'hA0;
-  params[71] = 8'h00;
-  params[72] = 8'h1A;
-  params[73] = 8'h00;
-  params[74] = 8'h69;
-  params[75] = 8'hFF;
-  params[76] = 8'h00;
-  params[77] = 8'h01;
-  params[78] = 8'h00;
-  params[79] = 8'hA0;
-  params[80] = 8'h00;
-  params[81] = 8'h1A;
-  params[82] = 8'h00;
-  params[83] = 8'h69;
+  params[66] = 8'h69;
+  params[67] = 8'hC7;// Limish Color
 
   param_counter = 7'b00;
   params_left = 14'd0;
-
 
   data = 8'h00;
   bit_counter = 3'b111;
@@ -291,6 +264,30 @@ module demo(
     end
     else
     begin
+     case(cmd[cmd_counter])
+      SLPOUT  : params_left <= 14'h00;
+      FRMCTR1 : params_left <= 14'h03;
+      FRMCTR2 : params_left <= 14'h03;
+      FRMCTR3 : params_left <= 14'h06;
+      INVCTR  : params_left <= 14'h01;
+      PWCTR1  : params_left <= 14'h03;
+      PWCTR2  : params_left <= 14'h01;
+      PWCTR3  : params_left <= 14'h02;
+      PWCTR4  : params_left <= 14'h02;
+      PWCTR5  : params_left <= 14'h02;
+      VMCTR1  : params_left <= 14'h01;
+      GMCTRP1 : params_left <= 14'h10;
+      GMCTRN1 : params_left <= 14'h10;
+      PWCTR6  : params_left <= 14'h01;
+      COLMOD  : params_left <= 14'h01;
+      MADCTL  : params_left <= 14'h01;
+      INVON   : params_left <= 14'h00;
+      DISPON  : params_left <= 14'h00;
+      CASET   : params_left <= 14'h04;
+      RASET   : params_left <= 14'h04;
+      RAMWR   : params_left <= 14'd12800;
+      default : params_left <= 14'h00;
+     endcase
      data <= cmd[cmd_counter];
      cmd_counter <= cmd_counter + 5'b1;
      state <= ldc;
@@ -337,7 +334,7 @@ module demo(
    sm: 
    begin
 
-    if(dc == 1'b1 && cmd[cmd_counter-5'd1] == 8'h2C)
+    if(dc == 1'b1 && cmd[cmd_counter-5'd1] == RAMWR)
     begin
      if(pixel_bit_counter == 4'b1111)
      begin
@@ -437,21 +434,21 @@ module demo(
      end
      else
      begin
-      if(cmd[cmd_counter-5'd1] == 8'hB3)
+      if(cmd[cmd_counter-5'd1] == FRMCTR3)
       begin
        state <= dfrmctr3_c;
       end
-      else if(cmd[cmd_counter-5'd1] == 8'hE0 ||
-          cmd[cmd_counter-5'd1] == 8'hE1)
+      else if(cmd[cmd_counter-5'd1] == GMCTRP1 ||
+          cmd[cmd_counter-5'd1] == GMCTRN1)
       begin
        state <= dgmctr_c;
       end
-      else if(cmd[cmd_counter-5'd1] == 8'h2A ||
-	  cmd[cmd_counter-5'd1] == 8'h2B)
+      else if(cmd[cmd_counter-5'd1] == CASET ||
+	  cmd[cmd_counter-5'd1] == RASET)
       begin
        state <= dcr_c;
       end
-      else if(cmd[cmd_counter-5'd1] == 8'h11)
+      else if(cmd[cmd_counter-5'd1] == SLPOUT)
       begin
        state <= dsleep;
       end
@@ -469,17 +466,17 @@ module demo(
      end
      else
      begin
-      if(cmd[cmd_counter-5'd1] == 8'hB3)
+      if(cmd[cmd_counter-5'd1] == FRMCTR3)
       begin
        state <= dfrmctr3_p;
       end
-      else if(cmd[cmd_counter-5'd1] == 8'hE0 ||
-	      cmd[cmd_counter-5'd1] == 8'hE1)
+      else if(cmd[cmd_counter-5'd1] == GMCTRP1 ||
+	      cmd[cmd_counter-5'd1] == GMCTRN1)
       begin
        state <= dgmctr_p;
       end
-      else if(cmd[cmd_counter-5'd1] == 8'h2A ||
-	      cmd[cmd_counter-5'd1] == 8'h2B)
+      else if(cmd[cmd_counter-5'd1] == CASET ||
+	      cmd[cmd_counter-5'd1] == RASET)
       begin
        state <= dcr_p;
       end
@@ -496,7 +493,6 @@ module demo(
    begin
 
     dc <= 1'b1;
-    params_left <= num_params[cmd_counter - 5'b1];
     state <= lp;
 
    end
@@ -504,7 +500,7 @@ module demo(
    lp: 
    begin
 
-    if(cmd[cmd_counter-5'd1] == 8'h2C)
+    if(cmd[cmd_counter-5'd1] == RAMWR)
     begin
      pixel_data[15:8] <= params[param_counter];
      pixel_data[7:0] <= params[param_counter];
@@ -520,7 +516,7 @@ module demo(
     end
     else
     begin
-     if(param_counter != 7'd75)
+     if(param_counter != 7'd67)
      begin
       param_counter <= param_counter + 7'd01;
      end                           
