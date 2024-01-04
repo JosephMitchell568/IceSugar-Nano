@@ -1,7 +1,3 @@
-This project is used to test the frame rate of the LCD screen.
+This project will attempt to optimize the PMOD 0.96 LCD demo program by removing unnecessary commands and/or shrinking delays when possible.
 
-However, it is important to keep in mind that this uses the non-optimized since I suspected the optimized one is not working properly.
-
-Color changes from FFFF -> EEEE -> DDDD ...
-
-It happens so fast that there is visible screen tearing involved. Future revisions will make this more easy on the eyes.
+Final delay results and bare minimum commands in order to write the white frame will be provided here.
