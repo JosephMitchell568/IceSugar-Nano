@@ -1,0 +1,7 @@
+This project is used to test the frame rate of the LCD screen.
+
+However, it is important to keep in mind that this uses the non-optimized since I suspected the optimized one is not working properly.
+
+Color changes from FFFF -> EEEE -> DDDD ...
+
+It happens so fast that there is visible screen tearing involved. Future revisions will make this more easy on the eyes.
