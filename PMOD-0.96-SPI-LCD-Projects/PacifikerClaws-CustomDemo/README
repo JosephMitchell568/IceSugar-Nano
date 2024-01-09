@@ -3,10 +3,18 @@ In this custom demo I will display Pacifiker Claws provided image onto the lefth
 First I will review the provided ST7735 documentation to ensure that I properly initialize the LCD screen.
 My goal is to perform the bare minimum initialization necessary to display my image.
 
-Update as of January 3rd, 2024: 
+**** Update as of January 3rd, 2024: 
  I have discovered recently that the ST7735S driver is more likely to be the correct driver due to PWCTR having 3 parameters versus 2.
  Currently I have a working initialized demo program to build this project with.
  The purpose of this project is to demonstrate my understanding of how CASET/RASET work in the placement of partial frames.
 
 I will also try to provide the shortest delays for lcd parameters and commands to maximize the efficiency in the displayment of frames.
  I am still working on correcting optimization of delays.
+
+**** Update as of January 8th, 2024:
+ I created a python script to generate bram block initialization statements to initialize 7600 bytes of pixel data for the partial frame
+  to be displayed to the screen. 
+ This approach was tried since $readmemh system task is not available in synthesis since it is a PLI system task.
+ After building it resulted in consuming over 800% LUT avaiable space!
+ So, I am currently reviewing how Yosys is determining the difference between BRAM and LUTs.
+ My next idea for this project is to use an external storage media (microSD card) for picture data.
