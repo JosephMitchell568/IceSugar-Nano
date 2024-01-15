@@ -1,3 +1,6 @@
+`include "cmd_bram.v"
+`include "param_bram.v"
+
 module demo(
   input CLK,
   output RST,
@@ -43,13 +46,22 @@ module demo(
  localparam send = 6'd10;
  localparam rdc = 6'd11;
  localparam lp = 6'd12;
+ localparam dsleep = 6'd13;
 
- localparam actRst_d = 16'd290;
- localparam dactRst_d = 16'd290;
+ localparam actRst_d = 16'd23817;
+ localparam dactRst_d = 16'd20858;
+ localparam sleep = 16'd20848;
 
- reg rst, scl, dc, mosi, cs;
+ //********* FSM internal registers ********
+
  reg [5:0] state;
  reg [15:0] delay;
+
+ //********* END FSM internal registers ****
+
+ //********* SPI signals/buffers ***********
+
+ reg rst, scl, dc, mosi, cs;
 
  reg [7:0] data;
  reg [2:0] bit_counter; 
@@ -57,156 +69,115 @@ module demo(
  reg [15:0] pixel_data;
  reg [3:0] pixel_bit_counter;
 
- reg [7:0] cmd [0:21];
- reg [13:0] num_params [0:20];
- reg [4:0] cmd_counter;
+ //********* END SPI signals/buffers *******
 
- reg [7:0] params [0:64];
- reg [6:0] param_counter;
+ //********* CMD BRAM inputs ***************
+ reg cb_rd_en;
+ reg [4:0] cb_rd_addr;
+ //********* END CMD BRAM inputs ***********
+ 
+ //********* CMD BRAM outputs **************
+ wire [7:0] cb_data_out;
+ wire cb_valid; 
+ //********* END CMD BRAM outputs **********
 
+ //********* PARAM BRAM inputs *************
+ reg pb_rd_en;
+ reg [6:0] pb_rd_addr;
+ //********* END PARAM BRAM inputs *********
+ 
+ //********* PARAM BRAM outputs ************
+ wire [7:0] pb_data_out;
+ wire pb_valid;
+ //********* END PARAM BRAM outputs ********
+
+ // Keep track of how many parameters each lcd cmd has
  reg [13:0] params_left;
+
+ //************ CMD BRAM instantiation *************
+ cmd_bram cmd_bram_inst(
+  .clk(CLK),
+  .rd_en(cb_rd_en),
+  .rd_addr(cb_rd_addr),
+  .data_out(cb_data_out),
+  .valid_out(cb_valid)
+ );
+ //************ END CMD BRAM instantiation *********
+
+ //************ PARAM BRAM instantiation ***********
+ param_bram param_bram_inst(
+  .clk(CLK),
+  .rd_en(pb_rd_en),
+  .rd_addr(pb_rd_addr),
+  .data_out(pb_data_out),
+  .valid_out(pb_valid)
+ );
+ //************ END PARAM BRAM instantiation *******
+
 
  initial
  begin
-  state = 6'd0;
+  //******** Initialize FSM internal registers *******
+  state = init;
+  delay = 16'd0;
+  //******** End Initialization of FSM internal reg. *
+
+  //******** Initialize SPI signals/buffers **********
+  rst = 1'b1;
   scl = 1'b1;
-
-  cmd[0]  = SLPOUT;
-  cmd[1]  = FRMCTR1;
-  cmd[2]  = FRMCTR2;
-  cmd[3]  = FRMCTR3;
-  cmd[4]  = INVCTR;
-  cmd[5]  = PWCTR1;
-  cmd[6]  = PWCTR2;
-  cmd[7]  = PWCTR3;
-  cmd[8]  = PWCTR4;
-  cmd[9]  = PWCTR5;
-  cmd[10] = VMCTR1;
-  cmd[11] = GMCTRP1;
-  cmd[12] = GMCTRN1;
-  cmd[13] = PWCTR6;
-  cmd[14] = COLMOD;
-  cmd[15] = MADCTL;
-  cmd[16] = INVON;
-  cmd[17] = DISPON;
-  cmd[18] = CASET;
-  cmd[19] = RASET;
-  cmd[20] = RAMWR;
-  cmd[21] = 8'h00; //NOP
-  num_params[0]  = 14'h00;
-  num_params[1]  = 14'h03;
-  num_params[2]  = 14'h03; 
-  num_params[3]  = 14'h06;
-  num_params[4]  = 14'h01;
-  num_params[5]  = 14'h03;
-  num_params[6]  = 14'h01;
-  num_params[7]  = 14'h02;
-  num_params[8]  = 14'h02;
-  num_params[9]  = 14'h02;
-  num_params[10] = 14'h01;
-  num_params[11] = 14'h10;
-  num_params[12] = 14'h10;
-  num_params[13] = 14'h01;
-  num_params[14] = 14'h01;
-  num_params[15] = 14'h01;
-  num_params[16] = 14'h00;
-  num_params[17] = 14'h00;
-  num_params[18] = 14'h04;
-  num_params[19] = 14'h04;
-  num_params[20] = 14'd12800;
-  cmd_counter = 5'b0;
-
-  params[0]  = 8'h05;
-  params[1]  = 8'h3C;
-  params[2]  = 8'h3C;
-  params[3]  = 8'h05;
-  params[4]  = 8'h3C;
-  params[5]  = 8'h3C;
-  params[6]  = 8'h05;
-  params[7]  = 8'h3C;
-  params[8]  = 8'h3C;
-  params[9]  = 8'h05;
-  params[10] = 8'h3C;
-  params[11] = 8'h3C;
-  params[12] = 8'h03;
-  params[13] = 8'hAB;
-  params[14] = 8'h0B;
-  params[15] = 8'h04;
-  params[16] = 8'hC5;
-  params[17] = 8'h0D;
-  params[15] = 8'h00;
-  params[16] = 8'h8D;
-  params[17] = 8'h6A;
-  params[18] = 8'h8D;
-  params[19] = 8'hEE;
-  params[20] = 8'h0F;
-  params[21] = 8'h07;
-  params[22] = 8'h0E;
-  params[23] = 8'h08;
-  params[24] = 8'h07;
-  params[25] = 8'h10;
-  params[26] = 8'h07;
-  params[27] = 8'h02;
-  params[28] = 8'h07;
-  params[29] = 8'h09;
-  params[30] = 8'h0F;
-  params[31] = 8'h25;
-  params[32] = 8'h36;
-  params[33] = 8'h00;
-  params[34] = 8'h08;
-  params[35] = 8'h04;
-  params[36] = 8'h10;
-  params[37] = 8'h0A;
-  params[38] = 8'h0D;
-  params[39] = 8'h08;
-  params[40] = 8'h07;
-  params[41] = 8'h0F;
-  params[42] = 8'h07;
-  params[43] = 8'h02;
-  params[44] = 8'h07;
-  params[45] = 8'h09;
-  params[46] = 8'h0F;
-  params[47] = 8'h25;
-  params[48] = 8'h35;
-  params[49] = 8'h00;
-  params[50] = 8'h09;
-  params[51] = 8'h04;
-  params[52] = 8'h10;
-  params[53] = 8'h80;
-  params[54] = 8'h05;
-  params[55] = 8'h78;
-  params[56] = 8'h00;
-  params[57] = 8'h01;
-  params[58] = 8'h00;
-  params[59] = 8'hA0;
-  params[60] = 8'h00;
-  params[61] = 8'h1A;
-  params[62] = 8'h00;
-  params[63] = 8'h69;
-  params[64] = 8'hFF;
-
-  param_counter = 7'b00;
-  params_left = 14'd0;
+  dc = 1'b1;
+  mosi = 1'b1;
+  cs = 1'b1;
 
   data = 8'h00;
   bit_counter = 3'b111;
-
+                               
   pixel_data = 16'h00_00;
   pixel_bit_counter = 4'b1111;
+  //******** End Initialization of SPI signals/buffers
+
+  //******** Initialize cmd_bram internal ports ******
+  cb_rd_en = 1'b0;
+  cb_rd_addr = 5'd0;
+  //******** End Initialization of cmd_bram ports ****
+
+  //******** Initialize param_bram internal ports ****
+  pb_rd_en = 1'b0;
+  pb_rd_addr = 7'd0;
+  //******** End initialization of param_bram ports **
+
+  // Initialize total remaining parameters to 0
+  params_left = 14'd0;
  end
 
+ /*
+ * Always on positive edge of clock:
+ 	* toggle the serial clock signal
+ */
  always@(posedge CLK)
  begin
-
+  
   scl <= ~scl;
 
  end
 
+ /*
+ * Always on positive edge of clock:
+	 * control LCD FSM
+ */
  always@(posedge CLK)
  begin
-
+  /*
+  * LCD FSM
+  */
   case(state)
 
+   /*
+   * init - Initializes all necessary internal signals & reg
+   *  regardless of being in initial block or not
+   * 
+   * next state - unconditional actRst
+   */
    init: 
    begin
 
@@ -219,6 +190,11 @@ module demo(
 
    end
 
+   /*
+   * actRst - activates active low lcd reset signal
+   *
+   * next state - unconditional drst   
+   */
    actRst: 
    begin
 
@@ -227,6 +203,12 @@ module demo(
 
    end
 
+   /*
+   * drst - delays for actRst_d cycles, then deactivates reset
+   *
+   * next state - [delay less than or equal to actRst_d] drst
+   * next state - [delay greater than actRst_d] ddrst
+   */
    drst: 
    begin
 
@@ -243,6 +225,13 @@ module demo(
 
    end
 
+   /*
+   * ddrst - delays dactRst_d cycles,
+	   * resets delay register,
+	   * enables cmd_bram read signal
+   * next state - [delay less than or equal to dactRst_d] ddrst
+   * next state - [delay greater than dactRst_d] lc 
+   */
    ddrst: 
    begin
 
@@ -253,27 +242,71 @@ module demo(
     else
     begin
      delay <= 16'd0;
+     cb_rd_en <= 1'b1;// Set read enable line
      state <= lc;
     end
 
    end
 
+   /*
+   * lc - load command state,
+	   *disable cmd bram read,
+	   *set cmd to data buffer,
+	   *point to next cmd in cmd_bram,
+	   *set proper number of params based on cmd value
+   * next state - [cmd is not valid] lc
+   * next state - [cmd is valid and not NOP] ldc
+   * next state - [cmd is valid and NOP] lc
+   */
    lc: 
    begin
-
-    if(cmd[cmd_counter] == 8'h00)
+    // We should check for valid cmd data for cb_data_out
+    if(cb_valid == 1'b0) //If cmd is not valid
     begin
      state <= lc;
     end
     else
     begin
-     data <= cmd[cmd_counter];
-     cmd_counter <= cmd_counter + 5'b1;
-     state <= ldc;
+     cb_rd_en <= 1'b0; // Disable cmd bram read
+     data <= cb_data_out;
+     cb_rd_addr <= cb_rd_addr + 5'd1;// point to next cmd
+     state <= ldc;// lower dc line to signify cmd byte
+     case(cb_data_out)// case switch for all cmd entries
+      SLPOUT  : params_left <= 14'h00;
+      FRMCTR1 : params_left <= 14'h03;
+      FRMCTR2 : params_left <= 14'h03;
+      FRMCTR3 : params_left <= 14'h06;
+      INVCTR  : params_left <= 14'h01;
+      PWCTR1  : params_left <= 14'h03;
+      PWCTR2  : params_left <= 14'h01;
+      PWCTR3  : params_left <= 14'h02;
+      PWCTR4  : params_left <= 14'h02;
+      PWCTR5  : params_left <= 14'h02;
+      VMCTR1  : params_left <= 14'h01;
+      GMCTRP1 : params_left <= 14'h10;
+      GMCTRN1 : params_left <= 14'h10;
+      PWCTR6  : params_left <= 14'h01;
+      COLMOD  : params_left <= 14'h01;
+      MADCTL  : params_left <= 14'h01;
+      INVON   : params_left <= 14'h00;
+      DISPON  : params_left <= 14'h00;
+      CASET   : params_left <= 14'h04;
+      RASET   : params_left <= 14'h04;
+      RAMWR   : params_left <= 14'd12800;
+      default : begin
+       params_left <= 14'h00;
+       state <= lc; // return to lc state on NOP
+      end
+     endcase                               
     end
  
    end
 
+   /*
+   * ldc - lower data command signal
+   *
+   * next state - unconditional sm 
+   */
    ldc: 
    begin
 
@@ -282,10 +315,22 @@ module demo(
 
    end
 
+   /*
+   * sm - set mosi bit,
+	   * either a pixel bit,
+	   * or standard cmd/param bit,
+	   * decrement their respective bit pointers
+   * next state - [param & RAMWR + first pixel bit] lcs
+   * next state - [param & RAMWR + last pixel bit] slb
+   * next state - [param & RAMWR] send
+   * next state - [not param & RAMWR + first data bit] lcs
+   * next state - [not param & RAMWR + last data bit] slb
+   * next state - [not param & RAMWR] send
+   */ 
    sm: 
    begin
 
-    if(dc == 1'b1 && cmd[cmd_counter-5'd1] == 8'h2C)
+    if(dc == 1'b1 && cb_data_out == RAMWR)
     begin
      if(pixel_bit_counter == 4'b1111)
      begin
@@ -326,6 +371,12 @@ module demo(
  
    end
 
+   /*
+   * lcs - lower chip select on falling edge of scl
+   *
+   * next state - [scl is high] send
+   * next state - [scl is low] lcs
+   */
    lcs: 
    begin
 
@@ -341,6 +392,12 @@ module demo(
 
    end
 
+   /*
+   * send - sends the current mosi bit through SPI (raise scl)
+   *
+   * next state - [scl is high] sm
+   * next state - [scl is low] send 
+   */
    send: 
    begin
 
@@ -355,6 +412,12 @@ module demo(
 
    end
 
+   /*
+   * slb - set last bit of SPI data
+   *
+   * next state - [scl is high] rcs
+   * next state - [scl is low] slb
+   */
    slb: 
    begin
 
@@ -369,55 +432,221 @@ module demo(
 
    end
 
+   /*
+   * rcs - raise chip select on completion of SPI transaction
+   *
+   * next state - [dc is low] rdc
+   * next state - [dc is high] lp
+   */
    rcs: 
    begin
    
     cs <= 1'b1;
     if(dc == 1'b0)
     begin
-     state <= rdc;
+     if(cb_data_out == SLPOUT)
+     begin
+      state <= dsleep;
+     end
+     else
+     begin
+      state <= rdc;
+     end
     end
     else
     begin
+     pb_rd_en <= 1'b1;//Enable param_bram read
      state <= lp;
     end
    
    end
 
+   /*
+   * rdc - raises data command SPI line
+   *
+   * next state - unconditional lp
+   */
    rdc: 
    begin
 
     dc <= 1'b1;
-    params_left <= num_params[cmd_counter - 5'b1];
+    pb_rd_en <= 1'b1; //Enable param_bram read
     state <= lp;
 
    end
 
+   /*
+   * lp - load next command parameter,
+	   * set both high and low bytes for RAMWR cmd,
+	   * otherwise set param data to standard data buffer,
+	   * disable param_bram read,
+	   * increment param pointer,
+	   * decrement remaining params
+   * next state - [out of parameters to send] lc
+   * next state - [parameters are left to send] sm 
+   */
    lp: 
    begin
 
-    if(cmd[cmd_counter-5'd1] == 8'h2C)
+    if(!pb_valid)
     begin
-     pixel_data[15:8] <= params[param_counter];
-     pixel_data[7:0] <= params[param_counter];
+     state <= lp; // Remain in lp until param is valid
     end
     else
     begin
-     data <= params[param_counter];
+     if(cb_data_out == RAMWR)
+     begin
+      pixel_data[15:8] <= pb_data_out;
+      pixel_data[7:0] <= pb_data_out;
+     end
+     else
+     begin
+      data <= pb_data_out;
+     end
+
+     if(params_left == 14'd0)
+     begin
+      cb_rd_en <= 1'b1; //Remember to enable cmd_bram read
+      state <= lc;// need to provide delay
+     end
+     else
+     begin
+      pb_rd_en <= 1'b0; //Remember to disable param read
+      //Remember to only increment the parameter pointer if it is not the
+      //pixel color data for frame color write!
+      if(pb_rd_addr < 7'd67)
+      begin
+       pb_rd_addr <= pb_rd_addr + 7'd1;// increment param pointer
+      end
+      params_left <= params_left - 14'd1;           
+      state <= sm;
+     end
     end
 
-    if(params_left == 14'd0)
+   end
+/*
+   dmw_p: begin
+    
+    if(delay < mw_p)
     begin
-     state <= lc;// need to provide delay
+     delay <= delay + 16'd1;
     end
     else
     begin
-     if(param_counter != 7'd75)
+     if(cmd_counter == 5'd20)
      begin
-      param_counter <= param_counter + 7'd01;
-     end                           
-     params_left <= params_left - 14'd1;           
-     state <= sm;
+      state <= rdc;
+     end
+     else
+     begin
+      state <= lp;
+     end
+     delay <= 16'd0;
+    end
+
+   end
+
+   dfrmctr3_c: 
+   begin
+
+    if(delay < frmctr3)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0; 
+    end
+
+   end
+
+   dfrmctr3_p:
+   begin
+
+    if(delay < frmctr3)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= lp;
+     delay <= 16'd0;
+    end
+ 
+   end
+
+   dgmctr_c:
+   begin
+
+    if(delay < gmctr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dgmctr_p:
+   begin
+
+    if(delay < gmctr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= lp;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dcr_c:
+   begin
+
+    if(delay < cr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0;
+    end
+
+   end
+
+   dcr_p:
+   begin
+
+    if(delay < cr)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= lp;
+     delay <= 16'd0;
+    end
+
+   end
+*/
+   dsleep:
+   begin
+
+    if(delay < sleep)
+    begin
+     delay <= delay + 16'd1;
+    end
+    else
+    begin
+     state <= rdc;
+     delay <= 16'd0;
     end
 
    end

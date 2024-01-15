@@ -1,18 +1,3 @@
 This project will attempt to optimize the PMOD 0.96 LCD demo program by removing unnecessary commands and/or shrinking delays when possible.
 
-Final delay results and bare minimum commands in order to write a frame will be provided here:
-
-Updated 1/12/2024:
- List of delays that have been removed:
-  - sleep [delay for sleep out booster on cmd]
-  - pcmd [post cmd delay]
-  - mw_c [memory write cmd delay]
-  - mw_p [memory write parameter delay]
-  - crg [CASET/RASET/GAMA delay]
-  - frmctr3 [Frame Rate Control 3 delay]
-  - gmctr [Gama control delay]
-  - cr [CASET/RASET delay]
- List of cmds removed:
-  - unnecessary CASET/RASET/RAMWR cmds
- Next Steps:
-  - Optimize the BRAM, nextpnr log should display proper BRAM utilization
+Final delay results and bare minimum commands in order to write the white frame will be provided here.
