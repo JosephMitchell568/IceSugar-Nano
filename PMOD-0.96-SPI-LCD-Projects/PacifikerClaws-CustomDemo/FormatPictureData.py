@@ -5,12 +5,15 @@
 
 number_of_bytes = 0
 index = 0
+n = 0
 
 with open(r'PacifikerClaws.mem','r') as f:
  data = f.read()
  lines = data.split()
- for line in lines:
-  print("picture_data["+str(index)+"] = 8'h"+line+";");
+ pixels = []
+ for n in range(0,len(lines),2):
+  print("picture_data["+str(index)+"] = 16'h"+lines[n]+"_"+lines[n+1]+";")
+  n = n + 2
   index = index + 1
 
 print(number_of_bytes)
