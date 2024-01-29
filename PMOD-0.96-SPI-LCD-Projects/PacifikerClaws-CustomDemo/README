@@ -1,3 +1,7 @@
-This project will attempt to optimize the PMOD 0.96 LCD demo program by removing unnecessary commands and/or shrinking delays when possible.
+This project will write to the PMOD 0.96 LCD screen a customized image.
 
-Final delay results and bare minimum commands in order to write the white frame will be provided here.
+I have discovered that based on the optimized demo example each block of ram has 4Kb.
+So, when I am only using 21 bytes give or take I am underutilizing the RAM.
+
+My goal now knowing this information is to fully utilize the block ram that I am using.
+Starting with just 1 block of ram and working my way up to all 16 blocks available.
