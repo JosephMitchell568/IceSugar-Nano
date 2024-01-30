@@ -4,7 +4,7 @@
 # me so that my hands don't fall off from typing so much XD
 
 number_of_bytes = 0
-index = 0
+index = 89
 n = 0
 
 with open(r'PacifikerClaws.mem','r') as f:
