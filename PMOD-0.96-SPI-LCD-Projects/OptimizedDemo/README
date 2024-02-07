@@ -1,3 +1,10 @@
 This project will attempt to optimize the PMOD 0.96 LCD demo program by removing unnecessary commands and/or shrinking delays when possible.
 
 Final delay results and bare minimum commands in order to write the white frame will be provided here.
+
+The current Optimized demo includes two separate BRAM blocks one for LCD cmds another for LCD paramaters.
+ Originally the BRAM was not being recognized by nextpnr, so I decided to use separate modules like 'wuxx' did.
+ I modified a version of his by removing the use of the write data feature, so in this case the BRAM is more like BROM
+
+BRAM is still underutilized at this current time, I plan to fix that by ensuring that each memory block (4Kb) are
+ completely full. That way there is no wasted data in the BRAM and I can use it all as I would expect to be able to.
