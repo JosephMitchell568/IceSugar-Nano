@@ -1,0 +1,3 @@
+This project utilizes the BRAM in the IceSugar Nano FPGA.
+
+This is crucial since a lot of future projects require large amounts of data.
