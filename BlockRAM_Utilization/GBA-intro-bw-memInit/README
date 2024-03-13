@@ -1,0 +1,5 @@
+This project will use ICESTORM RAM in order to display the black and white GBA intro screen to the PMOD LCD screen.
+
+This will then be used in the GBA intro bw image project in the SPI LCD projects section for organization purposes.
+
+*** Reminder to self to reorganize all current projects under this portfolio ***
