@@ -1,0 +1,11 @@
+set_io clk D1
+
+set_io LED_G A1
+set_io LED_R B1
+set_io LED_B E1
+
+
+set_io SW[0] B5
+set_io SW[1] B4
+set_io SW[2] B3
+set_io SW[3] E2
