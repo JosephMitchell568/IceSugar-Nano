@@ -1,7 +1,10 @@
-This example displays the first block of bram data for black/white pixels of the python google image of gba intro screen.
+This project will attempt to optimize the PMOD 0.96 LCD demo program by removing unnecessary commands and/or shrinking delays when possible.
 
-The purpose of this project is to get a skeleton structure for the FSM of the LCD screen project to display the emulated data.
+Final delay results and bare minimum commands in order to write the white frame will be provided here.
 
-This only displays the first out of roughly 4 blocks of ram data of black/white pixels.
+The current Optimized demo includes two separate BRAM blocks one for LCD cmds another for LCD paramaters.
+ Originally the BRAM was not being recognized by nextpnr, so I decided to use separate modules like 'wuxx' did.
+ I modified a version of his by removing the use of the write data feature, so in this case the BRAM is more like BROM
 
-Getting all of the blocks is going to take a little copy and pasting and nasty nested logic (probably should use case logic)
+BRAM is still underutilized at this current time, I plan to fix that by ensuring that each memory block (4Kb) are
+ completely full. That way there is no wasted data in the BRAM and I can use it all as I would expect to be able to.
