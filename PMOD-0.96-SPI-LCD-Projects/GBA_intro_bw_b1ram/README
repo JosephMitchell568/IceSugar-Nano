@@ -1,0 +1,7 @@
+This example displays the first block of bram data for black/white pixels of the python google image of gba intro screen.
+
+The purpose of this project is to get a skeleton structure for the FSM of the LCD screen project to display the emulated data.
+
+This only displays the first out of roughly 4 blocks of ram data of black/white pixels.
+
+Getting all of the blocks is going to take a little copy and pasting and nasty nested logic (probably should use case logic)
