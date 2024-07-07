@@ -1,0 +1,12 @@
+This folder contains microSD card SDIO communication related projects.
+
+The overarching goal is to learn how to communicate with the microSD card using SDIO
+ SDIO is supposed to be faster
+ It is also a new protocol to practice learning versus SPI which I learned prior with the PMOD 0.96 inch LCD screen
+
+Once I have learned how to read and write data to and from this microSD card correctly multiple future projects will become easier
+
+In order to fully emulate the nintendo GBA or even nintendo DS I will need a lot of storage space which is where microSD and SDIO come in handy.
+ I will store image data and audio data on this microSD card.
+
+I will need to dive deeper into both video and audio but that will come together behind the scenes (in parallel)
