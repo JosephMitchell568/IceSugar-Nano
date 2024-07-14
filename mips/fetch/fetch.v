@@ -1,60 +1,145 @@
-// Joseph Mitchell, 7/13/2024
-// Fetch stage of mips isa
-
 `include "instructionMem1.v"
+`include "instructionMem2.v"
+`include "instructionMem3.v"
+`include "instructionMem4.v"
 
-module fetch(
- input CLK
- //Later there must be a PCsrc control bit added
- // and a 32 bit branch/jump address supplied as inputs
- //Later there must be an IF/ID Pipe as output which includes
- // a 32 bit instruction word
- // a 32 bit pc address for next instruction
- );
+//example of a small memory implementation using bram, both inferred with a verilog array
+//and an explicit using the bram primitive in yosys
+//bram cannot be read and written at the same time
 
- reg [31:0] instruction; //Instruction fetched from instMemory
- reg [31:0] pc; //Program Counter (Points to next instruction)
+module fetch( 
+	input clk,
 
- //-------------- InstructionMem1 inputs ---------------------
- reg instRdEn1; // Read enable line
- reg [6:0] instRdAddr1; // 7 bit - 128 addresses
- //-------------- End InstructionMem1 inputs -----------------
- 
- //-------------- InstructionMem1 outputs --------------------
- wire [31:0] instDataOut1;
- wire instValidOut1;
- //-------------- End InstructionMem1 outputs ----------------
+        input PCsrc,
+        input [31:0] brnchJmpAddr,
 
- //-------------- InstructionMem1 module instantiaton --------
- instructionMem1 instructionMem1Inst(
-  .clk(CLK),
-  .rd_en(instRdEn1),
-  .rd_addr(instRdAddr1),
-  .data_out(instDataOut1),
-  .valid_out(instValidOut1)
- );
- //-------------- End instructionMem1 module Instantation ----
+        output [31:0] instruction,
+        output [31:0] PCnext	
+   );
 
- initial
- begin
-  instruction[31:0] = 32'b0; // NOP
-  pc[31:0] = 32'b0; // First instruction
-  instRdEn1 = 1'b1; // Enable read
-  instRdAddr1 = 7'b0; // Instruction address
- end
 
- always @(posedge CLK)
- begin
-  //if(PCsrc)
-  //begin
-  // pc[31:0] <= brchJmpAddr;
-  //end
-  //else
-  //begin
-  pc[31:0] <= pc[31:0] + 32'd4; // Increment PC by 4 bytes
-  //end
-  instruction[31:0] <= instDataOut1;
-  instRdAddr1[6:0] <= pc[6:2]; //7 bit byte addressable (word)
- end
- 
+   reg im1_rd_en,
+       im2_rd_en,
+       im3_rd_en,
+       im4_rd_en; 
+   reg [8:0] im1_rd_addr,
+	     im2_rd_addr,
+	     im3_rd_addr,
+	     im4_rd_addr; 
+   wire [7:0] im1_data_out,
+	      im2_data_out,
+	      im3_data_out,
+	      im4_data_out; 
+   wire im1_valid_out,
+	im2_valid_out,
+	im3_valid_out,
+	im4_valid_out; 
+
+   instructionMem1 instructionMem1Inst(
+    .clk(clk),
+    .rd_en(im1_rd_en), 
+    .rd_addr(im1_rd_addr), 
+    .data_out(im1_data_out), 
+    .valid_out(im1_valid_out)
+   );                                     
+
+   instructionMem2 instructionMem2Inst(
+    .clk(clk),
+    .rd_en(im2_rd_en), 
+    .rd_addr(im2_rd_addr), 
+    .data_out(im2_data_out), 
+    .valid_out(im2_valid_out)
+   );                                  
+
+   instructionMem3 instructionMem3Inst(
+    .clk(clk),
+    .rd_en(im3_rd_en), 
+    .rd_addr(im3_rd_addr), 
+    .data_out(im3_data_out), 
+    .valid_out(im3_valid_out)
+   );                                  
+
+   instructionMem4 instructionMem4Inst(
+    .clk(clk),
+    .rd_en(im4_rd_en), 
+    .rd_addr(im4_rd_addr), 
+    .data_out(im4_data_out), 
+    .valid_out(im4_valid_out)
+   );                                  
+
+   reg [32:0] init;
+   reg [32:0] state;
+   reg [31:0] instruction;
+
+   //leds are active low --- To show that 4 BRAM were used...
+   //assign INSTR_B4 = instruction[0];
+   //assign INSTR_B3 = instruction[8];
+   //assign INSTR_B2 = instruction[16];
+   //assign INSTR_B1 = instruction[24];
+
+   initial begin
+      block = 0;
+
+      im1_rd_en = 0;
+      im1_rd_addr = 0;
+
+      im2_rd_en = 0;
+      im2_rd_addr = 0;
+
+      im3_rd_en = 0;
+      im3_rd_addr = 0;
+
+      im4_rd_en = 0;
+      im4_rd_addr = 0;
+
+      init = 0;
+      state = 0;
+      instruction = 0;
+   end
+
+   always @(posedge clk)
+   begin
+
+      //bram need an init, will not work after a few cycles (maybe only when programming in sram?)
+    if(init < 60) begin
+       init <= init + 1;
+    end else begin
+       state <= state + 1;
+    end                   
+
+      //implicit/inferred module
+      //comment this and uncomment the explicit logic below to use explicit module
+    if (state == 4) begin
+       im1_rd_en <= 1;
+       im1_rd_addr <= 9'b0;
+       im2_rd_en <= 1;
+       im2_rd_addr <= 9'b0;
+       im3_rd_en <= 1;
+       im3_rd_addr <= 9'b0;
+       im4_rd_en <= 1;
+       im4_rd_addr <= 9'b0;
+    end 
+    else if (state == 5) begin
+       if(PCsrc)
+       begin
+        pc[31:0] <= brnchJmpAddr;
+       end
+       else
+       begin
+	pc[31:0] <= pc[31:0] + 32'd4;
+       end
+
+       instruction <= {im1_data_out,
+	               im2_data_out,
+	               im3_data_out,
+	               im4_data_out};
+
+       im1_rd_addr[8:0] <= pc[10:2];
+       im2_rd_addr[8:0] <= pc[10:2];
+       im3_rd_addr[8:0] <= pc[10:2];
+       im4_rd_addr[8:0] <= pc[10:2];
+    end                          
+
+   end
+
 endmodule

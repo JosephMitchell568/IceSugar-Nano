@@ -1,8 +1,8 @@
 // First initialization block ram for the
 //  mips pipeline project's instruction memory
-// This block represents the MSB of the instruction word
+// This block represents the MSB-1 of the instruction word
 
-module instructionMem1(
+module instructionMem2(
 	input wire clk,
 	input wire rd_en, 
 	input wire [8:0] rd_addr, // byte addressable
