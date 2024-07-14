@@ -1,0 +1,18 @@
+set_io CLK D1
+
+set_io INSTR_B1 A1
+set_io INSTR_B2 B1
+set_io INSTR_B3 E1
+set_io INSTR_B4 E2
+
+
+
+
+
+#set_io CMD E3    #White
+#set_io SD_CLK E1 #Brown
+#
+#set_io DAT[3] C6 #Yellow
+#set_io DAT[2] C2 #Green
+#set_io DAT[1] A1 #Gray
+#set_io DAT[0] B1 #Purple
