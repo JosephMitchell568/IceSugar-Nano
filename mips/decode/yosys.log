@@ -1,0 +1,1116 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Parsing `decode.v' using frontend `verilog' --
+
+1. Executing Verilog-2005 frontend: decode.v
+Parsing Verilog input from `decode.v' to AST representation.
+Generating RTLIL representation for module `\registerFile'.
+registerFile.v:68: Warning: Identifier `\WriteReg' is implicitly declared.
+Generating RTLIL representation for module `\decode'.
+Successfully finished Verilog frontend.
+
+-- Running command `synth_ice40 -json decode.json -blif decode.blif' --
+
+2. Executing SYNTH_ICE40 pass.
+
+2.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Successfully finished Verilog frontend.
+
+2.2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2.1. Finding top of design hierarchy..
+root of   1 design levels: decode              
+root of   0 design levels: registerFile        
+Automatically selected decode as design top module.
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \decode
+Used module:     \registerFile
+
+2.2.3. Analyzing design hierarchy..
+Top module:  \decode
+Used module:     \registerFile
+Removed 0 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$registerFile.v:57$34 in module registerFile.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\decode.$proc$decode.v:38$141'.
+  Set init value: \rdData1 = 0
+  Set init value: \rdData2 = 0
+  Set init value: \imm = 0
+Found init rule in `\registerFile.$proc$registerFile.v:20$73'.
+  Set init value: \valid_out = 1'0
+
+2.3.4. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\decode.$proc$decode.v:38$141'.
+     1/4: $0\control[8:0]
+     2/4: $1\imm[31:0]
+     3/4: $1\rdData2[31:0]
+     4/4: $1\rdData1[31:0]
+Creating decoders for process `\decode.$proc$decode.v:46$138'.
+     1/3: $0\imm[31:0]
+     2/3: $0\rdData2[31:0]
+     3/3: $0\rdData1[31:0]
+Creating decoders for process `\registerFile.$proc$registerFile.v:20$73'.
+     1/65: $1\valid_out[0:0]
+     2/65: $0$memwr$\memory$registerFile.v:52$32_DATA[31:0]$137
+     3/65: $0$memwr$\memory$registerFile.v:52$32_ADDR[31:0]$136
+     4/65: $0$memwr$\memory$registerFile.v:51$31_DATA[31:0]$135
+     5/65: $0$memwr$\memory$registerFile.v:51$31_ADDR[31:0]$134
+     6/65: $0$memwr$\memory$registerFile.v:50$30_DATA[31:0]$133
+     7/65: $0$memwr$\memory$registerFile.v:50$30_ADDR[31:0]$132
+     8/65: $0$memwr$\memory$registerFile.v:49$29_DATA[31:0]$131
+     9/65: $0$memwr$\memory$registerFile.v:49$29_ADDR[31:0]$130
+    10/65: $0$memwr$\memory$registerFile.v:48$28_DATA[31:0]$129
+    11/65: $0$memwr$\memory$registerFile.v:48$28_ADDR[31:0]$128
+    12/65: $0$memwr$\memory$registerFile.v:47$27_DATA[31:0]$127
+    13/65: $0$memwr$\memory$registerFile.v:47$27_ADDR[31:0]$126
+    14/65: $0$memwr$\memory$registerFile.v:46$26_DATA[31:0]$125
+    15/65: $0$memwr$\memory$registerFile.v:46$26_ADDR[31:0]$124
+    16/65: $0$memwr$\memory$registerFile.v:45$25_DATA[31:0]$123
+    17/65: $0$memwr$\memory$registerFile.v:45$25_ADDR[31:0]$122
+    18/65: $0$memwr$\memory$registerFile.v:44$24_DATA[31:0]$121
+    19/65: $0$memwr$\memory$registerFile.v:44$24_ADDR[31:0]$120
+    20/65: $0$memwr$\memory$registerFile.v:43$23_DATA[31:0]$119
+    21/65: $0$memwr$\memory$registerFile.v:43$23_ADDR[31:0]$118
+    22/65: $0$memwr$\memory$registerFile.v:42$22_DATA[31:0]$117
+    23/65: $0$memwr$\memory$registerFile.v:42$22_ADDR[31:0]$116
+    24/65: $0$memwr$\memory$registerFile.v:41$21_DATA[31:0]$115
+    25/65: $0$memwr$\memory$registerFile.v:41$21_ADDR[31:0]$114
+    26/65: $0$memwr$\memory$registerFile.v:40$20_DATA[31:0]$113
+    27/65: $0$memwr$\memory$registerFile.v:40$20_ADDR[31:0]$112
+    28/65: $0$memwr$\memory$registerFile.v:39$19_DATA[31:0]$111
+    29/65: $0$memwr$\memory$registerFile.v:39$19_ADDR[31:0]$110
+    30/65: $0$memwr$\memory$registerFile.v:38$18_DATA[31:0]$109
+    31/65: $0$memwr$\memory$registerFile.v:38$18_ADDR[31:0]$108
+    32/65: $0$memwr$\memory$registerFile.v:37$17_DATA[31:0]$107
+    33/65: $0$memwr$\memory$registerFile.v:37$17_ADDR[31:0]$106
+    34/65: $0$memwr$\memory$registerFile.v:36$16_DATA[31:0]$105
+    35/65: $0$memwr$\memory$registerFile.v:36$16_ADDR[31:0]$104
+    36/65: $0$memwr$\memory$registerFile.v:35$15_DATA[31:0]$103
+    37/65: $0$memwr$\memory$registerFile.v:35$15_ADDR[31:0]$102
+    38/65: $0$memwr$\memory$registerFile.v:34$14_DATA[31:0]$101
+    39/65: $0$memwr$\memory$registerFile.v:34$14_ADDR[31:0]$100
+    40/65: $0$memwr$\memory$registerFile.v:33$13_DATA[31:0]$99
+    41/65: $0$memwr$\memory$registerFile.v:33$13_ADDR[31:0]$98
+    42/65: $0$memwr$\memory$registerFile.v:32$12_DATA[31:0]$97
+    43/65: $0$memwr$\memory$registerFile.v:32$12_ADDR[31:0]$96
+    44/65: $0$memwr$\memory$registerFile.v:31$11_DATA[31:0]$95
+    45/65: $0$memwr$\memory$registerFile.v:31$11_ADDR[31:0]$94
+    46/65: $0$memwr$\memory$registerFile.v:30$10_DATA[31:0]$93
+    47/65: $0$memwr$\memory$registerFile.v:30$10_ADDR[31:0]$92
+    48/65: $0$memwr$\memory$registerFile.v:29$9_DATA[31:0]$91
+    49/65: $0$memwr$\memory$registerFile.v:29$9_ADDR[31:0]$90
+    50/65: $0$memwr$\memory$registerFile.v:28$8_DATA[31:0]$89
+    51/65: $0$memwr$\memory$registerFile.v:28$8_ADDR[31:0]$88
+    52/65: $0$memwr$\memory$registerFile.v:27$7_DATA[31:0]$87
+    53/65: $0$memwr$\memory$registerFile.v:27$7_ADDR[31:0]$86
+    54/65: $0$memwr$\memory$registerFile.v:26$6_DATA[31:0]$85
+    55/65: $0$memwr$\memory$registerFile.v:26$6_ADDR[31:0]$84
+    56/65: $0$memwr$\memory$registerFile.v:25$5_DATA[31:0]$83
+    57/65: $0$memwr$\memory$registerFile.v:25$5_ADDR[31:0]$82
+    58/65: $0$memwr$\memory$registerFile.v:24$4_DATA[31:0]$81
+    59/65: $0$memwr$\memory$registerFile.v:24$4_ADDR[31:0]$80
+    60/65: $0$memwr$\memory$registerFile.v:23$3_DATA[31:0]$79
+    61/65: $0$memwr$\memory$registerFile.v:23$3_ADDR[31:0]$78
+    62/65: $0$memwr$\memory$registerFile.v:22$2_DATA[31:0]$77
+    63/65: $0$memwr$\memory$registerFile.v:22$2_ADDR[31:0]$76
+    64/65: $0$memwr$\memory$registerFile.v:21$1_DATA[31:0]$75
+    65/65: $0$memwr$\memory$registerFile.v:21$1_ADDR[31:0]$74
+Creating decoders for process `\registerFile.$proc$registerFile.v:57$34'.
+     1/6: $0\valid_out[0:0]
+     2/6: $0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37
+     3/6: $0$memwr$\memory$registerFile.v:68$33_DATA[31:0]$36
+     4/6: $0$memwr$\memory$registerFile.v:68$33_ADDR[4:0]$35
+     5/6: $0\rdData2[31:0]
+     6/6: $0\rdData1[31:0]
+
+2.3.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\decode.\control' from process `\decode.$proc$decode.v:38$141'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:21$1_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:21$1_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:22$2_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:22$2_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:23$3_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:23$3_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:24$4_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:24$4_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:25$5_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:25$5_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:26$6_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:26$6_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:27$7_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:27$7_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:28$8_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:28$8_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:29$9_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:29$9_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:30$10_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:30$10_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:31$11_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:31$11_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:32$12_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:32$12_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:33$13_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:33$13_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:34$14_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:34$14_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:35$15_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:35$15_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:36$16_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:36$16_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:37$17_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:37$17_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:38$18_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:38$18_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:39$19_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:39$19_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:40$20_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:40$20_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:41$21_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:41$21_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:42$22_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:42$22_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:43$23_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:43$23_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:44$24_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:44$24_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:45$25_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:45$25_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:46$26_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:46$26_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:47$27_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:47$27_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:48$28_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:48$28_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:49$29_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:49$29_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:50$30_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:50$30_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:51$31_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:51$31_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:52$32_ADDR' from process `\registerFile.$proc$registerFile.v:20$73'.
+No latch inferred for signal `\registerFile.$memwr$\memory$registerFile.v:52$32_DATA' from process `\registerFile.$proc$registerFile.v:20$73'.
+
+2.3.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\decode.\rdData1' using process `\decode.$proc$decode.v:46$138'.
+  created $dff cell `$procdff$166' with positive edge clock.
+Creating register for signal `\decode.\rdData2' using process `\decode.$proc$decode.v:46$138'.
+  created $dff cell `$procdff$167' with positive edge clock.
+Creating register for signal `\decode.\imm' using process `\decode.$proc$decode.v:46$138'.
+  created $dff cell `$procdff$168' with positive edge clock.
+Creating register for signal `\registerFile.\rdData1' using process `\registerFile.$proc$registerFile.v:57$34'.
+  created $dff cell `$procdff$169' with positive edge clock.
+Creating register for signal `\registerFile.\rdData2' using process `\registerFile.$proc$registerFile.v:57$34'.
+  created $dff cell `$procdff$170' with positive edge clock.
+Creating register for signal `\registerFile.\valid_out' using process `\registerFile.$proc$registerFile.v:57$34'.
+  created $dff cell `$procdff$171' with positive edge clock.
+Creating register for signal `\registerFile.$memwr$\memory$registerFile.v:68$33_ADDR' using process `\registerFile.$proc$registerFile.v:57$34'.
+  created $dff cell `$procdff$172' with positive edge clock.
+Creating register for signal `\registerFile.$memwr$\memory$registerFile.v:68$33_DATA' using process `\registerFile.$proc$registerFile.v:57$34'.
+  created $dff cell `$procdff$173' with positive edge clock.
+Creating register for signal `\registerFile.$memwr$\memory$registerFile.v:68$33_EN' using process `\registerFile.$proc$registerFile.v:57$34'.
+  created $dff cell `$procdff$174' with positive edge clock.
+
+2.3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `decode.$proc$decode.v:38$141'.
+Removing empty process `decode.$proc$decode.v:46$138'.
+Removing empty process `registerFile.$proc$registerFile.v:20$73'.
+Found and cleaned up 2 empty switches in `\registerFile.$proc$registerFile.v:57$34'.
+Removing empty process `registerFile.$proc$registerFile.v:57$34'.
+Cleaned up 2 empty switches.
+
+2.4. Executing FLATTEN pass (flatten design).
+Using template registerFile for cells of type registerFile.
+<suppressed ~1 debug messages>
+No more expansions possible.
+Deleting now unused module registerFile.
+
+2.5. Executing TRIBUF pass.
+
+2.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+2.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+<suppressed ~1 debug messages>
+
+2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+Removed 3 unused cells and 157 unused wires.
+<suppressed ~7 debug messages>
+
+2.9. Executing CHECK pass (checking for obvious problems).
+checking module decode..
+Warning: Wire decode.\registerFileInst.WriteReg is used but has no driver.
+Warning: Wire decode.\registerFileInst.rd_en is used but has no driver.
+found and reported 2 problems.
+
+2.10. Executing OPT pass (performing simple optimizations).
+
+2.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \decode..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+2.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \decode.
+    Consolidated identical input bits for $mux cell $techmap\registerFileInst.$procmux$145:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$techmap\registerFileInst.$procmux$145_Y
+      New ports: A=1'0, B=1'1, Y=$techmap\registerFileInst.$procmux$145_Y [0]
+      New connections: $techmap\registerFileInst.$procmux$145_Y [31:1] = { $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] $techmap\registerFileInst.$procmux$145_Y [0] }
+  Optimizing cells in module \decode.
+    Consolidated identical input bits for $mux cell $techmap\registerFileInst.$procmux$148:
+      Old ports: A=$techmap\registerFileInst.$procmux$145_Y, B=0, Y=$techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37
+      New ports: A=$techmap\registerFileInst.$procmux$145_Y [0], B=1'0, Y=$techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0]
+      New connections: $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [31:1] = { $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] $techmap\registerFileInst.$0$memwr$\memory$registerFile.v:68$33_EN[31:0]$37 [0] }
+  Optimizing cells in module \decode.
+Performed a total of 2 changes.
+
+2.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.10.6. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec \registerFileInst.valid_out = 1'0 to constant driver in module decode.
+Promoted 1 init specs to constant drivers.
+
+2.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \decode..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+2.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \decode.
+Performed a total of 0 changes.
+
+2.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.10.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.10.16. Finished OPT passes. (There is nothing left to do.)
+
+2.11. Executing WREDUCE pass (reducing word size of cells).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:21$40 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:22$41 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:23$42 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:24$43 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:25$44 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:26$45 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:27$46 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:28$47 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:29$48 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:30$49 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:31$50 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:32$51 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:33$52 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:34$53 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:35$54 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:36$55 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:37$56 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:38$57 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:39$58 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:40$59 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:41$60 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:42$61 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:43$62 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:44$63 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:45$64 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:46$65 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:47$66 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:48$67 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:49$68 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:50$69 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:51$70 (registerFileInst.memory).
+Removed top 27 address bits (of 32) from memory init port decode.$techmap\registerFileInst.$meminit$\memory$registerFile.v:52$71 (registerFileInst.memory).
+Removed top 16 bits (of 32) from FF cell decode.$procdff$168 ($dff).
+Removed top 31 bits (of 32) from FF cell decode.$techmap\registerFileInst.$procdff$174 ($dff).
+Removed cell decode.$techmap\registerFileInst.$procmux$158 ($mux).
+Removed cell decode.$techmap\registerFileInst.$procmux$155 ($mux).
+Removed cell decode.$techmap\registerFileInst.$procmux$153 ($mux).
+Removed cell decode.$techmap\registerFileInst.$procmux$150 ($mux).
+
+2.12. Executing PEEPOPT pass (run peephole optimizers).
+
+2.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+2.14. Executing SHARE pass (SAT-based resource sharing).
+Found 2 cells in module decode that may be considered for resource sharing.
+  Analyzing resource sharing options for $techmap\registerFileInst.$memrd$\memory$registerFile.v:64$39 ($memrd):
+    Found 1 activation_patterns using ctrl signal \registerFileInst.rd_en.
+    Found 1 candidates: $techmap\registerFileInst.$memrd$\memory$registerFile.v:63$38
+    Analyzing resource sharing with $techmap\registerFileInst.$memrd$\memory$registerFile.v:63$38 ($memrd):
+      Found 1 activation_patterns using ctrl signal \registerFileInst.rd_en.
+      Activation pattern for cell $techmap\registerFileInst.$memrd$\memory$registerFile.v:64$39: \registerFileInst.rd_en = 1'1
+      Activation pattern for cell $techmap\registerFileInst.$memrd$\memory$registerFile.v:63$38: \registerFileInst.rd_en = 1'1
+      Size of SAT problem: 0 cells, 5 variables, 9 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: \registerFileInst.rd_en = 1'1
+  Analyzing resource sharing options for $techmap\registerFileInst.$memrd$\memory$registerFile.v:63$38 ($memrd):
+    Found 1 activation_patterns using ctrl signal \registerFileInst.rd_en.
+    No candidates found.
+
+2.15. Executing TECHMAP pass (map to technology primitives).
+
+2.15.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+2.15.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.16. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.18. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module decode:
+  created 0 $alu and 0 $macc cells.
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \decode..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \decode.
+Performed a total of 0 changes.
+
+2.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.19.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.19.9. Finished OPT passes. (There is nothing left to do.)
+
+2.20. Executing FSM pass (extract and optimize FSM).
+
+2.20.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking decode.$techmap\registerFileInst.$memwr$\memory$registerFile.v:68$33_ADDR as FSM state register:
+    Users of register don't seem to benefit from recoding.
+
+2.20.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.20.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.20.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.20.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.20.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.20.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.20.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.21.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.21.5. Finished fast OPT passes.
+
+2.22. Executing MEMORY pass.
+
+2.22.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$techmap\registerFileInst.$memwr$\memory$registerFile.v:68$72' in module `\decode': merged $dff to cell.
+Checking cell `$techmap\registerFileInst.$memrd$\memory$registerFile.v:63$38' in module `\decode': merged data $dff with rd enable to cell.
+Checking cell `$techmap\registerFileInst.$memrd$\memory$registerFile.v:64$39' in module `\decode': merged data $dff with rd enable to cell.
+
+2.22.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+Removed 7 unused cells and 9 unused wires.
+<suppressed ~8 debug messages>
+
+2.22.3. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.22.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\registerFileInst.memory' in module `\decode':
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:21$40 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:22$41 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:23$42 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:24$43 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:25$44 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:26$45 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:27$46 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:28$47 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:29$48 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:30$49 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:31$50 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:32$51 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:33$52 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:34$53 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:35$54 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:36$55 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:37$56 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:38$57 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:39$58 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:40$59 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:41$60 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:42$61 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:43$62 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:44$63 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:45$64 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:46$65 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:47$66 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:48$67 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:49$68 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:50$69 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:51$70 ($meminit)
+  $techmap\registerFileInst.$meminit$\memory$registerFile.v:52$71 ($meminit)
+  $techmap\registerFileInst.$memwr$\memory$registerFile.v:68$72 ($memwr)
+  $techmap\registerFileInst.$memrd$\memory$registerFile.v:64$39 ($memrd)
+  $techmap\registerFileInst.$memrd$\memory$registerFile.v:63$38 ($memrd)
+
+2.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.24. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+Processing decode.registerFileInst.memory:
+  Properties: ports=3 bits=1024 rports=2 wports=1 dbits=32 abits=5 words=32
+  Checking rule #1 for bram type $__ICE40_RAM4K_M0 (variant 1):
+    Bram geometry: abits=8 dbits=16 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M0: awaste=224 dwaste=0 bwaste=3584 waste=3584 efficiency=12
+    Rule #1 for bram type $__ICE40_RAM4K_M0 (variant 1) accepted.
+    Mapping to bram type $__ICE40_RAM4K_M0 (variant 1):
+      Write port #0 is in clock domain \CLK.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Mapped to bram port A1.2.
+      Updated properties: dups=2 waste=7168 efficiency=6
+      Storing for later selection.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 1):
+    Bram geometry: abits=9 dbits=8 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=480 dwaste=0 bwaste=3840 waste=3840 efficiency=6
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 1) accepted.
+    Mapping to bram type $__ICE40_RAM4K_M123 (variant 1):
+      Write port #0 is in clock domain \CLK.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Mapped to bram port A1.2.
+      Updated properties: dups=2 waste=7680 efficiency=3
+      Storing for later selection.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 2):
+    Bram geometry: abits=10 dbits=4 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=992 dwaste=0 bwaste=3968 waste=3968 efficiency=3
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 2) accepted.
+    Mapping to bram type $__ICE40_RAM4K_M123 (variant 2):
+      Write port #0 is in clock domain \CLK.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Mapped to bram port A1.2.
+      Updated properties: dups=2 waste=7936 efficiency=1
+    Rule for bram type $__ICE40_RAM4K_M123 rejected: requirement 'min efficiency 2' not met.
+    Mapping to bram type $__ICE40_RAM4K_M123 failed.
+  Checking rule #2 for bram type $__ICE40_RAM4K_M123 (variant 3):
+    Bram geometry: abits=11 dbits=2 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__ICE40_RAM4K_M123: awaste=2016 dwaste=0 bwaste=4032 waste=4032 efficiency=1
+    Rule #2 for bram type $__ICE40_RAM4K_M123 (variant 3) rejected: requirement 'min efficiency 2' not met.
+  Selecting best of 2 rules:
+    Efficiency for rule 2.1: efficiency=3, cells=8, acells=1
+    Efficiency for rule 1.1: efficiency=6, cells=4, acells=1
+    Selected rule 1.1 with efficiency 6.
+    Mapping to bram type $__ICE40_RAM4K_M0 (variant 1):
+      Write port #0 is in clock domain \CLK.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain \CLK.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain \CLK.
+        Mapped to bram port A1.2.
+      Creating $__ICE40_RAM4K_M0 cell at grid position <0 0 0>: registerFileInst.memory.0.0.0
+      Creating $__ICE40_RAM4K_M0 cell at grid position <0 0 1>: registerFileInst.memory.0.0.1
+      Creating $__ICE40_RAM4K_M0 cell at grid position <1 0 0>: registerFileInst.memory.1.0.0
+      Creating $__ICE40_RAM4K_M0 cell at grid position <1 0 1>: registerFileInst.memory.1.0.1
+
+2.25. Executing TECHMAP pass (map to technology primitives).
+
+2.25.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M0'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M123'.
+Successfully finished Verilog frontend.
+
+2.25.2. Continuing TECHMAP pass.
+Using template $paramod$79d0a3f62734c70032efab8ba86e8a6562fbefa8\$__ICE40_RAM4K_M0 for cells of type $__ICE40_RAM4K_M0.
+Using template $paramod$732cb071c562212ef3fc6e2f3380ae189ce1250d\$__ICE40_RAM4K_M0 for cells of type $__ICE40_RAM4K_M0.
+Using template $paramod$20d2f8c8c577aafa96799cc044473354c7d1c3d0\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
+Using template $paramod$6aa27761b0b72336c8f5da0e2970c81894ec70e6\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
+No more expansions possible.
+<suppressed ~90 debug messages>
+
+2.26. Executing ICE40_BRAMINIT pass.
+
+2.27. Executing OPT pass (performing simple optimizations).
+
+2.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+<suppressed ~20 debug messages>
+
+2.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+2.27.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+Removed 0 unused cells and 101 unused wires.
+<suppressed ~1 debug messages>
+
+2.27.5. Finished fast OPT passes.
+
+2.28. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+2.29. Executing OPT pass (performing simple optimizations).
+
+2.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \decode..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \decode.
+Performed a total of 0 changes.
+
+2.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.29.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.29.9. Finished OPT passes. (There is nothing left to do.)
+
+2.30. Executing TECHMAP pass (map to technology primitives).
+
+2.30.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.30.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+2.30.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $not.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+2.31. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.31.1. Running ICE40 specific optimizations.
+
+2.31.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.31.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.31.4. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.31.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+
+2.31.6. Finished OPT passes. (There is nothing left to do.)
+
+2.32. Executing DFFSR2DFF pass (mapping DFFSR cells to simpler FFs).
+
+2.33. Executing DFF2DFFE pass (transform $dff to $dffe where applicable).
+Selected cell types for direct conversion:
+  $_DFF_PP1_ -> $__DFFE_PP1
+  $_DFF_PP0_ -> $__DFFE_PP0
+  $_DFF_PN1_ -> $__DFFE_PN1
+  $_DFF_PN0_ -> $__DFFE_PN0
+  $_DFF_NP1_ -> $__DFFE_NP1
+  $_DFF_NP0_ -> $__DFFE_NP0
+  $_DFF_NN1_ -> $__DFFE_NN1
+  $_DFF_NN0_ -> $__DFFE_NN0
+  $_DFF_N_ -> $_DFFE_NP_
+  $_DFF_P_ -> $_DFFE_PP_
+Transforming FF to FF+Enable cells in module decode:
+
+2.34. Executing TECHMAP pass (map to technology primitives).
+
+2.34.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Successfully finished Verilog frontend.
+
+2.34.2. Continuing TECHMAP pass.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+No more expansions possible.
+<suppressed ~80 debug messages>
+
+2.35. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.36. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+2.37. Executing ICE40_FFINIT pass (implement FF init values).
+Handling FF init values in decode.
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$252 (SB_DFF): \rdData1 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$316 (SB_DFF): \imm [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$262 (SB_DFF): \rdData1 [10] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$253 (SB_DFF): \rdData1 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$254 (SB_DFF): \rdData1 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$255 (SB_DFF): \rdData1 [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$256 (SB_DFF): \rdData1 [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$261 (SB_DFF): \rdData1 [9] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$258 (SB_DFF): \rdData1 [6] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$259 (SB_DFF): \rdData1 [7] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$257 (SB_DFF): \rdData1 [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$263 (SB_DFF): \rdData1 [11] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$264 (SB_DFF): \rdData1 [12] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$265 (SB_DFF): \rdData1 [13] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$266 (SB_DFF): \rdData1 [14] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$267 (SB_DFF): \rdData1 [15] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$268 (SB_DFF): \rdData1 [16] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$269 (SB_DFF): \rdData1 [17] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$270 (SB_DFF): \rdData1 [18] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$271 (SB_DFF): \rdData1 [19] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$272 (SB_DFF): \rdData1 [20] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$273 (SB_DFF): \rdData1 [21] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$274 (SB_DFF): \rdData1 [22] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$275 (SB_DFF): \rdData1 [23] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$276 (SB_DFF): \rdData1 [24] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$277 (SB_DFF): \rdData1 [25] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$278 (SB_DFF): \rdData1 [26] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$279 (SB_DFF): \rdData1 [27] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$280 (SB_DFF): \rdData1 [28] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$281 (SB_DFF): \rdData1 [29] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$282 (SB_DFF): \rdData1 [30] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$283 (SB_DFF): \rdData1 [31] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$284 (SB_DFF): \rdData2 [0] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$285 (SB_DFF): \rdData2 [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$286 (SB_DFF): \rdData2 [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$287 (SB_DFF): \rdData2 [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$288 (SB_DFF): \rdData2 [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$289 (SB_DFF): \rdData2 [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$290 (SB_DFF): \rdData2 [6] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$291 (SB_DFF): \rdData2 [7] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$293 (SB_DFF): \rdData2 [9] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$328 (SB_DFF): \imm [12] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$294 (SB_DFF): \rdData2 [10] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$295 (SB_DFF): \rdData2 [11] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$296 (SB_DFF): \rdData2 [12] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$297 (SB_DFF): \rdData2 [13] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$298 (SB_DFF): \rdData2 [14] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$299 (SB_DFF): \rdData2 [15] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$300 (SB_DFF): \rdData2 [16] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$302 (SB_DFF): \rdData2 [18] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$322 (SB_DFF): \imm [6] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$303 (SB_DFF): \rdData2 [19] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$304 (SB_DFF): \rdData2 [20] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$305 (SB_DFF): \rdData2 [21] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$324 (SB_DFF): \imm [8] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$311 (SB_DFF): \rdData2 [27] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$308 (SB_DFF): \rdData2 [24] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$309 (SB_DFF): \rdData2 [25] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$310 (SB_DFF): \rdData2 [26] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$306 (SB_DFF): \rdData2 [22] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$320 (SB_DFF): \imm [4] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$318 (SB_DFF): \imm [2] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$314 (SB_DFF): \rdData2 [30] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$315 (SB_DFF): \rdData2 [31] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$301 (SB_DFF): \rdData2 [17] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$260 (SB_DFF): \rdData1 [8] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$319 (SB_DFF): \imm [3] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$317 (SB_DFF): \imm [1] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$313 (SB_DFF): \rdData2 [29] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$321 (SB_DFF): \imm [5] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$312 (SB_DFF): \rdData2 [28] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$325 (SB_DFF): \imm [9] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$323 (SB_DFF): \imm [7] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$326 (SB_DFF): \imm [10] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$327 (SB_DFF): \imm [11] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$292 (SB_DFF): \rdData2 [8] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$329 (SB_DFF): \imm [13] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$330 (SB_DFF): \imm [14] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$331 (SB_DFF): \imm [15] = 0
+FF init value for cell $auto$simplemap.cc:420:simplemap_dff$307 (SB_DFF): \rdData2 [23] = 0
+
+2.38. Executing ICE40_FFSSR pass (merge synchronous set/reset into FF cells).
+Merging set/reset $_MUX_ cells into SB_FFs in decode.
+
+2.39. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.39.1. Running ICE40 specific optimizations.
+
+2.39.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module decode.
+
+2.39.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\decode'.
+Removed a total of 0 cells.
+
+2.39.4. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.39.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \decode..
+Removed 0 unused cells and 240 unused wires.
+<suppressed ~1 debug messages>
+
+2.39.6. Finished OPT passes. (There is nothing left to do.)
+
+2.40. Executing TECHMAP pass (map to technology primitives).
+
+2.40.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+2.40.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.41. Executing ABC pass (technology mapping using ABC).
+
+2.41.1. Extracting gate netlist of module `\decode' to `<abc-temp-dir>/input.blif'..
+Extracted 1 gates and 2 wires to a netlist network with 1 inputs and 1 outputs.
+
+2.41.1.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + retime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress 
+ABC: Total number of equiv classes                =       2.
+ABC: Participating nodes from both networks       =       2.
+ABC: Participating nodes from the first network   =       1. (  50.00 % of nodes)
+ABC: Participating nodes from the second network  =       1. (  50.00 % of nodes)
+ABC: Node pairs (any polarity)                    =       1. (  50.00 % of names can be moved)
+ABC: Node pairs (same polarity)                   =       1. (  50.00 % of names can be moved)
+ABC: Total runtime =     0.00 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.41.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:        2
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        1
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+Removed 0 unused cells and 2 unused wires.
+
+2.42. Executing TECHMAP pass (map to technology primitives).
+
+2.42.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+2.42.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=1\LUT=2'01 for cells of type $lut.
+No more expansions possible.
+<suppressed ~12 debug messages>
+Removed 0 unused cells and 2 unused wires.
+
+2.43. Executing HIERARCHY pass (managing design hierarchy).
+
+2.43.1. Analyzing design hierarchy..
+Top module:  \decode
+
+2.43.2. Analyzing design hierarchy..
+Top module:  \decode
+Removed 0 unused modules.
+
+2.44. Printing statistics.
+
+=== decode ===
+
+   Number of wires:                 26
+   Number of wire bits:            422
+   Number of public wires:          25
+   Number of public wire bits:     421
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 85
+     SB_DFF                         80
+     SB_LUT4                         1
+     SB_RAM40_4K                     4
+
+2.45. Executing CHECK pass (checking for obvious problems).
+checking module decode..
+found and reported 0 problems.
+
+2.46. Executing BLIF backend.
+
+2.47. Executing JSON backend.
+
+Warnings: 3 unique messages, 3 total
+End of script. Logfile hash: 9d4ab5b842
+CPU: user 0.57s system 0.13s, MEM: 50.99 MB total, 45.41 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 38% 10x read_verilog (0 sec), 12% 15x opt_clean (0 sec), ...

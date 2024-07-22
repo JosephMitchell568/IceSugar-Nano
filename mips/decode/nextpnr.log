@@ -1,0 +1,4 @@
+Info: constrained 'CLK' to bel 'X0/Y8/io1'
+ERROR: IO 'writeData[31]' is unconstrained in PCF (override this error with --pcf-allow-unconstrained)
+ERROR: Loading PCF failed.
+0 warnings, 2 errors
