@@ -9,8 +9,8 @@ module microsd(
  input CLK,
  output SD_CLK,
  output LED,
- output CMD,
- output [3:0] DAT
+ inout CMD, //For simulation have port declaration be output
+ inout [3:0] DAT //For simulation have port declaration be output
  );
 
  reg led; // Error LED register
