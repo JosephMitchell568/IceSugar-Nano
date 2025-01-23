@@ -1,0 +1,5 @@
+FSM to calculate CRC checksums for SD Memory transmission/response pairs.
+
+Hardware Test passed - Basic Error LED did not turn on
+
+I now plan to verify its functionality further through simulation with Modelsim LE
