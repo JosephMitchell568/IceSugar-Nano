@@ -1,0 +1,11 @@
+set_io CLK D1
+
+set_io CMD B5    #White
+set_io SD_CLK E3 #Yellow
+
+set_io DAT[3] C6 #Brown
+set_io DAT[2] B4 #Green
+set_io DAT[1] C2 #Blue
+set_io DAT[0] E1 #Purple
+
+set_io LED B6
