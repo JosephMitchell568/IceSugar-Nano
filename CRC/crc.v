@@ -7,7 +7,7 @@ module crc(
  );
 
  reg led; // Error LED register
- reg [45:0] data; // SD CMD data packet 40 bits + 7 trailing zeros
+ reg [47:0] data; // SD CMD data packet 40 bits + 7 trailing zeros
                   // Ignore start and end bit for crc transmission
  reg [6:0] data_ptr;// Point to next databit to shift into crc buffer
 
@@ -46,19 +46,23 @@ module crc(
     if(crc_buffer[7] == 1'b0)// If MSB is leading zero, SHIFT it out
     begin
      crc_state <= SHIFT;// Transition to SHIFT to shift MSB out
+     if(data_ptr == 7'd0)// If last data bit already loaded...
+     begin
+      crc_state <= CRC_FINISH;// We are finished!
+     end
     end
     else
     begin
-     crc_buffer[7:0] <=  {crc_buffer[7] ~^ 1'b1, // x^7
-                          crc_buffer[6] ~^ 1'b0, 
-                         crc_buffer[5] ~^ 1'b0,
-                         crc_buffer[4] ~^ 1'b0,
-                         crc_buffer[3] ~^ 1'b1, // x^3
-                         crc_buffer[2] ~^ 1'b0,
-                         crc_buffer[1] ~^ 1'b0,
-                         crc_buffer[0] ~^ 1'b1  // 1
+     crc_buffer[7:0] <=  {crc_buffer[7] ^ 1'b1, // x^7
+                          crc_buffer[6] ^ 1'b0, 
+                          crc_buffer[5] ^ 1'b0,
+                          crc_buffer[4] ^ 1'b0,
+                          crc_buffer[3] ^ 1'b1, // x^3
+                          crc_buffer[2] ^ 1'b0,
+                          crc_buffer[1] ^ 1'b0,
+                          crc_buffer[0] ^ 1'b1  // 1
                         };// Generator Polynomial : x^7 + x^3 + 1
-     if(data_ptr != 7'd1)
+     if(data_ptr != 7'd0)// We need to process data[1]
      begin
       crc_state <= SHIFT;
      end
@@ -79,11 +83,22 @@ module crc(
    LOAD_NEXT:
    begin
     crc_buffer[0] <= data[data_ptr];// Set next data bit
-    if(data_ptr != 7'd1)
+    if(data_ptr != 7'd0)
     begin
      data_ptr <= data_ptr - 7'd1;// Decrement data pointer
+     if(crc_buffer[7] == 1'b1 || data_ptr == 7'd1)// MSB 1, or last data bit has been loaded
+     begin
+      crc_state <= XNOR_CRC;
+     end
+     else
+     begin
+      crc_state <= SHIFT;
+     end
     end
-    crc_state <= XNOR_CRC;
+    else
+    begin
+     crc_state <= XNOR_CRC;
+    end
    end   
 
    CRC_FINISH:
