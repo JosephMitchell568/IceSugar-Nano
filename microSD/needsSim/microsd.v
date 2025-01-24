@@ -81,8 +81,7 @@ module microsd(
  parameter SEND_CMD = 4'b0010;// Send SD Memory CMD
  parameter WAIT_RESPONSE = 4'b0011;// Wait Response
  parameter SEND_LAST = 4'b0100;// Send Last CMD bit 
- reg [3:0] crc_state;// CRC7 calc FSM state
-
+ parameter END = 4'b1000;// END state for testing
 
  reg [6:0] clkdiv; // 7 bit counter for clock divider (100khz)
  reg one_hundredkhz;
@@ -185,7 +184,7 @@ module microsd(
     case(crc_state)                                                                                        
      FULL_LOAD:
      begin
-      crc_buffer[7:0] <= data[47:40];// Load first 8 most significant data bits
+      crc_buffer[7:0] <= sd_mem_cmd[47:40];// Load first 8 most significant data bits
       data_ptr <= data_ptr - 7'd8;// Point to first data bit after first load
       crc_state <= XOR_CRC;// Transition to XNOR_CRC state
      end
@@ -231,7 +230,7 @@ module microsd(
                                                                                                           
      LOAD_NEXT:
      begin
-      crc_buffer[0] <= data[data_ptr];// Set next data bit                                               
+      crc_buffer[0] <= sd_mem_cmd[data_ptr];// Set next data bit                                               
       if(data_ptr != 7'd0)
       begin
        data_ptr <= data_ptr - 7'd1;// Decrement data pointer
@@ -258,7 +257,7 @@ module microsd(
         if(crc_buffer[6:0] != 7'b100_1010)// CMD0 was correct with 0x4A, now CMD8 needs to be correct with 0x43
         begin
          led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
-	 sd_mem_cmd[7:1] <= crc_buffer[6:0];
+	 //sd_mem_cmd[7:1] <= crc_buffer[6:0];
         end                                                                                                    
         else
         begin
@@ -279,7 +278,8 @@ module microsd(
         end
        end
                                                                                                                       
-      endcase      
+      endcase
+      data_ptr <= 7'd47;    
       crc_state <= FULL_LOAD;// Now instead of CRC_FINISH being a dead state, reset CRC FSM...
       sd_mem_state <= SEND_CMD;// And escape CRC FSM to send the CMD
      end
@@ -323,13 +323,13 @@ module microsd(
       if(resp_delay == 32'b0) // CMD response timed out
       begin
        resp_delay <= 6'b110101; // Reset response delay
-       case(sd_mem_cmd)
-        CMD0:
+       case(sd_mem_cmd[45:40])// Check the CMD Index becuase sd_mem_cmd has calculated CRC now!
+        6'b000000: //CMD index 0 
         begin
          sd_mem_cmd <= CMD8; // Set next CMD to CMD8: SEND_IF_COND
         end
        endcase
-       sd_mem_state <= SEND_CMD; // Go to send command state after timing out
+       sd_mem_state <= CALC_CRC; // Remember to calculate CRC first!
        cmd_read <= 1'b0; // Lower command read signal before writing to command line
        sd_mem_cmd_ptr <= 6'd47; // Ensure sd memory command bit pointer is MSB
       end                       
@@ -342,11 +342,11 @@ module microsd(
     end
     else // A Response has been found
     begin
-     if(sd_mem_cmd == CMD0)
-     begin
-      led <= 1'b1; // At no point should there be a response from CMD0
-     end
-     sd_mem_state <= 4'b1000; // Change to dead state for now...
+     //if(sd_mem_cmd[45:40] == 6'b000000)
+     //begin
+     // led <= 1'b1; // At no point should there be a response from CMD0
+     //end
+     sd_mem_state <= END; // Once a response has been received from card go to END state
      resp_delay <= 6'b110101; // Reset response delay for next command
     end
 
@@ -360,14 +360,14 @@ module microsd(
     sd_mem_state <= WAIT_RESPONSE; // Transition to wait response 
    end
 
-   4'b1000: // Dead State for testing
+   END: // Dead State for testing
    begin
     sd_clk <= ~sd_clk; // Toggle sd clock while in dead state...
-    if(sd_mem_cmd == CMD8)
+    if(sd_mem_cmd[45:40] == 6'b001000)// If CMD Index is 8, let me know
     begin
      led <= 1'b1; // Turn light on only when response to CMD8 is found...
     end
-    sd_mem_state <= 4'b1000;
+    sd_mem_state <= END;
    end
 
   endcase
