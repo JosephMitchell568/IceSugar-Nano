@@ -1,0 +1,2 @@
+This test needs to be debugged.
+The goal is to have a fully robust CRC calculation provided for all SD Memory command transmissions and responses.
