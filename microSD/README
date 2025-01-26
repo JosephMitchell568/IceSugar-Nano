@@ -10,3 +10,7 @@ In order to fully emulate the nintendo GBA or even nintendo DS I will need a lot
  I will store image data and audio data on this microSD card.
 
 I will need to dive deeper into both video and audio but that will come together behind the scenes (in parallel)
+
+Here is a nice useful link that helped explain to me that CMD55 needs to be sent before ACMD41 otherwise 
+ the call to ACMD41 would be interpreted as CMD41 which is a reserved manufacturer command:
+http://www.rjhcoding.com/avrc-sd-interface-3.php
