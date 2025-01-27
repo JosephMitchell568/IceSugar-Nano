@@ -24,6 +24,7 @@ module microsd(
  parameter CMD41  = 48'b0_1_101001_01000000000100000000000000000000_0000000_1;// HCS && 3.3v raised SEND_OP_COND
  parameter CMD2   = 48'b0_1_000010_00000000000000000000000000000000_0000000_1;// CMD2 ALL_SEND_CID
  parameter CMD3   = 48'b0_1_000011_00000000000000000000000000000000_0000000_1;// CMD3 SEND_RELATIVE_ADDR
+ parameter CMD7   = 48'b0_1_000111_00000000000000000000000000000000_0000000_1;// CMD7 needs RCA from CMD3
 
  reg [13:0] init_delay; // Delay required before sending any commands
 
@@ -38,8 +39,9 @@ module microsd(
  reg dat_read; // Raise for data line read
 
  reg [47:0] sd_cmd;// current sd memory command
- //reg sd_cmd_last; // sd memory command last bit flag
  reg [5:0] sd_cmd_ptr;// sd memory command bit pointer
+
+ reg [15:0] sd_rca;// Target card's RELATIVE_CARD_ADDR from CMD3
 
  reg [3:0] sd_mem_state;// Current state of sd memory FSM
  parameter DELAY = 4'b0000;// Delay before sending first command
@@ -178,8 +180,13 @@ module microsd(
      CMD2[47:8]: sd_cmd <= CMD3; // Set 6th cmd SEND_RELATIVE_ADDR brings microSD card to STANDBY state
      CMD3[47:8]:
      begin
-      sd_mem_state <= END;// After microSD card has entered STANDBY state, stop check work.
+      sd_rca[15:0] <= sd_cmd_resp[38:24];// Since my response register is off by 1 bit, should be from [38-24]
+      sd_cmd <= {CMD7[47:40],sd_cmd_resp[38:24],CMD7[24:0]};// Set 7th CMD to CMD7 with given RCA
      end 
+     {CMD7[47:40],sd_cmd[39:25],CMD7[24:8]}:
+     begin
+      sd_mem_state <= END;
+     end
     endcase
    end
 
@@ -266,46 +273,47 @@ module microsd(
                                                                                                                      
      CRC_FINISH:
      begin
-      case(sd_cmd[45:40])
-       6'b000000:// CMD Index 0
-       begin
-        if(crc_buffer[6:0] != 7'b100_1010)// CMD0 was correct with 0x4A, now CMD8 response needs to be correct with 0x43
-        begin
-         //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
-        end                                                                                                    
-        else
-        begin
-         sd_cmd[7:1] <= crc_buffer[6:0];// Set the calculated CRC7 for CMD0 before sending
-        end
-       end
-       6'b001000:// CMD Index 8
-       begin
-        if(crc_buffer[6:0] != 7'b100_0011)// CMD0 was correct with 0x4A, now CMD8 needs to be correct with 0x43
-        begin
-         //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
-        end                                                                                                    
-        else
-        begin
-         sd_cmd[7:1] <= crc_buffer[6:0];// Set the calculated CRC7 for CMD8 before sending
-        end
-       end
-       6'b110111:// CMD Index 55
-       begin
-        sd_cmd[7:1] <= crc_buffer[6:0];// Set the calculated CRC7 for CMD55 before sending
-       end
-       6'b101001:// CMD Index 41
-       begin
-        sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for ACMD41
-       end
-       6'b000010:
-       begin
-        sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for CMD2
-       end
-       6'b000011:
-       begin
-        sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for CMD3
-       end
-      endcase                                                                                                      
+      //case(sd_cmd[45:40])
+      // 6'b000000:// CMD Index 0
+      // begin
+      //  if(crc_buffer[6:0] != 7'b100_1010)// CMD0 was correct with 0x4A, now CMD8 response needs to be correct with 0x43
+      //  begin
+      //   //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
+      //  end                                                                                                    
+      //  else
+      //  begin
+      //   sd_cmd[7:1] <= crc_buffer[6:0];// Set the calculated CRC7 for CMD0 before sending
+      //  end
+      // end
+      // 6'b001000:// CMD Index 8
+      // begin
+      //  if(crc_buffer[6:0] != 7'b100_0011)// CMD0 was correct with 0x4A, now CMD8 needs to be correct with 0x43
+      //  begin
+      //   //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
+      //  end                                                                                                    
+      //  else
+      //  begin
+      //   sd_cmd[7:1] <= crc_buffer[6:0];// Set the calculated CRC7 for CMD8 before sending
+      //  end
+      // end
+      // 6'b110111:// CMD Index 55
+      // begin
+      //  sd_cmd[7:1] <= crc_buffer[6:0];// Set the calculated CRC7 for CMD55 before sending
+      // end
+      // 6'b101001:// CMD Index 41
+      // begin
+      //  sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for ACMD41
+      // end
+      // 6'b000010:
+      // begin
+      //  sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for CMD2
+      // end
+      // 6'b000011:
+      // begin
+      //  sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for CMD3
+      // end
+      //endcase                                                                                                     
+      sd_cmd[7:1] <= crc_buffer[6:0];// Shift in calculated crc7 regardless of what command we transmit 
       data_ptr <= 7'd47;// Reset the command data pointer once CRC calculation is finished    
       sd_mem_state <= SEND_CMD;// And escape CRC FSM to send the CMD                          
       crc_state <= FULL_LOAD;// When CRC calculation is fininshed, return to FULL_LOAD state
