@@ -150,21 +150,21 @@ module microsd(
 
    SET_CMD:
    begin
-    case(sd_cmd[47:8])// Transmission Bit prepended to CMD Index
-     40'b0:      sd_cmd <= CMD0;   //Set first SD Memory CMD to  CMD0  - GO_IDLE_STATE
-     CMD0[47:8]: sd_cmd <= CMD8;   //Set second SD Memory CMD to CMD8  - SEND_IF_COND
-     CMD8[47:8]: sd_cmd <= CMD55;  //Set third SD Memory CMD to  CMD55 - APP_CMD
-     CMD55[47:8]: 
-     begin
-      //sd_cmd <= CMD41; //Set fourth SD Memory CMD to CMD41 - SEND_OP_COND
-      sd_mem_state <= END;// After response captured from CMD55, go to END state...
-      //cmd_read <= 1'b1; // Ensure that a command is not accidentally sent to sd card
-     end
-    endcase
-    if(sd_cmd[47:8] != CMD55[47:8])
+    if(sd_cmd_resp[38] == 1'b1)
     begin
-     sd_mem_state <= CALC_CRC_CMD;
+     sd_mem_state <= END;
     end
+    else
+    begin    
+     sd_mem_state <= CALC_CRC_CMD;// Initially set as CALC_CRC_CMD awaiting potential override...
+    end
+    case(sd_cmd[47:8])// Transmission Bit prepended to CMD Index
+     40'b0:       sd_cmd <= CMD0;   //Set first SD Memory CMD to  CMD0  - GO_IDLE_STATE
+     CMD0[47:8]:  sd_cmd <= CMD8;   //Set second SD Memory CMD to CMD8  - SEND_IF_COND
+     CMD8[47:8]:  sd_cmd <= CMD55;  //Set third SD Memory CMD to  CMD55 - APP_CMD
+     CMD55[47:8]: sd_cmd <= CMD41;  //Set fourth SD Memory CMD to CMD41 - SEND_OP_COND
+     CMD41[47:8]: sd_cmd <= CMD55;// Resend ACMD41 until sd_cmd_resp[38] is high
+    endcase
    end
 
    CALC_CRC_CMD: // CalcCMDCRC state
@@ -255,7 +255,7 @@ module microsd(
        begin
         if(crc_buffer[6:0] != 7'b100_1010)// CMD0 was correct with 0x4A, now CMD8 response needs to be correct with 0x43
         begin
-         led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
+         //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
         end                                                                                                    
         else
         begin
@@ -266,7 +266,7 @@ module microsd(
        begin
         if(crc_buffer[6:0] != 7'b100_0011)// CMD0 was correct with 0x4A, now CMD8 needs to be correct with 0x43
         begin
-         led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
+         //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
         end                                                                                                    
         else
         begin
@@ -373,7 +373,7 @@ module microsd(
     sd_clk <= ~sd_clk;// Toggle sd_clk
     if(sd_clk == 1'b1)// Every falling edge of clock
     begin
-     sd_cmd_resp[sd_cmd_response_ptr] <= CMD;// Read the next CMD response bit
+     sd_cmd_resp[sd_cmd_resp_ptr] <= CMD;// Read the next CMD response bit
      if(sd_cmd_resp_ptr == 7'd0)// We captured the last response bit, but haven't risen the sd_clk
      begin
       sd_mem_state <= FINISH_RESPONSE;// Finish response by giving rising edge of sd_clk
@@ -471,9 +471,8 @@ module microsd(
        begin
         if(crc_buffer[6:0] != 7'b000_0000)// CMD8 response was correct with 0x43
         begin
-         led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
-        end                                                                                         
-        //sd_cmd[47:0] <= CMD55;// Remember to load next sd command!
+         //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
+        end                                                                                        
        end
        default: sd_mem_state <= CALC_CRC;	
       endcase                                                                                       
@@ -489,8 +488,7 @@ module microsd(
 
    END: // Dead State for testing
    begin
-    //sd_clk <= ~sd_clk; // If we don't toggle sd_clk, target device will just
-    // stay in idle state...
+    sd_clk <= ~sd_clk;
     sd_mem_state <= END;
    end
 
