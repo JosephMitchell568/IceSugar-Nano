@@ -22,11 +22,15 @@ module microsd(
  parameter CMD8   = 48'b0_1_001000_00000000000000000000000110101010_0000000_1;// SEND_IF_COND
  parameter CMD55  = 48'b0_1_110111_00000000000000000000000000000000_0000000_1;// APP_CMD - Tell SD Card next cmd APP
  parameter CMD41  = 48'b0_1_101001_01000000000100000000000000000000_0000000_1;// HCS && 3.3v raised SEND_OP_COND
+ parameter CMD2   = 48'b0_1_000010_00000000000000000000000000000000_0000000_1;// CMD2 ALL_SEND_CID
+ parameter CMD3   = 48'b0_1_000011_00000000000000000000000000000000_0000000_1;// CMD3 SEND_RELATIVE_ADDR
 
  reg [13:0] init_delay; // Delay required before sending any commands
 
 
- reg [5:0] resp_delay; // Response Delay 
+ reg [5:0] resp_delay; // Response Delay
+ reg [135:0] sd_cmd_resp_r2; // Response from CMD2
+ reg [7:0] sd_cmd_resp_ptr_r2; // Point to current R2 response bit
  reg [47:0] sd_cmd_resp; // Actual Response to CMD
  reg [5:0] sd_cmd_resp_ptr;// Point to current response bit
 
@@ -80,9 +84,13 @@ module microsd(
   sd_cmd_ptr[5:0] = 6'd47; // SD Memory cmd bit pointer
   
   sd_mem_state = DELAY; // Init state
+  
   resp_delay = 6'b110101; // 53 clock cycles ~2us delay
   sd_cmd_resp = 48'b0; // Cmd response
   sd_cmd_resp_ptr = 48'd47; // CMD response pointer MSB
+
+  sd_cmd_resp_r2 = 136'b0;// Init 0
+  sd_cmd_resp_ptr_r2 = 8'd135; // Initialize to MSB 135
 
   cmd_read = 1'b0; // Not ready to read a CMD response from card yet
   dat_read = 1'b0; // No data to read yet
@@ -150,20 +158,28 @@ module microsd(
 
    SET_CMD:
    begin
-    if(sd_cmd_resp[38] == 1'b1)
-    begin
-     sd_mem_state <= END;
-    end
-    else
-    begin    
-     sd_mem_state <= CALC_CRC_CMD;// Initially set as CALC_CRC_CMD awaiting potential override...
-    end
+    sd_mem_state <= CALC_CRC_CMD;// Initially set as CALC_CRC_CMD awaiting potential override...
     case(sd_cmd[47:8])// Transmission Bit prepended to CMD Index
      40'b0:       sd_cmd <= CMD0;   //Set first SD Memory CMD to  CMD0  - GO_IDLE_STATE
      CMD0[47:8]:  sd_cmd <= CMD8;   //Set second SD Memory CMD to CMD8  - SEND_IF_COND
      CMD8[47:8]:  sd_cmd <= CMD55;  //Set third SD Memory CMD to  CMD55 - APP_CMD
      CMD55[47:8]: sd_cmd <= CMD41;  //Set fourth SD Memory CMD to CMD41 - SEND_OP_COND
-     CMD41[47:8]: sd_cmd <= CMD55;// Resend ACMD41 until sd_cmd_resp[38] is high
+     CMD41[47:8]:
+     begin
+      if(sd_cmd_resp[38] == 1'b1)// ACMD41 has brought microSD card into READY state
+      begin
+       sd_cmd <= CMD2;// Set CMD2 as 5th cmd ALL_SEND_CID should bring microSD card into INITIALIZATION state
+      end
+      else
+      begin 
+       sd_cmd <= CMD55;// Resend ACMD41 until sd_cmd_resp[38] is high
+      end
+     end
+     CMD2[47:8]: sd_cmd <= CMD3; // Set 6th cmd SEND_RELATIVE_ADDR brings microSD card to STANDBY state
+     CMD3[47:8]:
+     begin
+      sd_mem_state <= END;// After microSD card has entered STANDBY state, stop check work.
+     end 
     endcase
    end
 
@@ -281,6 +297,14 @@ module microsd(
        begin
         sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for ACMD41
        end
+       6'b000010:
+       begin
+        sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for CMD2
+       end
+       6'b000011:
+       begin
+        sd_cmd[7:1] <= crc_buffer[6:0];// Set the CRC7 for CMD3
+       end
       endcase                                                                                                      
       data_ptr <= 7'd47;// Reset the command data pointer once CRC calculation is finished    
       sd_mem_state <= SEND_CMD;// And escape CRC FSM to send the CMD                          
@@ -360,9 +384,17 @@ module microsd(
     end
     else // A Response has been found. When a Response has been found, we should calculate its CRC
     begin
+     if(sd_cmd[45:40] == 6'b000010)// If CMD2 ALL_SEND_CID, use R2 response register and pointer instead!
+     begin
+      sd_cmd_resp_r2[sd_cmd_resp_ptr_r2] <= CMD;
+      sd_cmd_resp_ptr_r2 <= sd_cmd_resp_ptr_r2 - 8'd1;
+     end
+     else
+     begin
+      sd_cmd_resp[sd_cmd_resp_ptr] <= CMD;// CMD must have been 0 for start bit
+      sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd1;// MSB - 1                     
+     end
      sd_mem_state <= READ_RESPONSE;// Read the response once found
-     sd_cmd_resp[sd_cmd_resp_ptr] <= CMD;// CMD must have been 0 for start bit
-     sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd1;// MSB - 1
      resp_delay <= 6'b110101; // Reset response delay for next command
     end
 
@@ -373,16 +405,33 @@ module microsd(
     sd_clk <= ~sd_clk;// Toggle sd_clk
     if(sd_clk == 1'b1)// Every falling edge of clock
     begin
-     sd_cmd_resp[sd_cmd_resp_ptr] <= CMD;// Read the next CMD response bit
-     if(sd_cmd_resp_ptr == 7'd0)// We captured the last response bit, but haven't risen the sd_clk
+     if(sd_cmd[45:40] == 6'b000010)
      begin
-      sd_mem_state <= FINISH_RESPONSE;// Finish response by giving rising edge of sd_clk
-      sd_cmd_resp_ptr <= 7'd47;// Reset the sd command response bit pointer after response is finished!
+      sd_cmd_resp_r2[sd_cmd_resp_ptr_r2] <= CMD;// Read the next CMD response bit
+      if(sd_cmd_resp_ptr_r2 == 8'd0)// We captured the last response bit, but haven't risen the sd_clk
+      begin
+       sd_mem_state <= FINISH_RESPONSE;// Finish response by giving rising edge of sd_clk
+       sd_cmd_resp_ptr_r2 <= 8'd135;// Reset the sd command response bit pointer after response is finished!
+      end
+      else
+      begin
+       sd_cmd_resp_ptr_r2 <= sd_cmd_resp_ptr_r2 - 8'd1;// Point to the next command response bit only if not last one!
+       sd_mem_state <= READ_RESPONSE;// Transition back to read next response bit
+      end                                                                                                       
      end
      else
-     begin
-      sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd1;// Point to the next command response bit only if not last one!
-      sd_mem_state <= READ_RESPONSE;// Transition back to read next response bit
+     begin    
+      sd_cmd_resp[sd_cmd_resp_ptr] <= CMD;// Read the next CMD response bit
+      if(sd_cmd_resp_ptr == 7'd0)// We captured the last response bit, but haven't risen the sd_clk
+      begin
+       sd_mem_state <= FINISH_RESPONSE;// Finish response by giving rising edge of sd_clk
+       sd_cmd_resp_ptr <= 7'd47;// Reset the sd command response bit pointer after response is finished!
+      end
+      else
+      begin
+       sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd1;// Point to the next command response bit only if not last one!
+       sd_mem_state <= READ_RESPONSE;// Transition back to read next response bit
+      end                                                                                                       
      end
     end
    end
@@ -391,100 +440,151 @@ module microsd(
    begin
     sd_clk <= ~sd_clk;// Toggle sd_clk once to finish receiving response
     sd_mem_state <= CALC_CRC_RESP;// CALC CRC for the response of sent command...
+    sd_cmd_resp_ptr_r2 <= 8'd135;                                                             
+    sd_cmd_resp_ptr <= 7'd47;// Reset response pointer
+    sd_mem_state <= SET_CMD;// Once CRC has been calculated for the response set next command
+    cmd <= 1'b1; // Make sure CMD is high before sending start bit for next CMD
+    cmd_read <= 1'b0;// Lower the command read signal for the next command to send             
    end
 
-   CALC_CRC_RESP:
-   begin
+   // Currently removed from chip since there is not enough space on FPGA....
+   //CALC_CRC_RESP:
+   //begin
 
-    case(crc_state)
+   // case(crc_state)
 
-     FULL_LOAD:
-     begin
-      crc_buffer[7:0] <= sd_cmd_resp[47:40];// Load first 8 most significant response bits
-      sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd8;// Point to 9th bit                       
-      crc_state <= XOR_CRC;
-     end
+   //  FULL_LOAD:
+   //  begin
+   //   crc_buffer[7:0] <= sd_cmd_resp[47:40];// Load first 8 most significant response bits
+   //   if(sd_cmd[45:40] == 6'b000010)
+   //   begin
+   //    sd_cmd_resp_ptr_r2 <= sd_cmd_resp_ptr_r2 - 8'd8;// Point to next bit
+   //   end
+   //   else
+   //   begin
+   //    sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd8;// Point to next bit      
+   //   end                 
+   //   crc_state <= XOR_CRC;
+   //  end
 
-     XOR_CRC:
-     begin
-      if(crc_buffer[7] == 1'b0)
-      begin
-       crc_state <= SHIFT;
-       if(sd_cmd_resp_ptr == 7'b0)
-       begin
-	crc_state <= CRC_FINISH;
-       end
-      end
-      else
-      begin
-       crc_buffer[7:0] <=  {crc_buffer[7] ^ 1'b1, // x^7               
-                            crc_buffer[6] ^ 1'b0, 
-                            crc_buffer[5] ^ 1'b0,
-                            crc_buffer[4] ^ 1'b0,
-                            crc_buffer[3] ^ 1'b1, // x^3
-                            crc_buffer[2] ^ 1'b0,
-                            crc_buffer[1] ^ 1'b0,
-                            crc_buffer[0] ^ 1'b1  // 1
-                          };// Generator Polynomial : x^7 + x^3 + 1
-       if(sd_cmd_resp_ptr != 7'b0)
-       begin
-        crc_state <= SHIFT;
-       end
-       else
-       begin
-        crc_state <= CRC_FINISH;
-       end
-      end
-     end
+   //  XOR_CRC:
+   //  begin
+   //   if(crc_buffer[7] == 1'b0)
+   //   begin
+   //    crc_state <= SHIFT;
+   //    if(sd_cmd[45:40] == 6'b000010)
+   //    begin
+   //     if(sd_cmd_resp_ptr_r2 == 8'd0)
+   //     begin
+   //      crc_state <= CRC_FINISH;
+   //     end
+   //    end
+   //    else
+   //    begin
+   //     if(sd_cmd_resp_ptr == 7'b0)
+   //     begin
+   //      crc_state <= CRC_FINISH;
+   //     end
+   //    end
+   //   end
+   //   else
+   //   begin
+   //    crc_buffer[7:0] <=  {crc_buffer[7] ^ 1'b1, // x^7               
+   //                         crc_buffer[6] ^ 1'b0, 
+   //                         crc_buffer[5] ^ 1'b0,
+   //                         crc_buffer[4] ^ 1'b0,
+   //                         crc_buffer[3] ^ 1'b1, // x^3
+   //                         crc_buffer[2] ^ 1'b0,
+   //                         crc_buffer[1] ^ 1'b0,
+   //                         crc_buffer[0] ^ 1'b1  // 1
+   //                       };// Generator Polynomial : x^7 + x^3 + 1
+   //    if(sd_cmd[45:40] == 6'b000010)
+   //    begin
+   //     if(sd_cmd_resp_ptr_r2 != 8'd0)
+   //     begin
+   //      crc_state <= SHIFT;
+   //     end
+   //     else
+   //     begin
+   //      crc_state <= CRC_FINISH;
+   //     end
+   //    end
+   //    else
+   //    begin
+   //     if(sd_cmd_resp_ptr != 7'b0)
+   //     begin
+   //      crc_state <= SHIFT;
+   //     end
+   //     else
+   //     begin
+   //      crc_state <= CRC_FINISH;
+   //     end
+   //    end
+   //   end
+   //  end
 
-     SHIFT:
-     begin
-      crc_state <= LOAD_NEXT;
-      crc_buffer <= crc_buffer << 1;// Shift left 1 bit
-     end
+   //  SHIFT:
+   //  begin
+   //   crc_state <= LOAD_NEXT;
+   //   crc_buffer <= crc_buffer << 1;// Shift left 1 bit
+   //  end
 
-     LOAD_NEXT:
-     begin
-       crc_buffer[0] <= sd_cmd_resp[sd_cmd_resp_ptr];// Set next response bit
-       if(sd_cmd_resp_ptr != 7'd0)// If last response bit has not been loaded
-       begin
-        sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd1;// Decrement data pointer
-        if(crc_buffer[7] == 1'b1 || sd_cmd_resp_ptr == 7'd1)// MSB 1, or last data bit is being loaded
-        begin
-         crc_state <= XOR_CRC;// Check to see if crc buffer needs to be XOR'd
-        end
-        else// MSB not 1 and Not loading last bit
-        begin
-         crc_state <= SHIFT;// Shift out the leading zero
-        end
-       end
-       else// Last bit has already been loaded
-       begin
-        crc_state <= XOR_CRC;// Check to see if crc buffer needs to be XOR'd
-       end                                                                                       
-     end
+   //  LOAD_NEXT:
+   //  begin
+   //   if(sd_cmd[45:40] == 6'b000010)
+   //   begin
+   //    crc_buffer[0] <= sd_cmd_resp_r2[sd_cmd_resp_ptr_r2];// Set next response bit
+   //    if(sd_cmd_resp_ptr_r2 != 7'd0)// If last response bit has not been loaded
+   //    begin
+   //     sd_cmd_resp_ptr_r2 <= sd_cmd_resp_ptr_r2 - 7'd1;// Decrement data pointer
+   //     if(crc_buffer[7] == 1'b1 || sd_cmd_resp_ptr_r2 == 7'd1)// MSB 1, or last data bit is being lo
+   //     begin
+   //      crc_state <= XOR_CRC;// Check to see if crc buffer needs to be XOR'd
+   //     end
+   //     else// MSB not 1 and Not loading last bit
+   //     begin
+   //      crc_state <= SHIFT;// Shift out the leading zero
+   //     end
+   //    end
+   //    else// Last bit has already been loaded
+   //    begin
+   //     crc_state <= XOR_CRC;// Check to see if crc buffer needs to be XOR'd
+   //    end                                                                                       
+   //   end
+   //   else
+   //   begin
+   //    crc_buffer[0] <= sd_cmd_resp[sd_cmd_resp_ptr];// Set next response bit
+   //    if(sd_cmd_resp_ptr != 7'd0)// If last response bit has not been loaded
+   //    begin
+   //     sd_cmd_resp_ptr <= sd_cmd_resp_ptr - 7'd1;// Decrement data pointer
+   //     if(crc_buffer[7] == 1'b1 || sd_cmd_resp_ptr == 7'd1)// MSB 1, or last data bit is being loaded
+   //     begin
+   //      crc_state <= XOR_CRC;// Check to see if crc buffer needs to be XOR'd
+   //     end
+   //     else// MSB not 1 and Not loading last bit
+   //     begin
+   //      crc_state <= SHIFT;// Shift out the leading zero
+   //     end
+   //    end
+   //    else// Last bit has already been loaded
+   //    begin
+   //     crc_state <= XOR_CRC;// Check to see if crc buffer needs to be XOR'd
+   //    end                                                                                       
+   //   end
+   //  end
 
-     CRC_FINISH:
-     begin
-      case(sd_cmd_resp[45:40])// Which command was being responded to?                              
-       6'b001000:// CMD8
-       begin
-        if(crc_buffer[6:0] != 7'b000_0000)// CMD8 response was correct with 0x43
-        begin
-         //led <= 1'b1;// Raise Error LED when the calculated crc is not expected 0x4A for CMD0
-        end                                                                                        
-       end
-       default: sd_mem_state <= CALC_CRC;	
-      endcase                                                                                       
-      sd_cmd_resp_ptr <= 7'd47;// Reset response pointer
-      sd_mem_state <= SET_CMD;// Once CRC has been calculated for the response set next command
-      crc_state <= FULL_LOAD;// Reset crc FSM to FULL_LOAD state
-      cmd <= 1'b1; // Make sure CMD is high before sending start bit for next CMD
-      cmd_read <= 1'b0;// Lower the command read signal for the next command to send
-     end
-    endcase
+   //  CRC_FINISH:
+   //  begin
+   //   sd_cmd_resp_ptr_r2 <= 8'd135;                                                             
+   //   sd_cmd_resp_ptr <= 7'd47;// Reset response pointer
+   //   sd_mem_state <= SET_CMD;// Once CRC has been calculated for the response set next command
+   //   crc_state <= FULL_LOAD;// Reset crc FSM to FULL_LOAD state
+   //   cmd <= 1'b1; // Make sure CMD is high before sending start bit for next CMD
+   //   cmd_read <= 1'b0;// Lower the command read signal for the next command to send             
+   //  end
+   // endcase
 
-   end
+   //end
 
    END: // Dead State for testing
    begin
